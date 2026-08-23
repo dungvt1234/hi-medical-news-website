@@ -8,8 +8,25 @@ import { Facebook, Instagram, Phone, MapPin, Clock } from 'lucide-react';
  */
 export default function Footer() {
   return (
-    <footer className="bg-night-3 pb-10 pt-20 text-[#E9E0F7]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <footer className="relative overflow-hidden bg-night-3 pb-10 pt-20 text-[#E9E0F7]">
+      {/* Ảnh nền: hoa oải hương cận cảnh + overlay gradient lavender bán trong suốt */}
+      <div aria-hidden className="absolute inset-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2000&auto=format&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(48,38,66,0.92) 0%, rgba(139,95,199,0.78) 45%, rgba(169,130,216,0.60) 100%)',
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* CTA booking trên cùng */}
         <div className="mb-16 flex flex-col items-center justify-between gap-6 rounded-4xl border border-white/25 bg-white/10 px-8 py-10 text-center backdrop-blur-sm sm:flex-row sm:text-left">
           <div>
