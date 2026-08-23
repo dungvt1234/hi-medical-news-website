@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Marquee from '@/components/Marquee';
 import Introduction from '@/components/Introduction';
 import Treatments from '@/components/Treatments';
 import SpaExperience from '@/components/SpaExperience';
@@ -17,6 +18,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Marquee />
       <Introduction />
       <Treatments />
       <SpaExperience />

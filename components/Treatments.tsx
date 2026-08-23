@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Reveal from './Reveal';
 
 /**
  * Signature Treatments — 4 cards dịch vụ
@@ -62,11 +63,11 @@ export default function Treatments() {
               <span className="h-px w-10 bg-gold" />
               Signature Treatments
             </p>
-            <h2 className="reveal font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
+            <Reveal as="h2" className="font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
               Curated rituals for
               <br />
               <span className="italic text-rose-deep">every glow.</span>
-            </h2>
+            </Reveal>
           </div>
           <a
             href="#contact"

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Reveal from './Reveal';
 
 /**
  * Introduction — section sáng #F1E9ED
@@ -38,10 +39,10 @@ export default function Introduction() {
             <span className="h-px w-10 bg-gold" />
             Our Philosophy
           </p>
-          <h2 className="reveal font-heading text-4xl font-light leading-[1.15] text-[#302642] sm:text-5xl lg:text-6xl">
+          <Reveal as="h2" className="font-heading text-4xl font-light leading-[1.15] text-[#302642] sm:text-5xl lg:text-6xl">
             We believe beauty begins with{' '}
             <span className="italic text-rose-deep">slowing down.</span>
-          </h2>
+          </Reveal>
         </div>
 
         {/* Phải: description + philosophy + CTA */}

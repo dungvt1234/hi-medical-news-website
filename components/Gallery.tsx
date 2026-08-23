@@ -1,6 +1,11 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Reveal from './Reveal';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Gallery — masonry/editorial grid 6 ảnh
@@ -59,6 +64,34 @@ export default function Gallery() {
       { threshold: 0.1 }
     );
     obs.observe(el);
+
+    // Parallax nhẹ cho ảnh gallery theo scroll (tôn trọng reduced-motion)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const imgs = el.querySelectorAll('figure img');
+      const ctx = gsap.context(() => {
+        imgs.forEach((img) => {
+          gsap.fromTo(
+            img,
+            { yPercent: -8 },
+            {
+              yPercent: 8,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: img.closest('figure'),
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+              },
+            }
+          );
+        });
+      }, el);
+      return () => {
+        obs.disconnect();
+        ctx.revert();
+      };
+    }
+
     return () => obs.disconnect();
   }, []);
 
@@ -71,9 +104,9 @@ export default function Gallery() {
             The Gallery
             <span className="h-px w-10 bg-gold" />
           </p>
-          <h2 className="reveal font-heading text-4xl font-light text-ink sm:text-5xl">
+          <Reveal as="h2" className="font-heading text-4xl font-light text-ink sm:text-5xl">
             Moments of <span className="italic text-rose">tranquility.</span>
-          </h2>
+          </Reveal>
         </div>
 
         {/* Masonry grid */}
