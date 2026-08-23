@@ -30,7 +30,7 @@ export default function FloatingWidgets() {
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lavender">
             Journal · Mới nhất
           </p>
-          <p className="mt-1.5 line-clamp-2 font-heading text-base italic leading-snug text-ink group-hover:text-rose">
+          <p className="mt-1.5 line-clamp-2 font-heading text-base italic leading-snug text-ink group-hover:text-rose-deep">
             {latest.title}
           </p>
         </a>
@@ -71,7 +71,7 @@ export default function FloatingWidgets() {
         <a
           href="tel:0799390790"
           aria-label="Gọi hotline"
-          className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-rose text-night shadow-card transition-transform hover:scale-110"
+          className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-rose text-[#3B3157] shadow-card transition-transform hover:scale-110"
         >
           <Phone className="h-5 w-5" />
           <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-night-3 px-3 py-1.5 text-xs font-semibold text-ink opacity-0 shadow-card transition-opacity group-hover:opacity-100">
@@ -86,7 +86,7 @@ export default function FloatingWidgets() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Đóng trợ giúp' : 'Mở trợ giúp'}
         aria-expanded={open}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-rose text-night shadow-card transition-all hover:scale-105"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-rose text-[#3B3157] shadow-card transition-all hover:scale-105"
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         {/* Vòng pulse */}

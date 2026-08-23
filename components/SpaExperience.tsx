@@ -49,7 +49,7 @@ export default function SpaExperience() {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-night/70" />
+        <div className="absolute inset-0 bg-[#2C2447]/70" />
         <div className="absolute inset-0 bg-gradient-to-b from-night-3 via-transparent to-night-3" />
       </div>
 
@@ -58,17 +58,17 @@ export default function SpaExperience() {
         ref={textRef}
         className="reveal relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8"
       >
-        <p className="eyebrow mb-6 flex items-center justify-center gap-3">
+        <p className="eyebrow mb-6 flex items-center justify-center gap-3 !text-[#E5DCF0]">
           <span className="h-px w-10 bg-rose/60" />
           The Experience
           <span className="h-px w-10 bg-rose/60" />
         </p>
-        <h2 className="font-heading text-4xl font-light leading-[1.15] text-ink sm:text-6xl">
+        <h2 className="font-heading text-4xl font-light leading-[1.15] !text-[#F8F4F7] sm:text-6xl">
           An experience
           <br />
           <span className="italic text-rose">beyond beauty.</span>
         </h2>
-        <p className="mx-auto mt-7 max-w-xl text-base font-light leading-relaxed text-ink-light">
+        <p className="mx-auto mt-7 max-w-xl text-base font-light leading-relaxed !text-[#D8CCE8]">
           Không gian được thiết kế như một ốc đảo tĩnh lặng — ánh sáng dịu, hương thơm
           nhẹ nhàng và những chạm khắc tinh tế, đưa bạn rời xa ồn ào để trở về với chính mình.
         </p>

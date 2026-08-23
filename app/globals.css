@@ -8,8 +8,8 @@ html {
 }
 
 body {
-  background: #171D35;
-  color: #F8F4F7;
+  background: #C9B7EA;
+  color: #3B3157;
   -webkit-font-smoothing: antialiased;
   font-family: 'Manrope', 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
@@ -21,8 +21,8 @@ h1, h2, h3, h4 {
 
 /* ---------- Selection ---------- */
 ::selection {
-  background: #D7BFD0;
-  color: #171D35;
+  background: #BE93B0;
+  color: #3B3157;
 }
 
 /* ---------- Scrollbar ---------- */
@@ -30,14 +30,14 @@ h1, h2, h3, h4 {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #171D35;
+  background: #C9B7EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(169, 155, 185, 0.35);
+  background: rgba(142, 127, 176, 0.45);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(215, 191, 208, 0.5);
+  background: rgba(190, 147, 176, 0.6);
 }
 
 /* ---------- Utilities ---------- */
@@ -64,7 +64,7 @@ h1, h2, h3, h4 {
 
 /* ---------- Fine luxury border ---------- */
 .luxury-border {
-  border: 1px solid rgba(215, 191, 208, 0.25);
+  border: 1px solid rgba(90, 72, 130, 0.28);
 }
 
 /* ---------- Editorial label (eyebrow) ---------- */
@@ -73,7 +73,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #C2B3D4;
+  color: #8E7FB0;
 }
 
 /* ---------- Reveal animation (scroll) ---------- */

@@ -47,7 +47,7 @@ export default function WhyUs() {
           </p>
           <h2 className="reveal font-heading text-4xl font-light text-ink sm:text-5xl">
             Trusted by those who seek{' '}
-            <span className="italic text-rose">the finest.</span>
+            <span className="italic text-rose-deep">the finest.</span>
           </h2>
         </div>
 
@@ -60,7 +60,7 @@ export default function WhyUs() {
                 i === 0 ? 'lg:border-l-0' : ''
               }`}
             >
-              <p className="font-heading text-6xl font-light text-rose sm:text-7xl">
+              <p className="font-heading text-6xl font-light text-rose-deep sm:text-7xl">
                 {s.value}
               </p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-ink-light">

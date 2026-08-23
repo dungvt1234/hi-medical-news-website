@@ -31,7 +31,7 @@ export default function JournalPage() {
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at 70% 20%, rgba(194,179,212,0.28), transparent 40%), #171D35',
+              'radial-gradient(circle at 70% 20%, rgba(160,140,205,0.30), transparent 40%), #C9B7EA',
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 text-center sm:px-8 sm:py-20">
@@ -41,7 +41,7 @@ export default function JournalPage() {
             <span className="h-px w-10 bg-rose/60" />
           </p>
           <h1 className="font-heading text-4xl font-light text-ink sm:text-5xl lg:text-6xl">
-            Tin tức &amp; <span className="italic text-rose">sự kiện</span>
+            Tin tức &amp; <span className="italic text-rose-deep">sự kiện</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-relaxed text-ink-light">
             Cập nhật xu hướng làm đẹp, bí quyết chăm sóc da từ chuyên gia và chương trình
@@ -60,8 +60,8 @@ export default function JournalPage() {
               onClick={() => setActiveCat(c.key)}
               className={`shrink-0 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                 activeCat === c.key
-                  ? 'border-rose bg-rose text-night'
-                  : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose'
+                  ? 'border-rose bg-rose text-[#3B3157]'
+                  : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose-deep'
               }`}
             >
               {c.label}
@@ -74,7 +74,7 @@ export default function JournalPage() {
       <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         {filtered.length === 0 ? (
           <div className="rounded-4xl border border-dashed border-luxury py-20 text-center">
-            <p className="font-heading text-2xl italic text-rose">Đang cập nhật...</p>
+            <p className="font-heading text-2xl italic text-rose-deep">Đang cập nhật...</p>
             <p className="mt-2 text-sm text-ink-light">
               Anh/chị vui lòng quay lại sau nhé!
             </p>
@@ -96,11 +96,11 @@ export default function JournalPage() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-8 lg:p-12">
-                  <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-rose">
+                  <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose" />
                     {featured.category}
                   </p>
-                  <h2 className="font-heading text-3xl font-light leading-snug text-ink transition-colors group-hover:text-rose sm:text-4xl">
+                  <h2 className="font-heading text-3xl font-light leading-snug text-ink transition-colors group-hover:text-rose-deep sm:text-4xl">
                     {featured.title}
                   </h2>
                   <p className="mt-4 line-clamp-3 text-sm font-light leading-relaxed text-ink-light">
@@ -116,7 +116,7 @@ export default function JournalPage() {
             {/* Tiêu đề + toggle view */}
             <div className="mb-6 flex items-center justify-between">
               <p className="text-sm text-ink-light">
-                Hiển thị <strong className="text-rose">{filtered.length}</strong> bài viết
+                Hiển thị <strong className="text-rose-deep">{filtered.length}</strong> bài viết
               </p>
               <div className="flex items-center gap-1 rounded-full border border-luxury bg-night-2 p-1">
                 <button
@@ -124,7 +124,7 @@ export default function JournalPage() {
                   onClick={() => setView('grid')}
                   aria-label="Xem dạng lưới"
                   className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                    view === 'grid' ? 'bg-rose text-night' : 'text-ink-light hover:text-rose'
+                    view === 'grid' ? 'bg-rose text-[#3B3157]' : 'text-ink-light hover:text-rose-deep'
                   }`}
                 >
                   <LayoutGrid className="h-4 w-4" />
@@ -134,7 +134,7 @@ export default function JournalPage() {
                   onClick={() => setView('list')}
                   aria-label="Xem dạng danh sách"
                   className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                    view === 'list' ? 'bg-rose text-night' : 'text-ink-light hover:text-rose'
+                    view === 'list' ? 'bg-rose text-[#3B3157]' : 'text-ink-light hover:text-rose-deep'
                   }`}
                 >
                   <Rows3 className="h-4 w-4" />
@@ -158,12 +158,12 @@ export default function JournalPage() {
                         loading="lazy"
                         className="img-zoom h-full w-full object-cover"
                       />
-                      <span className="absolute left-4 top-4 rounded-full bg-night/70 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose backdrop-blur-sm">
+                      <span className="absolute left-4 top-4 rounded-full bg-night/70 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-deep backdrop-blur-sm">
                         {a.category}
                       </span>
                     </div>
                     <div className="p-6">
-                      <h3 className="line-clamp-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose">
+                      <h3 className="line-clamp-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
                         {a.title}
                       </h3>
                       <p className="mt-3 line-clamp-2 text-sm font-light leading-relaxed text-ink-light">
@@ -193,10 +193,10 @@ export default function JournalPage() {
                       />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-rose">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
                         {a.category}
                       </p>
-                      <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose">
+                      <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
                         {a.title}
                       </h3>
                       <p className="mt-2 line-clamp-2 text-sm font-light text-ink-light">

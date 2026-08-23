@@ -65,12 +65,12 @@ export default function Treatments() {
             <h2 className="reveal font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
               Curated rituals for
               <br />
-              <span className="italic text-rose">every glow.</span>
+              <span className="italic text-rose-deep">every glow.</span>
             </h2>
           </div>
           <a
             href="#contact"
-            className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose"
+            className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
           >
             View All Treatments
           </a>
@@ -96,20 +96,20 @@ export default function Treatments() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-transparent to-transparent" />
                 {/* Số thứ tự */}
-                <span className="absolute right-5 top-5 font-heading text-lg italic text-rose/80">
+                <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80">
                   0{i + 1}
                 </span>
               </div>
 
               {/* Nội dung */}
               <div className="p-7">
-                <h3 className="font-heading text-2xl font-medium text-ink transition-colors duration-500 group-hover:text-rose">
+                <h3 className="font-heading text-2xl font-medium text-ink transition-colors duration-500 group-hover:text-rose-deep">
                   {t.name}
                 </h3>
                 <p className="mt-2 text-sm font-light leading-relaxed text-ink-light">
                   {t.desc}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-rose/80 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-deep/80 opacity-0 transition-all duration-500 group-hover:opacity-100">
                   Discover <span aria-hidden>→</span>
                 </span>
               </div>

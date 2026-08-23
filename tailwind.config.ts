@@ -8,25 +8,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ===== Midnight Luxury Spa palette =====
+        // ===== Midnight Luxury Spa palette (pastel sáng) =====
         night: {
-          DEFAULT: '#171D35', // Primary background
-          2: '#272744', // Secondary background (cards)
-          3: '#151728', // Footer
+          DEFAULT: '#C9B7EA', // Primary background — tím pastel sáng
+          2: '#D9CCF5', // Secondary background (cards)
+          3: '#BEAAE6', // Footer
         },
         lavender: {
-          DEFAULT: '#C2B3D4', // Dusty lavender — icon/border/hover (nhạt hơn)
-          soft: '#D2C5E2',
+          DEFAULT: '#8E7FB0', // Dusty lavender — icon/text/border trên nền sáng
+          soft: '#AEA0CE',
         },
         rose: {
-          DEFAULT: '#D7BFD0', // Soft dusty rose — CTA/highlight
-          deep: '#C4A6BC',
+          DEFAULT: '#B98DAD', // Dusty rose — CTA/highlight
+          deep: '#A97C9F', // text nhỏ trên nền sáng
         },
-        cream: '#F1E9ED', // Warm cream — light sections
+        cream: '#F6F0F4', // Warm cream — light sections
         // Text
         ink: {
-          DEFAULT: '#F8F4F7', // Primary text
-          light: '#B9B1C1', // Secondary text
+          DEFAULT: '#3B3157', // Primary text — tối trên nền sáng
+          light: '#6E648C', // Secondary text
         },
       },
       fontFamily: {
@@ -34,8 +34,8 @@ const config: Config = {
         body: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 60px rgba(194, 179, 212, 0.20)',
-        card: '0 18px 50px rgba(9, 11, 24, 0.35)',
+        glow: '0 0 60px rgba(140, 120, 190, 0.30)',
+        card: '0 18px 50px rgba(80, 65, 120, 0.20)',
       },
       borderRadius: {
         '3xl': '20px',
@@ -43,7 +43,7 @@ const config: Config = {
         '5xl': '48px',
       },
       borderColor: {
-        luxury: 'rgba(215, 191, 208, 0.25)',
+        luxury: 'rgba(90, 72, 130, 0.28)',
       },
       keyframes: {
         'fade-up': {

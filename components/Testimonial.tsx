@@ -32,7 +32,7 @@ export default function Testimonial() {
       <div ref={ref} className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         {/* Dấu ngoặc kép trang trí */}
         <div className="reveal mb-8 flex justify-center">
-          <span className="font-heading text-7xl italic leading-none text-rose/60">"</span>
+          <span className="font-heading text-7xl italic leading-none text-rose-deep/60">"</span>
         </div>
 
         <blockquote className="reveal">
@@ -45,7 +45,7 @@ export default function Testimonial() {
 
         <div className="reveal mt-10">
           <div className="mx-auto mb-4 h-px w-16 bg-rose/50" />
-          <p className="font-heading text-xl text-rose">Minh Anh</p>
+          <p className="font-heading text-xl text-rose-deep">Minh Anh</p>
           <p className="mt-1 text-xs uppercase tracking-[0.22em] text-ink-light">
             Khách hàng thân thiết · TP. Hồ Chí Minh
           </p>

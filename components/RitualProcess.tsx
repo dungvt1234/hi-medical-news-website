@@ -62,7 +62,7 @@ export default function RitualProcess() {
             <span className="h-px w-10 bg-rose/60" />
           </p>
           <h2 className="reveal font-heading text-4xl font-light text-ink sm:text-5xl">
-            Four steps to <span className="italic text-rose">complete serenity.</span>
+            Four steps to <span className="italic text-rose-deep">complete serenity.</span>
           </h2>
         </div>
 
@@ -84,7 +84,7 @@ export default function RitualProcess() {
               <div key={s.num} className="reveal relative flex gap-6 lg:block lg:text-center">
                 {/* Số + chấm */}
                 <div className="flex flex-col items-center lg:mb-8">
-                  <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-rose/50 bg-night font-heading text-xl italic text-rose shadow-glow">
+                  <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#3B3157]/25 bg-[#3B3157] font-heading text-xl italic text-[#F6F0F4] shadow-glow">
                     {s.num}
                   </span>
                   {i < STEPS.length - 1 && (

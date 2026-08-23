@@ -26,7 +26,7 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-night"
       style={{
         background:
-          'radial-gradient(circle at 70% 20%, rgba(194,179,212,0.38), transparent 35%), radial-gradient(circle at 20% 80%, rgba(215,191,208,0.14), transparent 30%), #171D35',
+          'radial-gradient(circle at 70% 20%, rgba(160,140,205,0.45), transparent 40%), radial-gradient(circle at 20% 80%, rgba(215,180,200,0.28), transparent 35%), #C9B7EA',
       }}
     >
       {/* Decorative moon + stars */}
@@ -56,7 +56,7 @@ export default function Hero() {
             <br />
             your inner
             <br />
-            <span className="italic text-rose">glow.</span>
+            <span className="italic text-rose-deep">glow.</span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-md text-base font-light leading-relaxed text-ink-light lg:mx-0">
@@ -67,20 +67,20 @@ export default function Hero() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-night transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3B3157] transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
               Book Your Ritual
             </a>
             <a
               href="#treatments"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-luxury px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-luxury px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep sm:w-auto"
             >
               Explore Treatments
             </a>
           </div>
 
           <p className="mt-10 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-lavender lg:justify-start">
-            <Sparkles className="h-4 w-4 text-rose" />
+            <Sparkles className="h-4 w-4 text-rose-deep" />
             OPEN DAILY 9:00 — 21:00
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function Hero() {
           <div
             ref={imgRef}
             className="arch-mask relative aspect-[4/5] w-full opacity-0 transition-opacity duration-[1500ms]"
-            style={{ boxShadow: '0 30px 80px rgba(9,11,24,0.6)' }}
+            style={{ boxShadow: '0 30px 80px rgba(80, 65, 120, 0.35)' }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -104,10 +104,10 @@ export default function Hero() {
               className="h-full w-full object-cover"
             />
             {/* Overlay nhẹ */}
-            <div className="absolute inset-0 bg-gradient-to-t from-night/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#4A3E75]/35 via-transparent to-transparent" />
             {/* Badge */}
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-luxury bg-night/60 p-4 backdrop-blur-md">
-              <p className="font-heading text-lg italic text-rose">Since 2016</p>
+              <p className="font-heading text-lg italic text-rose-deep">Since 2016</p>
               <p className="mt-1 text-xs tracking-wide text-ink-light">
                 Chuyên gia thẩm mỹ · Công nghệ chuẩn quốc tế
               </p>
