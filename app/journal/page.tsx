@@ -31,7 +31,7 @@ export default function JournalPage() {
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at 70% 20%, rgba(174,151,190,0.25), transparent 40%), #171D35',
+              'radial-gradient(circle at 70% 20%, rgba(194,179,212,0.28), transparent 40%), #171D35',
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 text-center sm:px-8 sm:py-20">

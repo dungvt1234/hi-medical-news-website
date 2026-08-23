@@ -37,7 +37,7 @@ export default function CTASection() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 80% 30%, rgba(174,151,190,0.25), transparent 40%), radial-gradient(circle at 10% 90%, rgba(215,191,208,0.10), transparent 35%)',
+            'radial-gradient(circle at 80% 30%, rgba(194,179,212,0.28), transparent 40%), radial-gradient(circle at 10% 90%, rgba(215,191,208,0.12), transparent 35%)',
         }}
       />
 

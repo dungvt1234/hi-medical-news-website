@@ -34,7 +34,7 @@ export default function Introduction() {
       <div ref={ref} className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         {/* Trái: label + heading */}
         <div>
-          <p className="eyebrow reveal mb-6 flex items-center gap-3 !text-[#A99BB9]">
+          <p className="eyebrow reveal mb-6 flex items-center gap-3 !text-[#C2B3D4]">
             <span className="h-px w-10 bg-rose-deep/60" />
             Our Philosophy
           </p>

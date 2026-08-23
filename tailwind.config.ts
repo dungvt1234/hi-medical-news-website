@@ -15,8 +15,8 @@ const config: Config = {
           3: '#151728', // Footer
         },
         lavender: {
-          DEFAULT: '#A99BB9', // Dusty lavender — icon/border/hover
-          soft: '#AEA0BE',
+          DEFAULT: '#C2B3D4', // Dusty lavender — icon/border/hover (nhạt hơn)
+          soft: '#D2C5E2',
         },
         rose: {
           DEFAULT: '#D7BFD0', // Soft dusty rose — CTA/highlight
@@ -34,7 +34,7 @@ const config: Config = {
         body: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 60px rgba(174, 158, 190, 0.18)',
+        glow: '0 0 60px rgba(194, 179, 212, 0.20)',
         card: '0 18px 50px rgba(9, 11, 24, 0.35)',
       },
       borderRadius: {

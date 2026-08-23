@@ -26,7 +26,7 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-night"
       style={{
         background:
-          'radial-gradient(circle at 70% 20%, rgba(174,151,190,0.35), transparent 35%), radial-gradient(circle at 20% 80%, rgba(215,191,208,0.12), transparent 30%), #171D35',
+          'radial-gradient(circle at 70% 20%, rgba(194,179,212,0.38), transparent 35%), radial-gradient(circle at 20% 80%, rgba(215,191,208,0.14), transparent 30%), #171D35',
       }}
     >
       {/* Decorative moon + stars */}
