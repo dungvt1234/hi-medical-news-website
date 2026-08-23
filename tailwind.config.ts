@@ -8,49 +8,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand — lavender / purple (Hi Medical)
-        brand: {
-          50: '#f6f4fc',
-          100: '#e6e6fa',
-          200: '#d8cfe8',
-          300: '#b9a8d6',
-          400: '#8a6fc0',
-          500: '#5e3fa3',
-          600: '#4a2886',
-          700: '#3a1f6e',
-          800: '#2c1754',
-          900: '#1f1040',
+        // ===== Midnight Luxury Spa palette =====
+        night: {
+          DEFAULT: '#171D35', // Primary background
+          2: '#272744', // Secondary background (cards)
+          3: '#151728', // Footer
         },
-        // Gold CTA
-        gold: {
-          DEFAULT: '#d4af37',
-          dark: '#b8942f',
-          light: '#f7edd0',
+        lavender: {
+          DEFAULT: '#A99BB9', // Dusty lavender — icon/border/hover
+          soft: '#AEA0BE',
         },
+        rose: {
+          DEFAULT: '#D7BFD0', // Soft dusty rose — CTA/highlight
+          deep: '#C4A6BC',
+        },
+        cream: '#F1E9ED', // Warm cream — light sections
+        // Text
         ink: {
-          DEFAULT: '#33303f',
-          light: '#6b6780',
+          DEFAULT: '#F8F4F7', // Primary text
+          light: '#B9B1C1', // Secondary text
         },
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 10px 30px rgba(74,40,134,.10)',
-        'card-lg': '0 18px 50px rgba(74,40,134,.16)',
+        glow: '0 0 60px rgba(174, 158, 190, 0.18)',
+        card: '0 18px 50px rgba(9, 11, 24, 0.35)',
       },
       borderRadius: {
-        xl2: '18px',
+        '3xl': '20px',
+        '4xl': '32px',
+        '5xl': '48px',
+      },
+      borderColor: {
+        luxury: 'rgba(215, 191, 208, 0.25)',
       },
       keyframes: {
         'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        'pop-in': {
-          '0%': { opacity: '0', transform: 'scale(.6)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+        'slow-zoom': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.06)' },
         },
         'pulse-ring': {
           '0%': { transform: 'scale(.8)', opacity: '.7' },
@@ -58,9 +60,9 @@ const config: Config = {
         },
       },
       animation: {
-        'fade-up': 'fade-up .5s ease both',
-        'pop-in': 'pop-in .25s cubic-bezier(.34,1.56,.64,1) both',
-        'pulse-ring': 'pulse-ring 1.6s cubic-bezier(.4,0,.6,1) infinite',
+        'fade-up': 'fade-up .9s cubic-bezier(.22,1,.36,1) both',
+        'slow-zoom': 'slow-zoom 1.6s cubic-bezier(.22,1,.36,1) both',
+        'pulse-ring': 'pulse-ring 1.8s cubic-bezier(.4,0,.6,1) infinite',
       },
     },
   },
