@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 /**
@@ -10,12 +11,12 @@ import { Menu, X } from 'lucide-react';
  * - Mobile: hamburger drawer
  */
 const NAV_LINKS = [
-  { href: '#home', label: 'Home' },
-  { href: '#treatments', label: 'Treatments' },
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#treatments', label: 'Treatments' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
   { href: '/journal', label: 'Journal' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -47,7 +48,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
-        <a href="#home" className="group flex items-center gap-3">
+        <Link href="/#home" className="group flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-night/40 font-heading text-lg italic text-rose-deep transition-colors group-hover:border-rose/50">
             H
           </span>
@@ -59,29 +60,29 @@ export default function Navbar() {
               Lavender Glow Spa
             </span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-sm font-medium text-ink-light transition-colors duration-300 hover:text-rose-deep"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* CTA + hamburger */}
         <div className="flex items-center gap-4">
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden rounded-full border border-rose/60 px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
             Book an Appointment
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -102,7 +103,7 @@ export default function Navbar() {
       >
         <nav className="flex flex-col gap-1 px-8 pt-10">
           {NAV_LINKS.map((link, i) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
@@ -110,15 +111,15 @@ export default function Navbar() {
               style={{ transitionDelay: `${i * 30}ms` }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-rose px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white"
           >
             Book an Appointment
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

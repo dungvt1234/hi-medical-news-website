@@ -83,8 +83,7 @@ export default function JournalPage() {
           <>
             {/* Featured (khi xem Tất cả) */}
             {activeCat === 'all' && (
-              <a
-                href={`/journal#${featured.slug}`}
+              <div
                 className="group mb-10 grid overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow lg:grid-cols-2"
               >
                 <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
@@ -110,7 +109,7 @@ export default function JournalPage() {
                     {featured.dateLabel} · {featured.readTime}
                   </p>
                 </div>
-              </a>
+              </div>
             )}
 
             {/* Tiêu đề + toggle view */}

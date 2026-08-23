@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Facebook, Instagram, Phone, MapPin, Clock } from 'lucide-react';
 
 /**
@@ -47,7 +48,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo + desc + social */}
           <div>
-            <a href="#home" className="flex items-center gap-3">
+            <Link href="/#home" className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 font-heading text-lg italic text-gold">
                 H
               </span>
@@ -59,7 +60,7 @@ export default function Footer() {
                   Lavender Glow Spa
                 </span>
               </span>
-            </a>
+            </Link>
             <p className="mt-6 max-w-xs text-sm font-light leading-relaxed">
               Nơi vẻ đẹp được chăm sóc trọn vẹn — kết hợp công nghệ thẩm mỹ tiên tiến
               và những nghi thức thư giãn đẳng cấp.
@@ -104,17 +105,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm font-light">
               {[
-                ['#home', 'Home'],
-                ['#treatments', 'Treatments'],
-                ['#about', 'About'],
-                ['#experience', 'Experience'],
+                ['/#home', 'Home'],
+                ['/#treatments', 'Treatments'],
+                ['/#about', 'About'],
+                ['/#experience', 'Experience'],
                 ['/journal', 'Journal'],
-                ['#contact', 'Contact'],
+                ['/#contact', 'Contact'],
               ].map(([href, label]) => (
                 <li key={label}>
-                  <a href={href} className="transition-colors duration-300 hover:text-gold">
+                  <Link href={href} className="transition-colors duration-300 hover:text-gold">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
