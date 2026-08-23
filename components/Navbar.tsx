@@ -52,7 +52,7 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="Hi Medical"
-            className="h-10 w-10 rounded-full border border-luxury bg-night/40 object-contain p-1 transition-colors group-hover:border-rose/50"
+            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <span className="leading-tight">
             <span className="block font-heading text-xl font-semibold tracking-wide text-ink">

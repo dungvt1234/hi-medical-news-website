@@ -52,7 +52,7 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="Hi Medical"
-                className="h-10 w-10 rounded-full border border-white/25 bg-white/10 object-contain p-1"
+                className="h-14 w-auto object-contain"
               />
               <span className="leading-tight">
                 <span className="block font-heading text-xl font-semibold text-white">
