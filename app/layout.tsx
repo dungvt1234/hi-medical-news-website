@@ -5,15 +5,15 @@ import Footer from '@/components/Footer';
 import FloatingWidgets from '@/components/FloatingWidgets';
 
 export const metadata: Metadata = {
-  title: 'Hi Medical Spa — Midnight Luxury Skincare & Beauty',
+  title: 'Hi Medical Spa — Lavender Glow Luxury Skincare & Beauty',
   description:
-    'Trải nghiệm spa cao cấp giữa ánh trăng — liệu trình chăm sóc da, thư giãn và phục hồi đẳng cấp tại Hi Medical Skincare & Beauty. Đặt lịch ngay hôm nay.',
+    'Trải nghiệm spa cao cấp với tinh chất lavender — liệu trình chăm sóc da, thư giãn và phục hồi đẳng cấp tại Hi Medical Skincare & Beauty. Đặt lịch ngay hôm nay.',
   keywords: [
     'spa cao cấp',
     'skincare',
     'Hi Medical',
     'liệu trình làm đẹp',
-    'midnight luxury spa',
+    'lavender glow spa',
   ],
 };
 

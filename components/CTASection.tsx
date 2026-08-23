@@ -37,7 +37,7 @@ export default function CTASection() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 80% 30%, rgba(160,140,205,0.40), transparent 40%), radial-gradient(circle at 10% 90%, rgba(200,170,190,0.25), transparent 35%)',
+            'radial-gradient(circle at 80% 30%, rgba(139,95,199,0.18), transparent 45%), radial-gradient(circle at 10% 90%, rgba(232,201,90,0.10), transparent 35%)',
         }}
       />
 
@@ -45,7 +45,7 @@ export default function CTASection() {
         {/* Trái: text + CTA */}
         <div className="text-center lg:text-left">
           <p className="eyebrow reveal mb-6 flex items-center justify-center gap-3 lg:justify-start">
-            <span className="h-px w-10 bg-rose/60" />
+            <span className="h-px w-10 bg-gold" />
             Reserve Your Moment
           </p>
           <h2 className="reveal font-heading text-5xl font-light leading-[1.1] text-ink sm:text-6xl">
@@ -60,7 +60,7 @@ export default function CTASection() {
           <div className="reveal mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="tel:0799390790"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3B3157] transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
               Book Your Experience
             </a>
@@ -82,7 +82,7 @@ export default function CTASection() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div
             aria-hidden
-            className="absolute -inset-5 rounded-[48px] bg-rose/10 blur-3xl"
+            className="absolute -inset-5 rounded-[48px] bg-lavender-soft/20 blur-3xl"
           />
           <div className="relative overflow-hidden rounded-[999px_999px_48px_48px] border border-luxury">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -91,8 +91,8 @@ export default function CTASection() {
               alt="Trải nghiệm spa Hi Medical"
               className="aspect-[4/5] w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#4A3E75]/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-luxury bg-night/60 p-4 text-center backdrop-blur-md">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/35 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-luxury bg-night/70 p-4 text-center backdrop-blur-md">
               <p className="font-heading text-lg italic text-rose-deep">A quiet luxury</p>
               <p className="text-xs text-ink-light">spa experience under moonlight</p>
             </div>

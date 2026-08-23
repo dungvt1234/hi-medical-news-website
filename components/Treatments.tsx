@@ -59,7 +59,7 @@ export default function Treatments() {
         <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <p className="eyebrow reveal mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-rose/60" />
+              <span className="h-px w-10 bg-gold" />
               Signature Treatments
             </p>
             <h2 className="reveal font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">

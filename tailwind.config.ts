@@ -8,25 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ===== Midnight Luxury Spa palette (pastel sáng) =====
+        // ===== Hi Medical — Medical Luxury Lavender Glow palette =====
         night: {
-          DEFAULT: '#C9B7EA', // Primary background — tím pastel sáng
-          2: '#D9CCF5', // Secondary background (cards)
-          3: '#BEAAE6', // Footer
+          DEFAULT: '#F5F1FA', // Lavender White — nền chính (60%)
+          2: '#FFFFFF', // White — card/section phụ
+          3: '#8B5FC7', // Violet — footer
         },
         lavender: {
-          DEFAULT: '#8E7FB0', // Dusty lavender — icon/text/border trên nền sáng
-          soft: '#AEA0CE',
+          DEFAULT: '#8B5FC7', // Violet — thương hiệu (10%)
+          soft: '#A982D8', // Lavender (25%)
         },
         rose: {
-          DEFAULT: '#B98DAD', // Dusty rose — CTA/highlight
-          deep: '#A97C9F', // text nhỏ trên nền sáng
+          DEFAULT: '#8B5FC7', // Violet — CTA chính
+          deep: '#7A4FB3', // Violet đậm — hover / text nhỏ
         },
-        cream: '#F6F0F4', // Warm cream — light sections
+        gold: '#E8C95A', // Champagne Gold — điểm nhấn (5%)
+        cream: '#D8C8F0', // Soft Lavender — section nhẹ
         // Text
         ink: {
-          DEFAULT: '#3B3157', // Primary text — tối trên nền sáng
-          light: '#6E648C', // Secondary text
+          DEFAULT: '#302642', // Deep Purple — text chính
+          light: '#6E6285', // Text phụ
         },
       },
       fontFamily: {
@@ -34,8 +35,8 @@ const config: Config = {
         body: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 60px rgba(140, 120, 190, 0.30)',
-        card: '0 18px 50px rgba(80, 65, 120, 0.20)',
+        glow: '0 0 60px rgba(139, 95, 199, 0.22)',
+        card: '0 18px 50px rgba(48, 38, 66, 0.14)',
       },
       borderRadius: {
         '3xl': '20px',
@@ -43,7 +44,7 @@ const config: Config = {
         '5xl': '48px',
       },
       borderColor: {
-        luxury: 'rgba(90, 72, 130, 0.28)',
+        luxury: 'rgba(139, 95, 199, 0.25)',
       },
       keyframes: {
         'fade-up': {

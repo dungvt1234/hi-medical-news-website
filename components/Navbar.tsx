@@ -56,7 +56,7 @@ export default function Navbar() {
               Hi Medical
             </span>
             <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-lavender">
-              Midnight Spa
+              Lavender Glow Spa
             </span>
           </span>
         </a>
@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden rounded-full border border-rose/60 px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-[#3B3157] sm:inline-flex"
+            className="hidden rounded-full border border-rose/60 px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
             Book an Appointment
           </a>
@@ -115,7 +115,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-rose px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-[#3B3157]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-rose px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white"
           >
             Book an Appointment
           </a>

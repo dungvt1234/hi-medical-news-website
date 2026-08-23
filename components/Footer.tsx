@@ -8,19 +8,19 @@ import { Facebook, Instagram, Phone, MapPin, Clock } from 'lucide-react';
  */
 export default function Footer() {
   return (
-    <footer className="bg-night-3 pb-10 pt-20 text-ink-light">
+    <footer className="bg-night-3 pb-10 pt-20 text-[#E9E0F7]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* CTA booking trên cùng */}
-        <div className="mb-16 flex flex-col items-center justify-between gap-6 rounded-4xl border border-luxury bg-night/60 px-8 py-10 text-center sm:flex-row sm:text-left">
+        <div className="mb-16 flex flex-col items-center justify-between gap-6 rounded-4xl border border-white/25 bg-white/10 px-8 py-10 text-center backdrop-blur-sm sm:flex-row sm:text-left">
           <div>
-            <h3 className="font-heading text-3xl font-light text-ink">
-              Ready for your <span className="italic text-rose-deep">ritual?</span>
+            <h3 className="font-heading text-3xl font-light text-white">
+              Ready for your <span className="italic text-gold">ritual?</span>
             </h3>
             <p className="mt-2 text-sm">Đặt lịch hôm nay — ưu đãi dành riêng cho khách hàng mới.</p>
           </div>
           <a
             href="tel:0799390790"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-rose px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3B3157] transition-all duration-500 hover:bg-rose-deep hover:shadow-glow"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#302642] transition-all duration-500 hover:bg-[#F3D97A] hover:shadow-glow"
           >
             Book an Appointment
           </a>
@@ -31,15 +31,15 @@ export default function Footer() {
           {/* Logo + desc + social */}
           <div>
             <a href="#home" className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-night/40 font-heading text-lg italic text-rose-deep">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 font-heading text-lg italic text-gold">
                 H
               </span>
               <span className="leading-tight">
-                <span className="block font-heading text-xl font-semibold text-ink">
+                <span className="block font-heading text-xl font-semibold text-white">
                   Hi Medical
                 </span>
-                <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-lavender">
-                  Midnight Spa
+                <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-[#D8C8F0]">
+                  Lavender Glow Spa
                 </span>
               </span>
             </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury text-ink-light transition-all duration-300 hover:border-rose/60 hover:text-rose-deep"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-[#E9E0F7] transition-all duration-300 hover:border-gold hover:text-gold"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -62,7 +62,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury text-ink-light transition-all duration-300 hover:border-rose/60 hover:text-rose-deep"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-[#E9E0F7] transition-all duration-300 hover:border-gold hover:text-gold"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -71,7 +71,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Zalo"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury text-ink-light transition-all duration-300 hover:border-rose/60 hover:text-rose-deep"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-[#E9E0F7] transition-all duration-300 hover:border-gold hover:text-gold"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden>
                   <path d="M12.04 2C6.54 2 2.06 6.25 2.06 11.47c0 2.86 1.39 5.4 3.57 7.1V22l3.26-1.79c.99.27 2.04.42 3.15.42 5.5 0 9.98-4.25 9.98-9.47S17.54 2 12.04 2zm5.5 8.26-3.98 3.98a.62.62 0 0 1-.88 0l-1.43-1.43-2.72 2.72a.62.62 0 0 1-.88-.88l3.17-3.16a.62.62 0 0 1 .88 0l1.43 1.43 3.53-3.53a.62.62 0 1 1 .88.87z" />
@@ -82,7 +82,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-ink">
+            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
               Explore
             </h4>
             <ul className="space-y-3 text-sm font-light">
@@ -95,7 +95,7 @@ export default function Footer() {
                 ['#contact', 'Contact'],
               ].map(([href, label]) => (
                 <li key={label}>
-                  <a href={href} className="transition-colors duration-300 hover:text-rose-deep">
+                  <a href={href} className="transition-colors duration-300 hover:text-gold">
                     {label}
                   </a>
                 </li>
@@ -105,18 +105,18 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-ink">
+            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
               Contact
             </h4>
             <ul className="space-y-4 text-sm font-light">
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-rose-deep" />
-                <a href="tel:0799390790" className="transition-colors hover:text-rose-deep">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a href="tel:0799390790" className="transition-colors hover:text-gold">
                   0799 390 790
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-rose-deep" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
                   123 Nguyễn Trãi, Q.1,
                   <br />
@@ -124,7 +124,7 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-rose-deep" />
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
                   Mon — Sun · 09:00 — 21:00
                 </span>
@@ -134,25 +134,25 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-ink">
+            <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
               Stay in Touch
             </h4>
             <p className="text-sm font-light leading-relaxed">
               Nhận bí quyết chăm sóc da và ưu đãi độc quyền mỗi tháng.
             </p>
             <form
-              className="mt-5 flex overflow-hidden rounded-full border border-luxury bg-night/60 focus-within:border-rose/60"
+              className="mt-5 flex overflow-hidden rounded-full border border-white/25 bg-white/10 focus-within:border-gold/70"
               onSubmit={(e) => e.preventDefault()}
             >
               <input
                 type="email"
                 placeholder="Email của bạn"
                 aria-label="Email"
-                className="w-full bg-transparent px-5 py-3 text-sm text-ink placeholder:text-ink-light/50 focus:outline-none"
+                className="w-full bg-transparent px-5 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none"
               />
               <button
                 type="submit"
-                className="shrink-0 bg-rose px-5 text-xs font-bold uppercase tracking-wider text-[#3B3157] transition-colors hover:bg-rose-deep"
+                className="shrink-0 bg-gold px-5 text-xs font-bold uppercase tracking-wider text-[#302642] transition-colors hover:bg-[#F3D97A]"
               >
                 Send
               </button>
@@ -161,11 +161,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-luxury/40 pt-8 text-xs text-ink-light/70 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-8 text-xs text-[#D8C8F0] sm:flex-row">
           <p>© 2026 Hi Medical Skincare &amp; Beauty. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose" />
-            Midnight Luxury Spa
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" />
+            Lavender Glow Spa
           </p>
         </div>
       </div>

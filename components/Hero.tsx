@@ -26,19 +26,19 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-night"
       style={{
         background:
-          'radial-gradient(circle at 70% 20%, rgba(160,140,205,0.45), transparent 40%), radial-gradient(circle at 20% 80%, rgba(215,180,200,0.28), transparent 35%), #C9B7EA',
+          'radial-gradient(circle at 70% 20%, rgba(169,130,216,0.35), transparent 45%), radial-gradient(circle at 15% 85%, rgba(232,201,90,0.12), transparent 35%), linear-gradient(160deg, #F5F1FA 0%, #D8C8F0 100%)',
       }}
     >
       {/* Decorative moon + stars */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[12%] top-[14%] h-16 w-16 rounded-full bg-rose/10 blur-2xl" />
+        <div className="absolute right-[12%] top-[14%] h-16 w-16 rounded-full bg-lavender-soft/25 blur-2xl" />
         <div className="absolute left-[8%] top-[20%] h-2 w-2 rounded-full bg-lavender/40" />
-        <div className="absolute left-[18%] top-[38%] h-1.5 w-1.5 rounded-full bg-rose/50" />
-        <div className="absolute right-[26%] top-[60%] h-1.5 w-1.5 rounded-full bg-lavender/30" />
-        <div className="absolute bottom-[22%] left-[45%] h-1 w-1 rounded-full bg-rose/40" />
+        <div className="absolute left-[18%] top-[38%] h-1.5 w-1.5 rounded-full bg-gold/70" />
+        <div className="absolute right-[26%] top-[60%] h-1.5 w-1.5 rounded-full bg-lavender-soft/60" />
+        <div className="absolute bottom-[22%] left-[45%] h-1 w-1 rounded-full bg-gold/60" />
         {/* Crescent moon */}
         <div className="absolute right-[10%] top-[26%] opacity-20">
-          <div className="h-10 w-10 rounded-full bg-rose/60" />
+          <div className="h-10 w-10 rounded-full bg-gold/70" />
           <div className="absolute -right-2 -top-2 h-10 w-10 rounded-full bg-night" />
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function Hero() {
         {/* ---- Left: text ---- */}
         <div className="text-center lg:text-left">
           <p className="eyebrow mb-6 flex items-center justify-center gap-3 lg:justify-start">
-            <span className="h-px w-10 bg-rose/60" />
+            <span className="h-px w-10 bg-gold" />
             Hi Medical Skincare &amp; Beauty
           </p>
 
@@ -67,7 +67,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#3B3157] transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
               Book Your Ritual
             </a>
@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-10 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-lavender lg:justify-start">
-            <Sparkles className="h-4 w-4 text-rose-deep" />
+            <Sparkles className="h-4 w-4 text-gold" />
             OPEN DAILY 9:00 — 21:00
           </p>
         </div>
@@ -90,12 +90,12 @@ export default function Hero() {
           {/* Glow phía sau ảnh */}
           <div
             aria-hidden
-            className="absolute -inset-6 rounded-[999px_999px_48px_48px] bg-lavender/20 blur-3xl"
+            className="absolute -inset-6 rounded-[999px_999px_48px_48px] bg-lavender-soft/25 blur-3xl"
           />
           <div
             ref={imgRef}
             className="arch-mask relative aspect-[4/5] w-full opacity-0 transition-opacity duration-[1500ms]"
-            style={{ boxShadow: '0 30px 80px rgba(80, 65, 120, 0.35)' }}
+            style={{ boxShadow: '0 30px 80px rgba(139, 95, 199, 0.30)' }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -104,7 +104,7 @@ export default function Hero() {
               className="h-full w-full object-cover"
             />
             {/* Overlay nhẹ */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#4A3E75]/35 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
             {/* Badge */}
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-luxury bg-night/60 p-4 backdrop-blur-md">
               <p className="font-heading text-lg italic text-rose-deep">Since 2016</p>

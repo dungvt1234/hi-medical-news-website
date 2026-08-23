@@ -41,9 +41,9 @@ export default function WhyUs() {
       <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-16 text-center">
           <p className="eyebrow reveal mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-rose/60" />
+            <span className="h-px w-10 bg-gold" />
             Why Hi Medical
-            <span className="h-px w-10 bg-rose/60" />
+            <span className="h-px w-10 bg-gold" />
           </p>
           <h2 className="reveal font-heading text-4xl font-light text-ink sm:text-5xl">
             Trusted by those who seek{' '}

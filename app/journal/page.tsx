@@ -31,7 +31,7 @@ export default function JournalPage() {
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at 70% 20%, rgba(160,140,205,0.30), transparent 40%), #C9B7EA',
+              'radial-gradient(circle at 70% 20%, rgba(169,130,216,0.30), transparent 45%), linear-gradient(160deg, #F5F1FA 0%, #D8C8F0 100%)',
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-16 text-center sm:px-8 sm:py-20">
@@ -60,7 +60,7 @@ export default function JournalPage() {
               onClick={() => setActiveCat(c.key)}
               className={`shrink-0 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                 activeCat === c.key
-                  ? 'border-rose bg-rose text-[#3B3157]'
+                  ? 'border-rose bg-rose text-white'
                   : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose-deep'
               }`}
             >
@@ -124,7 +124,7 @@ export default function JournalPage() {
                   onClick={() => setView('grid')}
                   aria-label="Xem dạng lưới"
                   className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                    view === 'grid' ? 'bg-rose text-[#3B3157]' : 'text-ink-light hover:text-rose-deep'
+                    view === 'grid' ? 'bg-rose text-white' : 'text-ink-light hover:text-rose-deep'
                   }`}
                 >
                   <LayoutGrid className="h-4 w-4" />
@@ -134,7 +134,7 @@ export default function JournalPage() {
                   onClick={() => setView('list')}
                   aria-label="Xem dạng danh sách"
                   className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                    view === 'list' ? 'bg-rose text-[#3B3157]' : 'text-ink-light hover:text-rose-deep'
+                    view === 'list' ? 'bg-rose text-white' : 'text-ink-light hover:text-rose-deep'
                   }`}
                 >
                   <Rows3 className="h-4 w-4" />

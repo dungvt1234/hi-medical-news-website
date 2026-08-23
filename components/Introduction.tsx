@@ -34,11 +34,11 @@ export default function Introduction() {
       <div ref={ref} className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         {/* Trái: label + heading */}
         <div>
-          <p className="eyebrow reveal mb-6 flex items-center gap-3 !text-[#8E7FB0]">
-            <span className="h-px w-10 bg-rose-deep/70" />
+          <p className="eyebrow reveal mb-6 flex items-center gap-3 !text-[#8B5FC7]">
+            <span className="h-px w-10 bg-gold" />
             Our Philosophy
           </p>
-          <h2 className="reveal font-heading text-4xl font-light leading-[1.15] text-[#3B3157] sm:text-5xl lg:text-6xl">
+          <h2 className="reveal font-heading text-4xl font-light leading-[1.15] text-[#302642] sm:text-5xl lg:text-6xl">
             We believe beauty begins with{' '}
             <span className="italic text-rose-deep">slowing down.</span>
           </h2>
@@ -57,7 +57,7 @@ export default function Introduction() {
           </p>
           <a
             href="#treatments"
-            className="reveal mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-[#3B3157] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#F6F0F4] transition-all duration-500 hover:bg-[#4A3E75]"
+            className="reveal mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-rose px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow"
           >
             Discover Our Rituals
             <span aria-hidden>→</span>
