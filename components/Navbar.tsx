@@ -49,9 +49,11 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
         <Link href="/#home" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-night/40 font-heading text-lg italic text-rose-deep transition-colors group-hover:border-rose/50">
-            H
-          </span>
+          <img
+            src="/logo.png"
+            alt="Hi Medical"
+            className="h-10 w-10 rounded-full border border-luxury bg-night/40 object-contain p-1 transition-colors group-hover:border-rose/50"
+          />
           <span className="leading-tight">
             <span className="block font-heading text-xl font-semibold tracking-wide text-ink">
               Hi Medical

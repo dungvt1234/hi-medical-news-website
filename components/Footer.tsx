@@ -49,9 +49,11 @@ export default function Footer() {
           {/* Logo + desc + social */}
           <div>
             <Link href="/#home" className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 font-heading text-lg italic text-gold">
-                H
-              </span>
+              <img
+                src="/logo.png"
+                alt="Hi Medical"
+                className="h-10 w-10 rounded-full border border-white/25 bg-white/10 object-contain p-1"
+              />
               <span className="leading-tight">
                 <span className="block font-heading text-xl font-semibold text-white">
                   Hi Medical
