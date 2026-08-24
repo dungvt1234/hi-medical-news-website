@@ -70,7 +70,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-ink-light transition-colors duration-300 hover:text-rose-deep"
+              className="text-sm font-semibold text-ink transition-colors duration-300 hover:text-rose-deep"
             >
               {link.label}
             </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/#contact"
-            className="hidden rounded-full border border-rose/60 px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
+            className="hidden rounded-full border border-rose px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
             Book an Appointment
           </Link>
