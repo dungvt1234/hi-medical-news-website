@@ -11,12 +11,12 @@ import { Menu, X } from 'lucide-react';
  * - Mobile: hamburger drawer
  */
 const NAV_LINKS = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#treatments', label: 'Treatments' },
-  { href: '/#about', label: 'About' },
-  { href: '/#experience', label: 'Experience' },
-  { href: '/journal', label: 'Journal' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#home', label: 'Trang chủ' },
+  { href: '/#treatments', label: 'Dịch vụ' },
+  { href: '/#about', label: 'Giới thiệu' },
+  { href: '/#experience', label: 'Trải nghiệm' },
+  { href: '/journal', label: 'Bài viết' },
+  { href: '/#contact', label: 'Liên hệ' },
 ];
 
 export default function Navbar() {
@@ -83,7 +83,7 @@ export default function Navbar() {
             href="/#contact"
             className="hidden rounded-full border border-rose px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
-            Book an Appointment
+            Đặt lịch hẹn
           </Link>
           <button
             type="button"
@@ -120,7 +120,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-rose px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white"
           >
-            Book an Appointment
+            Đặt lịch hẹn
           </Link>
         </nav>
       </div>
