@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { Percent } from 'lucide-react';
 import Reveal from './Reveal';
 
@@ -10,36 +11,42 @@ import Reveal from './Reveal';
  */
 const SERVICES = [
   {
+    slug: 'triet-long-cong-nghe-cao',
     name: 'Triệt lông công nghệ cao',
     en: 'Diode Laser',
     desc: 'Nách, tay, chân, mặt, bikini, toàn thân — sạch lông an toàn, êm ái, hiệu quả lâu dài theo chuẩn y khoa.',
     img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=900&auto=format&fit=crop',
   },
   {
+    slug: 'dieu-tri-da-chuyen-sau',
     name: 'Điều trị da chuyên sâu',
     en: 'Acne & Pigmentation',
     desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — phác đồ chuẩn y khoa với công nghệ laser & IPL hiện đại.',
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
   },
   {
+    slug: 'cham-soc-da',
     name: 'Chăm sóc da',
     en: 'Luxury Skincare',
     desc: 'Facial làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ cao cấp và chăm sóc da body trọn vẹn.',
     img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
   },
   {
+    slug: 'tre-hoa-nang-co',
     name: 'Trẻ hóa & nâng cơ',
     en: 'Rejuvenation',
     desc: 'IPL, laser tái tạo bề mặt da, HIFU nâng cơ săn chắc — trả lại vẻ tươi trẻ không cần phẫu thuật.',
     img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
   },
   {
+    slug: 'massage-thu-gian',
     name: 'Massage thư giãn',
     en: 'Body Massage',
     desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
   },
   {
+    slug: 'combo-uu-dai',
     name: 'Combo ưu đãi',
     en: 'Best Value',
     desc: 'Gói combo chăm sóc toàn diện với mức giá ưu đãi hấp dẫn — dành riêng cho khách đặt lịch online.',
@@ -98,9 +105,10 @@ export default function Treatments() {
         {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((t, i) => (
-            <article
-              key={t.name}
-              className={`reveal group overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow ${
+            <Link
+              key={t.slug}
+              href={`/dich-vu/${t.slug}`}
+              className={`reveal group block overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow ${
                 t.special
                   ? 'relative border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
                   : 'border-luxury bg-night-2 hover:border-rose/40'
@@ -162,7 +170,7 @@ export default function Treatments() {
                   Khám phá <span aria-hidden>→</span>
                 </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

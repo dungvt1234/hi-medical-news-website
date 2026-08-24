@@ -21,12 +21,12 @@ const NAV_LINKS = [
 
 /** Các dịch vụ con — hiện trong dropdown “Dịch vụ” */
 const SERVICE_LINKS = [
-  { name: 'Triệt lông công nghệ cao', en: 'Diode Laser' },
-  { name: 'Điều trị da chuyên sâu', en: 'Acne & Pigmentation' },
-  { name: 'Chăm sóc da', en: 'Luxury Skincare' },
-  { name: 'Trẻ hóa & nâng cơ', en: 'Rejuvenation' },
-  { name: 'Massage thư giãn', en: 'Body Massage' },
-  { name: 'Combo ưu đãi', en: 'Best Value', special: true },
+  { name: 'Triệt lông công nghệ cao', en: 'Diode Laser', href: '/dich-vu/triet-long-cong-nghe-cao' },
+  { name: 'Điều trị da chuyên sâu', en: 'Acne & Pigmentation', href: '/dich-vu/dieu-tri-da-chuyen-sau' },
+  { name: 'Chăm sóc da', en: 'Luxury Skincare', href: '/dich-vu/cham-soc-da' },
+  { name: 'Trẻ hóa & nâng cơ', en: 'Rejuvenation', href: '/dich-vu/tre-hoa-nang-co' },
+  { name: 'Massage thư giãn', en: 'Body Massage', href: '/dich-vu/massage-thu-gian' },
+  { name: 'Combo ưu đãi', en: 'Best Value', href: '/dich-vu/combo-uu-dai', special: true },
 ];
 
 export default function Navbar() {
@@ -96,7 +96,7 @@ export default function Navbar() {
                       {SERVICE_LINKS.map((sv) => (
                         <Link
                           key={sv.name}
-                          href="/#treatments"
+                          href={sv.href}
                           className={`flex items-center justify-between gap-3 rounded-xl px-4 py-3 transition-colors duration-200 ${
                             sv.special ? 'bg-gold/10 hover:bg-gold/20' : 'hover:bg-rose/10'
                           }`}
@@ -120,7 +120,7 @@ export default function Navbar() {
                     </div>
                     <div className="border-t border-luxury/60 p-2.5">
                       <Link
-                        href="/#treatments"
+                        href="/dich-vu"
                         className="flex items-center justify-center gap-1 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-rose-deep transition-colors hover:bg-rose/10"
                       >
                         Xem tất cả dịch vụ <span aria-hidden>→</span>
@@ -195,7 +195,7 @@ export default function Navbar() {
                     {SERVICE_LINKS.map((sv) => (
                       <Link
                         key={sv.name}
-                        href="/#treatments"
+                        href={sv.href}
                         onClick={() => setOpen(false)}
                         className={`flex items-center justify-between gap-3 py-2.5 text-base transition-colors ${
                           sv.special ? 'font-semibold text-[#8A6D1F]' : 'text-ink-light hover:text-rose-deep'
