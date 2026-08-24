@@ -10,22 +10,22 @@ import Reveal from './Reveal';
 const STEPS = [
   {
     num: '01',
-    title: 'Arrive',
+    title: 'Đến',
     desc: 'Chào đón nồng ấm, trà thảo mộc và không gian tĩnh lặng.',
   },
   {
     num: '02',
-    title: 'Unwind',
+    title: 'Thư giãn',
     desc: 'Thư giãn toàn thân, xoa dịu căng thẳng từ những lo toan.',
   },
   {
     num: '03',
-    title: 'Restore',
+    title: 'Phục hồi',
     desc: 'Liệu trình chuyên sâu phục hồi làn da và năng lượng.',
   },
   {
     num: '04',
-    title: 'Glow',
+    title: 'Rạng rỡ',
     desc: 'Rời đi với làn da rạng rỡ và tâm trí nhẹ nhàng.',
   },
 ];
@@ -63,7 +63,7 @@ export default function RitualProcess() {
             <span className="h-px w-10 bg-gold" />
           </p>
           <Reveal as="h2" className="font-heading text-4xl font-light text-ink sm:text-5xl">
-            Four steps to <span className="italic text-rose-deep">complete serenity.</span>
+            Bốn bước đến <span className="italic text-rose-deep">sự an nhiên trọn vẹn.</span>
           </Reveal>
         </div>
 

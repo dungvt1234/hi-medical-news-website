@@ -40,7 +40,7 @@ export default function Footer() {
             href="tel:0799390790"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#302642] transition-all duration-500 hover:bg-[#F3D97A] hover:shadow-glow"
           >
-            Book an Appointment
+            Đặt lịch hẹn
           </a>
         </div>
 
@@ -103,16 +103,16 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
-              Explore
+              Khám phá
             </h4>
             <ul className="space-y-3 text-sm font-light">
               {[
-                ['/#home', 'Home'],
-                ['/#treatments', 'Treatments'],
-                ['/#about', 'About'],
-                ['/#experience', 'Experience'],
-                ['/journal', 'Journal'],
-                ['/#contact', 'Contact'],
+                ['/#home', 'Trang chủ'],
+                ['/#treatments', 'Dịch vụ'],
+                ['/#about', 'Giới thiệu'],
+                ['/#experience', 'Trải nghiệm'],
+                ['/journal', 'Bài viết'],
+                ['/#contact', 'Liên hệ'],
               ].map(([href, label]) => (
                 <li key={label}>
                   <Link href={href} className="transition-colors duration-300 hover:text-gold">
@@ -126,7 +126,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
-              Contact
+              Liên hệ
             </h4>
             <ul className="space-y-4 text-sm font-light">
               <li className="flex items-start gap-3">
@@ -146,7 +146,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
-                  Mon — Sun · 09:00 — 21:00
+                  Thứ 2 — Chủ nhật · 09:00 — 21:00
                 </span>
               </li>
             </ul>
@@ -155,7 +155,7 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white">
-              Stay in Touch
+              Nhận tin mới
             </h4>
             <p className="text-sm font-light leading-relaxed">
               Nhận bí quyết chăm sóc da và ưu đãi độc quyền mỗi tháng.
@@ -174,7 +174,7 @@ export default function Footer() {
                 type="submit"
                 className="shrink-0 bg-gold px-5 text-xs font-bold uppercase tracking-wider text-[#302642] transition-colors hover:bg-[#F3D97A]"
               >
-                Send
+                Gửi
               </button>
             </form>
           </div>
@@ -182,7 +182,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-8 text-xs text-[#D8C8F0] sm:flex-row">
-          <p>© 2026 Hi Medical Skincare &amp; Beauty. All rights reserved.</p>
+          <p>© 2026 Hi Medical Skincare &amp; Beauty. Mọi quyền được bảo lưu.</p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" />
             Lavender Glow Spa

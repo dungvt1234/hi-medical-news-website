@@ -34,12 +34,12 @@ const GALLERY = [
   },
   {
     img: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=900&auto=format&fit=crop',
-    caption: 'Serene Interiors',
+    caption: 'Không gian tĩnh lặng',
     tall: false,
   },
   {
     img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
-    caption: 'Premium Products',
+    caption: 'Sản phẩm cao cấp',
     tall: false,
   },
 ];
@@ -105,7 +105,7 @@ export default function Gallery() {
             <span className="h-px w-10 bg-gold" />
           </p>
           <Reveal as="h2" className="font-heading text-4xl font-light text-ink sm:text-5xl">
-            Moments of <span className="italic text-rose">tranquility.</span>
+            Khoảnh khắc <span className="italic text-rose">an nhiên.</span>
           </Reveal>
         </div>
 

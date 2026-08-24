@@ -73,19 +73,19 @@ export default function Hero() {
               href="#contact"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
-              Book Your Ritual
+              Đặt lịch ngay
             </a>
             <a
               href="#treatments"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-500 hover:border-gold hover:text-gold sm:w-auto"
             >
-              Explore Treatments
+              Xem liệu trình
             </a>
           </div>
 
           <p className="mt-10 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-white/75 lg:justify-start">
             <Sparkles className="h-4 w-4 text-gold" />
-            OPEN DAILY 9:00 — 21:00
+            MỞ CỬA HÀNG NGÀY 9:00 — 21:00
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
             {/* Badge */}
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/40 bg-night/50 p-4 backdrop-blur-md">
-              <p className="font-heading text-lg italic text-gold">Since 2016</p>
+              <p className="font-heading text-lg italic text-gold">Từ 2016</p>
               <p className="mt-1 text-xs tracking-wide text-white/85">
                 Chuyên gia thẩm mỹ · Công nghệ chuẩn quốc tế
               </p>

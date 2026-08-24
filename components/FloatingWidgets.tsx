@@ -28,7 +28,7 @@ export default function FloatingWidgets() {
           className="group mb-1 max-w-[260px] rounded-2xl border border-luxury bg-night-2/95 p-4 shadow-card backdrop-blur-md transition-colors hover:border-rose/50"
         >
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lavender">
-            Journal · Mới nhất
+            Bài viết · Mới nhất
           </p>
           <p className="mt-1.5 line-clamp-2 font-heading text-base italic leading-snug text-ink group-hover:text-rose-deep">
             {latest.title}

@@ -40,8 +40,8 @@ export default function Introduction() {
             Our Philosophy
           </p>
           <Reveal as="h2" className="font-heading text-4xl font-light leading-[1.15] text-[#302642] sm:text-5xl lg:text-6xl">
-            We believe beauty begins with{' '}
-            <span className="italic text-rose-deep">slowing down.</span>
+            Chúng tôi tin vẻ đẹp bắt đầu
+            từ việc <span className="italic text-rose-deep">chậm lại.</span>
           </Reveal>
         </div>
 
@@ -60,7 +60,7 @@ export default function Introduction() {
             href="#treatments"
             className="reveal mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-rose px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow"
           >
-            Discover Our Rituals
+            Khám phá liệu trình
             <span aria-hidden>→</span>
           </a>
         </div>

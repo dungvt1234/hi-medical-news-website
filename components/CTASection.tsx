@@ -50,12 +50,12 @@ export default function CTASection() {
             Reserve Your Moment
           </p>
           <Reveal as="h2" className="font-heading text-5xl font-light leading-[1.1] text-ink sm:text-6xl">
-            Your time
+            Khoảnh khắc
             <br />
-            to <span className="italic text-rose-deep">restore.</span>
+            của bạn để <span className="italic text-rose-deep">hồi phục.</span>
           </Reveal>
           <p className="reveal mx-auto mt-6 max-w-md text-base font-light leading-relaxed text-ink-light lg:mx-0">
-            Take a moment for yourself. Đặt lịch ngay hôm nay để được tư vấn miễn phí
+            Hãy dành một khoảnh khắc cho chính mình. Đặt lịch ngay hôm nay để được tư vấn miễn phí
             và nhận liệu trình phù hợp nhất với làn da của bạn.
           </p>
           <div className="reveal mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -63,7 +63,7 @@ export default function CTASection() {
               href="tel:0799390790"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
-              Book Your Experience
+              Đặt lịch trải nghiệm
             </a>
             <a
               href="https://zalo.me/0799390790"
@@ -95,7 +95,7 @@ export default function CTASection() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/35 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-luxury bg-night/70 p-4 text-center backdrop-blur-md">
               <p className="font-heading text-lg italic text-rose-deep">A quiet luxury</p>
-              <p className="text-xs text-ink-light">spa experience under moonlight</p>
+              <p className="text-xs text-ink-light">trải nghiệm spa dưới ánh trăng</p>
             </div>
           </div>
         </div>

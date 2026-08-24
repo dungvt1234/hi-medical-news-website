@@ -65,9 +65,9 @@ export default function SpaExperience() {
           <span className="h-px w-10 bg-gold" />
         </p>
         <Reveal as="h2" className="font-heading text-4xl font-light leading-[1.15] !text-[#F8F4F7] sm:text-6xl">
-          An experience
+          Một trải nghiệm
           <br />
-          <span className="italic text-gold">beyond beauty.</span>
+          <span className="italic text-gold">vượt xa vẻ đẹp.</span>
         </Reveal>
         <p className="mx-auto mt-7 max-w-xl text-base font-light leading-relaxed !text-[#D8CCE8]">
           Không gian được thiết kế như một ốc đảo tĩnh lặng — ánh sáng dịu, hương thơm

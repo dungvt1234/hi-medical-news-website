@@ -10,22 +10,22 @@ import Reveal from './Reveal';
 const TREATMENTS = [
   {
     name: 'Moonlight Facial',
-    desc: 'Deep hydration & skin renewal',
+    desc: 'Dưỡng ẩm sâu & tái tạo da',
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
   },
   {
     name: 'Lavender Ritual',
-    desc: 'Relaxation & aromatherapy',
+    desc: 'Thư giãn & trị liệu hương thơm',
     img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=900&auto=format&fit=crop',
   },
   {
     name: 'Deep Rest Massage',
-    desc: 'Full-body recovery',
+    desc: 'Phục hồi toàn thân',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
   },
   {
     name: 'Glow Therapy',
-    desc: 'Radiance & rejuvenation',
+    desc: 'Rạng rỡ & trẻ hóa',
     img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
   },
 ];
@@ -64,16 +64,16 @@ export default function Treatments() {
               Signature Treatments
             </p>
             <Reveal as="h2" className="font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
-              Curated rituals for
+              Liệu trình tuyển chọn cho
               <br />
-              <span className="italic text-rose-deep">every glow.</span>
+              <span className="italic text-rose-deep">mọi vẻ đẹp.</span>
             </Reveal>
           </div>
           <a
             href="#contact"
             className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
           >
-            View All Treatments
+            Xem tất cả liệu trình
           </a>
         </div>
 
@@ -111,7 +111,7 @@ export default function Treatments() {
                   {t.desc}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-deep/80 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                  Discover <span aria-hidden>→</span>
+                  Khám phá <span aria-hidden>→</span>
                 </span>
               </div>
             </article>

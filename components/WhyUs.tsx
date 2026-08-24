@@ -8,10 +8,10 @@ import Reveal from './Reveal';
  * Layout tối giản editorial portfolio
  */
 const STATS = [
-  { value: '10+', label: 'Years of experience' },
-  { value: '5K+', label: 'Happy clients' },
-  { value: '20+', label: 'Signature rituals' },
-  { value: '100%', label: 'Personalized care' },
+  { value: '10+', label: 'Năm kinh nghiệm' },
+  { value: '5K+', label: 'Khách hàng hài lòng' },
+  { value: '20+', label: 'Liệu trình đặc trưng' },
+  { value: '100%', label: 'Chăm sóc cá nhân hóa' },
 ];
 
 export default function WhyUs() {
@@ -47,8 +47,8 @@ export default function WhyUs() {
             <span className="h-px w-10 bg-gold" />
           </p>
           <Reveal as="h2" className="font-heading text-4xl font-light text-ink sm:text-5xl">
-            Trusted by those who seek{' '}
-            <span className="italic text-rose-deep">the finest.</span>
+            Được tin chọn bởi những người{' '}
+            <span className="italic text-rose-deep">tìm kiếm sự tinh tế.</span>
           </Reveal>
         </div>
 
