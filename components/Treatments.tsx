@@ -1,32 +1,50 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { Percent } from 'lucide-react';
 import Reveal from './Reveal';
 
 /**
  * Signature Treatments — 4 cards dịch vụ
  * Style: dark navy, large image, minimal typography, hover zoom nhẹ
  */
-const TREATMENTS = [
+const SERVICES = [
   {
-    name: 'Moonlight Facial',
-    desc: 'Dưỡng ẩm sâu & tái tạo da',
+    name: 'Triệt lông công nghệ cao',
+    en: 'Diode Laser',
+    desc: 'Nách, tay, chân, mặt, bikini, toàn thân — sạch lông an toàn, êm ái, hiệu quả lâu dài theo chuẩn y khoa.',
+    img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=900&auto=format&fit=crop',
+  },
+  {
+    name: 'Điều trị da chuyên sâu',
+    en: 'Acne & Pigmentation',
+    desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — phác đồ chuẩn y khoa với công nghệ laser & IPL hiện đại.',
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
   },
   {
-    name: 'Lavender Ritual',
-    desc: 'Thư giãn & trị liệu hương thơm',
-    img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=900&auto=format&fit=crop',
+    name: 'Chăm sóc da',
+    en: 'Luxury Skincare',
+    desc: 'Facial làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ cao cấp và chăm sóc da body trọn vẹn.',
+    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
   },
   {
-    name: 'Deep Rest Massage',
-    desc: 'Phục hồi toàn thân',
+    name: 'Trẻ hóa & nâng cơ',
+    en: 'Rejuvenation',
+    desc: 'IPL, laser tái tạo bề mặt da, HIFU nâng cơ săn chắc — trả lại vẻ tươi trẻ không cần phẫu thuật.',
+    img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
+  },
+  {
+    name: 'Massage thư giãn',
+    en: 'Body Massage',
+    desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
   },
   {
-    name: 'Glow Therapy',
-    desc: 'Rạng rỡ & trẻ hóa',
-    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
+    name: 'Combo ưu đãi',
+    en: 'Best Value',
+    desc: 'Gói combo chăm sóc toàn diện với mức giá ưu đãi hấp dẫn — dành riêng cho khách đặt lịch online.',
+    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop',
+    special: true,
   },
 ];
 
@@ -77,14 +95,16 @@ export default function Treatments() {
           </a>
         </div>
 
-        {/* Grid 4 cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {TREATMENTS.map((t, i) => (
+        {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((t, i) => (
             <article
               key={t.name}
-              className={`reveal group overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-700 hover:-translate-y-1.5 hover:border-rose/40 hover:shadow-glow ${
-                i % 2 === 1 ? 'lg:mt-10' : ''
-              }`}
+              className={`reveal group overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow ${
+                t.special
+                  ? 'relative border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
+                  : 'border-luxury bg-night-2 hover:border-rose/40'
+              } ${i % 3 === 1 ? 'lg:mt-10' : ''}`}
             >
               {/* Ảnh */}
               <div className="relative aspect-[3/4] overflow-hidden">
@@ -100,17 +120,45 @@ export default function Treatments() {
                 <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80">
                   0{i + 1}
                 </span>
+                {/* Badge ưu đãi nổi bật */}
+                {t.special && (
+                  <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#302642] shadow-glow">
+                    <Percent className="h-3.5 w-3.5" />
+                    Ưu đãi
+                  </span>
+                )}
               </div>
 
               {/* Nội dung */}
               <div className="p-7">
-                <h3 className="font-heading text-2xl font-medium text-ink transition-colors duration-500 group-hover:text-rose-deep">
+                <h3
+                  className={`font-heading text-2xl font-medium transition-colors duration-500 ${
+                    t.special ? 'text-white group-hover:text-gold' : 'text-ink group-hover:text-rose-deep'
+                  }`}
+                >
                   {t.name}
                 </h3>
-                <p className="mt-2 text-sm font-light leading-relaxed text-ink-light">
+                {t.en && (
+                  <p
+                    className={`mt-1.5 font-heading text-sm italic ${
+                      t.special ? 'text-gold' : 'text-rose-deep/90'
+                    }`}
+                  >
+                    {t.en}
+                  </p>
+                )}
+                <p
+                  className={`mt-2.5 text-sm font-light leading-relaxed ${
+                    t.special ? 'text-[#D8C8F0]' : 'text-ink-light'
+                  }`}
+                >
                   {t.desc}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-rose-deep/80 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                <span
+                  className={`mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] opacity-0 transition-all duration-500 group-hover:opacity-100 ${
+                    t.special ? 'text-gold' : 'text-rose-deep/80'
+                  }`}
+                >
                   Khám phá <span aria-hidden>→</span>
                 </span>
               </div>
