@@ -30,12 +30,12 @@ export default function Hero() {
           alt=""
           className="h-full w-full object-cover"
         />
-        {/* Overlay gradient lavender bán trong suốt: đậm trái (vùng chữ) → nhạt phải */}
+        {/* Overlay gradient tối navy/đen: đậm trái (vùng chữ + logo) → nhạt phải (vẫn thấy hoa) */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(105deg, rgba(48,38,66,0.72) 0%, rgba(139,95,199,0.55) 38%, rgba(169,130,216,0.35) 65%, rgba(216,200,240,0.25) 100%)',
+              'linear-gradient(105deg, rgba(6,8,18,0.88) 0%, rgba(12,15,32,0.72) 38%, rgba(23,29,53,0.5) 65%, rgba(35,40,65,0.35) 100%)',
           }}
         />
       </div>
