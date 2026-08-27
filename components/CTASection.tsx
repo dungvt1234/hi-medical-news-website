@@ -75,7 +75,7 @@ export default function CTASection() {
             </a>
           </div>
           <p className="reveal mt-8 text-sm text-ink-light">
-            📞 Hotline: <span className="text-rose-deep">0799 390 790</span> · 09:00 — 21:00
+            📞 Hotline: <span className="text-rose-deep">0799 390 790</span> · 09:00 — 18:00
           </p>
         </div>
 

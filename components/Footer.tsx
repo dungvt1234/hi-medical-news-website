@@ -146,7 +146,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
-                  Thứ 2 — Chủ nhật · 09:00 — 21:00
+                  Thứ 2 — Chủ nhật · 09:00 — 18:00
                 </span>
               </li>
             </ul>

@@ -196,7 +196,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               Chat Zalo
             </a>
           </div>
-          <p className="mt-5 text-xs font-light text-white/70">📞 Hotline: 0799 390 790 · 09:00 — 21:00</p>
+          <p className="mt-5 text-xs font-light text-white/70">📞 Hotline: 0799 390 790 · 09:00 — 18:00</p>
         </div>
       </section>
 

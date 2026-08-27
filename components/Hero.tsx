@@ -90,7 +90,7 @@ export default function Hero() {
 
           <p className="mt-10 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-white/75 lg:justify-start">
             <Sparkles className="h-4 w-4 text-gold" />
-            MỞ CỬA HÀNG NGÀY 9:00 — 21:00
+            MỞ CỬA HÀNG NGÀY 9:00 — 18:00
           </p>
         </div>
 
