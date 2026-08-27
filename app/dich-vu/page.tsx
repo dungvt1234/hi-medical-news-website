@@ -4,7 +4,7 @@ import { SERVICES } from '@/lib/services';
 export const metadata = {
   title: 'Dịch vụ — Hi Medical Lavender Glow Spa',
   description:
-    'Khám phá các dịch vụ chăm sóc sắc đẹp chuẩn y khoa tại Hi Medical: triệt lông công nghệ cao, điều trị da chuyên sâu, chăm sóc da, trẻ hóa & nâng cơ, massage thư giãn và combo ưu đãi.',
+    'Khám phá các dịch vụ chăm sóc sắc đẹp an toàn tại Hi Medical: triệt lông công nghệ cao, điều trị da chuyên sâu, chăm sóc da, trẻ hóa & nâng cơ, massage thư giãn và combo ưu đãi.',
 };
 
 export default function DichVuPage() {
@@ -21,8 +21,7 @@ export default function DichVuPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base font-light leading-relaxed text-[#6E6285]">
             Từ triệt lông công nghệ cao đến điều trị da chuyên sâu — mỗi liệu trình đều được
-            cá nhân hóa theo làn da và nhu cầu của bạn, với tiêu chuẩn y khoa và không gian
-            sang trọng.
+            thiết kế riêng theo làn da và nhu cầu của bạn, an toàn và thoải mái.
           </p>
         </div>
       </section>

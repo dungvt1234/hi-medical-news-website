@@ -175,7 +175,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         <div className="absolute inset-0 bg-gradient-to-br from-[#8B5FC7] via-[#A982D8] to-[#D8C8F0]" />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-4xl font-medium leading-tight text-white sm:text-5xl">
-            Bắt đầu hành trình <span className="italic">của bạn</span> ngay hôm nay
+            Đặt lịch ngay hôm nay
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm font-light leading-relaxed text-white/85">
             Đặt lịch để được tư vấn miễn phí và nhận ưu đãi dành riêng cho khách hàng online.
