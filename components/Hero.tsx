@@ -22,20 +22,20 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-night">
-      {/* Ảnh nền: dải ngân hà (galaxy) */}
+      {/* Ảnh nền: ảnh anh Dung gửi */}
       <div aria-hidden className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=2000&auto=format&fit=crop"
+          src="/images/hero-bg.jpg"
           alt=""
           className="h-full w-full object-cover"
         />
-        {/* Overlay gradient tối navy/đen: đậm trái (vùng chữ + logo) → nhạt phải (vẫn thấy galaxy) */}
+        {/* Overlay gradient tối navy/đen: đậm trái (vùng chữ + logo) → nhạt phải (vẫn thấy ảnh) */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(105deg, rgba(6,8,18,0.85) 0%, rgba(12,15,32,0.65) 38%, rgba(23,29,53,0.4) 65%, rgba(30,35,60,0.25) 100%)',
+              'linear-gradient(105deg, rgba(6,8,18,0.75) 0%, rgba(12,15,32,0.55) 38%, rgba(23,29,53,0.3) 65%, rgba(20,20,35,0.2) 100%)',
           }}
         />
       </div>
