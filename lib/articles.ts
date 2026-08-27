@@ -44,9 +44,9 @@ export const ARTICLES: Article[] = [
     id: 'a1',
     slug: 'triet-long-cong-nghe-cao-diot-laser',
     title:
-      'Triệt lông công nghệ cao Diode Laser: giải pháp "sạch lông vĩnh viễn" được chị em tin dùng nhất 2026',
+      'Triệt lông công nghệ cao SMART OPT IDPL DELUXE: giải pháp "sạch lông vĩnh viễn" được chị em tin dùng nhất 2026',
     excerpt:
-      'Không còn lo lắng về việc triệt lông đau rát, lông mọc lại nhanh hay kích ứng da — công nghệ Diode Laser thế hệ mới tại Hi Medical giúp làm sạch lông an toàn, êm ái, hiệu quả lâu dài chỉ sau một liệu trình chuẩn y khoa.',
+      'Không còn lo lắng về việc triệt lông đau rát, lông mọc lại nhanh hay kích ứng da — công nghệ SMART OPT IDPL DELUXE tại Hi Medical giúp làm sạch lông an toàn, êm ái, hiệu quả lâu dài chỉ sau một liệu trình chuẩn y khoa.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
     image: IMG.laser,

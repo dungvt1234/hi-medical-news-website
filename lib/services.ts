@@ -41,10 +41,10 @@ export const SERVICES: Service[] = [
   {
     slug: 'triet-long-cong-nghe-cao',
     name: 'Triệt lông công nghệ cao',
-    en: 'Diode Laser Hair Removal',
+    en: 'SMART OPT IDPL DELUXE Hair Removal',
     tagline:
       'Nách, tay, chân, mặt, bikini, toàn thân — sạch lông an toàn, êm ái, hiệu quả lâu dài theo chuẩn y khoa.',
-    desc: 'Triệt lông bằng công nghệ Diode Laser thế hệ mới tác động sâu vào nang lông, làm suy yếu và ngừng phát triển lông mà không gây tổn thương da xung quanh. Liệu trình được cá nhân hóa theo vùng da và mật độ lông của từng khách hàng.',
+    desc: 'Triệt lông bằng công nghệ SMART OPT IDPL DELUXE tác động sâu vào nang lông, làm suy yếu và ngừng phát triển lông mà không gây tổn thương da xung quanh. Liệu trình được cá nhân hóa theo vùng da và mật độ lông của từng khách hàng.',
     img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop',
     subs: [
       { name: 'Triệt lông nách', en: 'Underarm', desc: 'Vùng nhạy cảm, thấm mồ hôi — làm sạch nhanh, ít đau, không để lại vết thâm.' },
@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
       { name: 'Triệt lông lưng – ngực – bụng', en: 'Back & Chest', desc: 'Phù hợp nam giới, xử lý vùng lông dày hiệu quả.' },
       { name: 'Combo triệt lông toàn thân', en: 'Full Body', desc: 'Gói trọn toàn thân với mức ưu đãi hấp dẫn, tiết kiệm thời gian.' },
     ],
-    tech: ['Diode Laser', 'IPL'],
+    tech: ['SMART OPT IDPL DELUXE', 'IPL'],
     steps: STEPS,
     benefits: [
       'An toàn, chuẩn y khoa — không tổn thương da',
@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'dieu-tri-da-chuyen-sau',
-    name: 'Điều trị da chuyên sâu',
+    name: 'Hỗ trợ cải thiện các vấn đề da',
     en: 'Acne & Pigmentation Treatment',
     tagline:
       'Mụn, nám, thâm, sẹo, quầng thâm mắt — phác đồ chuẩn y khoa với công nghệ laser & IPL hiện đại.',
@@ -142,7 +142,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'massage-thu-gian',
-    name: 'Massage thư giãn',
+    name: 'Dưỡng sinh thảo dược',
     en: 'Body Massage',
     tagline:
       'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',

@@ -13,13 +13,13 @@ const SERVICES = [
   {
     slug: 'triet-long-cong-nghe-cao',
     name: 'Triệt lông công nghệ cao',
-    en: 'Diode Laser',
+    en: 'SMART OPT IDPL DELUXE',
     desc: 'Nách, tay, chân, mặt, bikini, toàn thân — sạch lông an toàn, êm ái, hiệu quả lâu dài theo chuẩn y khoa.',
     img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=900&auto=format&fit=crop',
   },
   {
     slug: 'dieu-tri-da-chuyen-sau',
-    name: 'Điều trị da chuyên sâu',
+    name: 'Hỗ trợ cải thiện các vấn đề da',
     en: 'Acne & Pigmentation',
     desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — phác đồ chuẩn y khoa với công nghệ laser & IPL hiện đại.',
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
@@ -40,7 +40,7 @@ const SERVICES = [
   },
   {
     slug: 'massage-thu-gian',
-    name: 'Massage thư giãn',
+    name: 'Dưỡng sinh thảo dược',
     en: 'Body Massage',
     desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
