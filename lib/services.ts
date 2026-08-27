@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
       { name: 'Điều trị mụn', en: 'Acne Treatment', desc: 'Mụn viêm, mụn bọc, mụn đầu đen — liệu trình an toàn, hạn chế mụn quay lại.' },
       { name: 'Điều trị nám & tàn nhang', en: 'Melasma & Pigmentation', desc: 'Nám chân sâu, tàn nhang, đồi mồi — làm mờ rõ rệt sau liệu trình.' },
       { name: 'Điều trị thâm & sẹo', en: 'Dark Spots & Scars', desc: 'Sẹo rỗ, sẹo lồi, thâm mụn — làm da mềm mịn hơn.' },
-      { name: 'Trị quầng thâm mắt', en: 'Eye Brightening', desc: 'Công nghệ IPL — giảm thâm quầng, mắt sáng khỏe hơn.' },
+      { name: 'Trị quầng thâm mắt', en: 'Eye Brightening', desc: 'Công nghệ IPL (ánh sáng xung cường độ cao) — tác động nhẹ nhàng, giúp giảm thâm quầng và làm sáng vùng da quanh mắt.' },
       { name: 'Điều trị da dầu & lỗ chân lông to', en: 'Oily Skin & Pores', desc: 'Giảm nhờn, se nhỏ lỗ chân lông, da thông thoáng hơn.' },
     ],
     tech: ['Laser', 'IPL', 'Peel hóa học', 'Lăn kim (Microneedling)'],
