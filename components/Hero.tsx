@@ -56,11 +56,16 @@ export default function Hero() {
           </p>
 
           <h1 className="font-heading text-5xl font-light leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            🌙 Moonlight,
+            <img
+              src="/images/moon.png"
+              alt="moon"
+              className="mr-3 inline-block h-14 w-14 align-middle sm:h-16 sm:w-16"
+            />
+            Moonlight,
             <br />
             floral scent &amp;
             <br />
-            a touch of <span className="italic text-gold">beauty.</span> ✨
+            a touch of <span className="italic text-gold">beauty.</span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-md text-base font-light leading-relaxed text-white/85 lg:mx-0">
