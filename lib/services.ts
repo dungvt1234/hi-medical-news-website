@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     en: 'Acne & Pigmentation Treatment',
     tagline:
       'Mụn, nám, thâm, sẹo, quầng thâm mắt — liệu trình an toàn với công nghệ laser & IPL hiện đại.',
-    desc: 'Mỗi người có một tình trạng da khác nhau. Sau khi thăm khám, chuyên gia da liễu sẽ tư vấn liệu trình phù hợp, kết hợp công nghệ laser, IPL và mỹ phẩm chuyên dụng để cải thiện rõ rệt các vấn đề về da.',
+    desc: 'Mỗi người có một tình trạng da khác nhau. Sau khi thăm khám, chuyên gia da liễu sẽ tư vấn liệu trình phù hợp, kết hợp công nghệ laser, IPL và dược mỹ phẩm để cải thiện rõ rệt các vấn đề về da.',
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&auto=format&fit=crop',
     subs: [
       { name: 'Điều trị mụn', en: 'Acne Treatment', desc: 'Mụn viêm, mụn bọc, mụn đầu đen — liệu trình an toàn, hạn chế mụn quay lại.' },
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
     en: 'Luxury Skincare',
     tagline:
       'Làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ và chăm sóc da toàn thân.',
-    desc: 'Chăm sóc da đều đặn giúp da khỏe hơn và tinh thần thoải mái hơn. Hi Medical mang đến quy trình chăm sóc da thư giãn với mỹ phẩm chuyên dụng và kỹ thuật viên có tay nghề.',
+    desc: 'Chăm sóc da đều đặn giúp da khỏe hơn và tinh thần thoải mái hơn. Hi Medical mang đến quy trình chăm sóc da thư giãn với dược mỹ phẩm và kỹ thuật viên có tay nghề.',
     img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop',
     subs: [
       { name: 'CHĂM SÓC DA CHUẨN HÀN', en: 'Basic Facial', desc: 'Căng bóng mướt mịn' },
@@ -108,12 +108,12 @@ export const SERVICES: Service[] = [
       { name: 'LUXURY GOLD THERAPY', en: 'Luxury Mask', desc: 'Dát vàng 24K chăm sóc nâng cơ' },
       { name: 'TÁI SINH DA HÀN QUỐC', desc: 'Tái sinh làn da theo công nghệ Hàn Quốc — da tươi mới, khỏe khoắn.' },
     ],
-    tech: ['Mỹ phẩm chuyên dụng', 'Công nghệ làm sạch hiện đại'],
+    tech: ['Dược mỹ phẩm', 'Công nghệ làm sạch hiện đại'],
     steps: STEPS,
     benefits: [
       'Thư giãn thoải mái trong không gian dễ chịu',
       'An toàn cho mọi loại da, kể cả da nhạy cảm',
-      'Mỹ phẩm chuyên dụng, nguồn gốc rõ ràng',
+      'Dược mỹ phẩm, nguồn gốc rõ ràng',
       'Kỹ thuật viên được đào tạo bài bản',
       'Hiệu quả nhìn thấy ngay sau buổi đầu tiên',
     ],
