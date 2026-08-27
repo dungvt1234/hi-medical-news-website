@@ -143,7 +143,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'massage-thu-gian',
     name: 'Dưỡng sinh thảo dược',
-    en: 'Body Massage',
+    en: 'Massage',
     tagline:
       'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
     desc: 'Không chỉ là massage, đây là liệu pháp chữa lành cho cơ thể và tinh thần. Kết hợp kỹ thuật massage chuyên sâu cùng tinh dầu thiên nhiên, giúp lưu thông khí huyết, giải tỏa mọi căng thẳng.',

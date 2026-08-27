@@ -25,7 +25,7 @@ const SERVICE_LINKS = [
   { name: 'Hỗ trợ cải thiện các vấn đề da', en: 'Acne & Pigmentation', href: '/dich-vu/dieu-tri-da-chuyen-sau' },
   { name: 'Chăm sóc da', en: 'Luxury Skincare', href: '/dich-vu/cham-soc-da' },
   { name: 'Trẻ hóa & nâng cơ', en: 'Rejuvenation', href: '/dich-vu/tre-hoa-nang-co' },
-  { name: 'Dưỡng sinh thảo dược', en: 'Body Massage', href: '/dich-vu/massage-thu-gian' },
+  { name: 'Dưỡng sinh thảo dược', en: 'Massage', href: '/dich-vu/massage-thu-gian' },
   { name: 'Combo ưu đãi', en: 'Best Value', href: '/dich-vu/combo-uu-dai', special: true },
 ];
 
