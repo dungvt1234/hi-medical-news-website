@@ -151,10 +151,9 @@ export const SERVICES: Service[] = [
     desc: 'Massage giúp cơ thể thư giãn sâu, giảm mệt mỏi và căng thẳng. Kết hợp kỹ thuật massage chuyên nghiệp với tinh dầu thiên nhiên, bạn sẽ thấy dễ chịu và khỏe khoắn hơn.',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop',
     subs: [
-      { name: 'Massage body toàn thân', en: 'Full Body Massage', desc: 'Giảm căng thẳng, giúp cơ thể khỏe khoắn, dễ chịu.' },
+      { name: 'Gội đầu dưỡng sinh', en: 'Herbal Hair Wash', desc: 'Thảo dược thiên nhiên — làm sạch da đầu, thư giãn, giúp tóc chắc khỏe.' },
       { name: 'Massage mặt', en: 'Facial Massage', desc: 'Thư giãn cơ mặt, giảm nếp nhăn do căng thẳng.' },
       { name: 'Trị liệu hương thơm', en: 'Aromatherapy', desc: 'Tinh dầu thiên nhiên — thư giãn tinh thần sâu.' },
-      { name: 'Massage đá nóng', en: 'Hot Stone Massage', desc: 'Đá nóng kết hợp kỹ thuật massage — giảm đau mỏi hiệu quả.' },
     ],
     tech: ['Kỹ thuật massage chuyên sâu', 'Tinh dầu thiên nhiên'],
     steps: STEPS,
