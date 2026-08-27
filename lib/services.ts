@@ -123,16 +123,16 @@ export const SERVICES: Service[] = [
     name: 'Trẻ hóa & nâng cơ',
     en: 'Skin Rejuvenation',
     tagline:
-      'IPL, laser, HIFU nâng cơ — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
+      'IPL, laser, Micro needle shoot — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
     desc: 'Công nghệ không phẫu thuật giúp da tự sản sinh collagen, làm mờ nếp nhăn, da đều màu và săn chắc hơn — tươi trẻ mà không cần nghỉ dưỡng.',
     img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1200&auto=format&fit=crop',
     subs: [
       { name: 'Trẻ hóa da bằng IPL', en: 'IPL Rejuvenation', desc: 'Giúp da săn chắc, đều màu và sáng hơn.' },
       { name: 'Laser trẻ hóa da', en: 'Laser Resurfacing', desc: 'Làm mờ nếp nhăn, thâm nám — bề mặt da mịn màng hơn.' },
-      { name: 'HIFU nâng cơ', en: 'HIFU Lifting', desc: 'Công nghệ siêu âm hội tụ — nâng cơ, xóa nhăn không phẫu thuật.' },
+      { name: 'Micro needle shoot', en: 'Micro Needle Shoot', desc: 'Công nghệ lăn kim siêu vi điểm — kích thích collagen, giúp da săn chắc, mờ nếp nhăn.' },
       { name: 'RF săn chắc da', en: 'RF Tightening', desc: 'Sóng radio tác động sâu, săn chắc vùng mặt và cổ.' },
     ],
-    tech: ['HIFU', 'RF', 'IPL', 'Laser'],
+    tech: ['Micro needle shoot', 'RF', 'IPL', 'Laser'],
     steps: STEPS,
     benefits: [
       'Không phẫu thuật, không cần nghỉ dưỡng',

@@ -35,7 +35,7 @@ const SERVICES = [
     slug: 'tre-hoa-nang-co',
     name: 'Trẻ hóa & nâng cơ',
     en: 'Rejuvenation',
-    desc: 'IPL, laser, HIFU nâng cơ — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
+    desc: 'IPL, laser, Micro needle shoot — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
     img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
   },
   {
