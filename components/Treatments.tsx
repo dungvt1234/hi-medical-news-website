@@ -43,7 +43,7 @@ const SERVICES = [
     name: 'Dưỡng sinh thảo dược',
     en: 'Massage',
     desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
-    img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
+    img: '/images/duong-sinh-thao-moc.jpg',
   },
   {
     slug: 'combo-uu-dai',
