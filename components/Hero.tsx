@@ -118,7 +118,7 @@ export default function Hero() {
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/40 bg-night/50 p-4 backdrop-blur-md">
               <p className="font-heading text-lg italic text-gold">Từ 2016</p>
               <p className="mt-1 text-xs tracking-wide text-white/85">
-                Chuyên gia thẩm mỹ · Công nghệ chuẩn quốc tế
+                Chuyên gia da liễu · Làm đẹp công nghệ cao
               </p>
             </div>
           </div>
