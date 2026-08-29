@@ -53,8 +53,8 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled
-          ? 'border-b border-luxury bg-night/90 py-3 shadow-glow backdrop-blur-md'
-          : 'border-b border-white/10 bg-white/25 py-6 backdrop-blur-md'
+          ? 'border-b border-luxury bg-night/95 py-3 shadow-glow'
+          : 'border-b border-white/10 bg-white/30 py-6'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
