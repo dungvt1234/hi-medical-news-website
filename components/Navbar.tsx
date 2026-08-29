@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled
           ? 'border-b border-luxury bg-night/90 py-3 shadow-glow backdrop-blur-md'
           : 'border-b border-white/10 bg-white/25 py-6 backdrop-blur-md'
@@ -154,7 +154,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Mở menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-white/30 text-ink backdrop-blur-sm lg:hidden"
+            className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-white/30 text-ink backdrop-blur-sm lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -163,7 +163,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-x-0 top-[64px] bottom-0 z-30 bg-night/95 backdrop-blur-lg transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-50 bg-night/95 transition-all duration-500 lg:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
