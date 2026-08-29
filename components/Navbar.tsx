@@ -69,8 +69,8 @@ export default function Navbar() {
             <span className="block font-heading text-xl font-semibold tracking-wide text-ink">
               Hi Medical
             </span>
-            <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-lavender">
-              Lavender Glow Spa
+            <span className="block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+              Skincare &amp; Beauty
             </span>
           </span>
         </Link>

@@ -12,7 +12,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const sv = getService(params.slug);
   if (!sv) return { title: 'Không tìm thấy dịch vụ' };
   return {
-    title: `${sv.name} — Hi Medical Lavender Glow Spa`,
+    title: `${sv.name} — Hi Medical Skincare & Beauty`,
     description: sv.tagline,
   };
 }

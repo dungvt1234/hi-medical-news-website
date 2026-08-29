@@ -5,7 +5,7 @@
  * Tôn trọng prefers-reduced-motion: animation tự tắt
  */
 export default function Marquee({
-  items = ['Lavender Glow Spa', 'Premium Skincare', 'Medical Luxury', 'Rituals of Beauty'],
+  items = ['Skincare & Beauty', 'Premium Skincare', 'Medical Luxury', 'Rituals of Beauty'],
   speed = 30, // giây cho 1 vòng
   className = '',
 }: {

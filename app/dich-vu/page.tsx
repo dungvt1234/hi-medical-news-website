@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { SERVICES } from '@/lib/services';
 
 export const metadata = {
-  title: 'Dịch vụ — Hi Medical Lavender Glow Spa',
+  title: 'Dịch vụ — Hi Medical Skincare & Beauty',
   description:
     'Khám phá các dịch vụ chăm sóc sắc đẹp an toàn tại Hi Medical: triệt lông công nghệ cao, điều trị da chuyên sâu, chăm sóc da, trẻ hóa & nâng cơ, massage thư giãn và combo ưu đãi.',
 };

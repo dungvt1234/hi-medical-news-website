@@ -58,8 +58,8 @@ export default function Footer() {
                 <span className="block font-heading text-xl font-semibold text-white">
                   Hi Medical
                 </span>
-                <span className="block text-[10px] font-medium uppercase tracking-[0.3em] text-[#D8C8F0]">
-                  Lavender Glow Spa
+                <span className="block text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+                  Skincare &amp; Beauty
                 </span>
               </span>
             </Link>
@@ -185,7 +185,7 @@ export default function Footer() {
           <p>© 2026 Hi Medical Skincare &amp; Beauty. Mọi quyền được bảo lưu.</p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" />
-            Lavender Glow Spa
+            Skincare &amp; Beauty
           </p>
         </div>
       </div>
