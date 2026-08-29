@@ -108,8 +108,8 @@ export default function Hero() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1000&auto=format&fit=crop"
-              alt="Liệu trình spa cao cấp Midnight Luxury"
+              src="/images/hero-chuyen-gia-da-lieu.jpg"
+              alt="Chuyên gia da liễu tư vấn tại Hi Medical"
               className="h-full w-full object-cover"
             />
             {/* Overlay nhẹ */}
