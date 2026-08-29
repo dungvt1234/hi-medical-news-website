@@ -22,7 +22,7 @@ const SERVICES = [
     name: 'Hỗ trợ cải thiện các vấn đề da',
     en: 'Acne & Pigmentation',
     desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — liệu trình an toàn với công nghệ laser & IPL hiện đại.',
-    img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
+    img: '/images/dieu-tri-da-chuyen-sau.jpg',
   },
   {
     slug: 'cham-soc-da',
