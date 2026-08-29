@@ -29,7 +29,7 @@ const SERVICES = [
     name: 'Chăm sóc da',
     en: 'Luxury Skincare',
     desc: 'Làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ và chăm sóc da toàn thân.',
-    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
+    img: '/images/cham-soc-da.jpg',
   },
   {
     slug: 'tre-hoa-nang-co',
