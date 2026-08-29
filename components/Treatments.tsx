@@ -15,7 +15,7 @@ const SERVICES = [
     name: 'Triệt lông công nghệ cao',
     en: 'SMART OPT IDPL DELUXE',
     desc: 'Nách, tay, chân, mặt, bikini, toàn thân — triệt lông an toàn, êm ái, hiệu quả lâu dài.',
-    img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=900&auto=format&fit=crop',
+    img: '/images/triet-long-cong-nghe-cao.jpg',
   },
   {
     slug: 'dieu-tri-da-chuyen-sau',
