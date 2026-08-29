@@ -163,7 +163,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed inset-0 z-50 bg-night/95 transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-50 bg-night transition-all duration-500 lg:hidden ${
           open ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
