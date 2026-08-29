@@ -50,7 +50,7 @@ const SERVICES = [
     name: 'Combo ưu đãi',
     en: 'Best Value',
     desc: 'Gói combo chăm sóc toàn diện với mức giá ưu đãi hấp dẫn — dành riêng cho khách đặt lịch online.',
-    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop',
+    img: '/images/combo-uu-dai.jpg',
     special: true,
   },
 ];
