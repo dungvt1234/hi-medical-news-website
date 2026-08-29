@@ -54,7 +54,7 @@ export default function Navbar() {
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
         scrolled
           ? 'border-b border-luxury bg-night/90 py-3 shadow-glow backdrop-blur-md'
-          : 'bg-transparent py-6'
+          : 'border-b border-white/10 bg-white/25 py-6 backdrop-blur-md'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -83,7 +83,7 @@ export default function Navbar() {
               <div key={link.label} className="group relative">
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1.5 text-sm font-semibold text-ink transition-colors duration-300 hover:text-rose-deep"
+                  className="flex items-center gap-1.5 text-sm font-bold text-ink drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)] transition-colors duration-300 hover:text-rose-deep"
                 >
                   {link.label}
                   <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
@@ -133,7 +133,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-semibold text-ink transition-colors duration-300 hover:text-rose-deep"
+                className="text-sm font-bold text-ink drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)] transition-colors duration-300 hover:text-rose-deep"
               >
                 {link.label}
               </Link>
@@ -145,7 +145,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/#contact"
-            className="hidden rounded-full border border-rose px-6 py-2.5 text-xs font-bold uppercase tracking-[0.18em] text-rose-deep transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
+            className="hidden rounded-full border-2 border-rose bg-white/30 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-rose-deep backdrop-blur-sm transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
             Đặt lịch hẹn
           </Link>
@@ -154,7 +154,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Mở menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury text-ink lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-luxury bg-white/30 text-ink backdrop-blur-sm lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
