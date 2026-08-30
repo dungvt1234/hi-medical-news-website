@@ -4,9 +4,11 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useRef,
   type ReactNode,
 } from 'react';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 
 /**
@@ -60,18 +62,15 @@ export default function FlipProvider({ children }: { children: ReactNode }) {
   const shineRef = useRef<HTMLDivElement>(null);
   const sweepRef = useRef<HTMLDivElement>(null);
 
-  const flipTo = useCallback((hash: string) => {
-    const target = document.querySelector(hash) as HTMLElement | null;
+  // Pathname tại lúc mount — dùng để quyết định có chạy intro flip khi load trang chủ
+  const pathname = usePathname();
+  const mountPathRef = useRef(pathname);
 
-    // Accessibility: reduced motion → scroll thẳng, bỏ hiệu ứng
-    // (CHỈ khi ALWAYS_FLIP = false; mặc định Option B: luôn chạy)
-    if (!ALWAYS_FLIP && prefersReducedMotion()) {
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else if (hash === '#home' || hash === '#top')
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
+  /**
+   * Chạy timeline flip. scrollTo? — truyền callback để cuộn tới section
+   * (chỉ khi click nav; intro lúc load thì không cần scroll).
+   */
+  const runFlip = useCallback((scrollTo?: () => void) => {
     const overlay = overlayRef.current;
     const brand = brandRef.current;
     const shine = shineRef.current;
@@ -96,23 +95,48 @@ export default function FlipProvider({ children }: { children: ReactNode }) {
       onComplete: () => gsap.set(overlay, { display: 'none' }),
     });
 
-    tl.to(overlay, { rotateY: 0, opacity: 1, duration: 0.45, ease: EASE_OUT }, 0)
-      .to(brand, { opacity: 1, y: 0, duration: 0.35, ease: EASE_OUT }, 0.12)
-      .to(shine, { xPercent: 320, duration: 0.75, ease: EASE_OUT }, 0.15)
-      // 450ms: scroll tới section (lật gần xong thì cuộn)
-      .add(
-        () => {
-          if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' });
-          else if (hash === '#home' || hash === '#top')
-            window.scrollTo({ top: 0, behavior: 'auto' });
-        },
-        0.45,
-      )
-      // 500ms: lật ra + vệt sáng thứ 2
-      .to(sweep, { opacity: 1, duration: 0.25, ease: EASE_OUT }, 0.5)
-      .to(sweep, { xPercent: 360, duration: 0.7, ease: EASE_OUT }, 0.5)
-      .to(overlay, { rotateY: -90, opacity: 0, duration: 0.45, ease: EASE_IN }, 0.5);
+    tl.to(overlay, { rotateY: 0, opacity: 1, duration: 0.6, ease: EASE_OUT }, 0)
+      .to(brand, { opacity: 1, y: 0, duration: 0.45, ease: EASE_OUT }, 0.15)
+      .to(shine, { xPercent: 320, duration: 0.9, ease: EASE_OUT }, 0.2)
+      // 550ms: scroll tới section (lật gần xong thì cuộn)
+      .add(() => scrollTo && scrollTo(), 0.55)
+      // 650ms: lật ra + vệt sáng thứ 2
+      .to(sweep, { opacity: 1, duration: 0.3, ease: EASE_OUT }, 0.65)
+      .to(sweep, { xPercent: 360, duration: 0.85, ease: EASE_OUT }, 0.65)
+      .to(overlay, { rotateY: -90, opacity: 0, duration: 0.6, ease: EASE_IN }, 0.65);
+
+    return tl;
   }, []);
+
+  const flipTo = useCallback(
+    (hash: string) => {
+      const target = document.querySelector(hash) as HTMLElement | null;
+
+      // Accessibility: reduced motion → scroll thẳng, bỏ hiệu ứng
+      // (CHỈ khi ALWAYS_FLIP = false; mặc định Option B: luôn chạy)
+      if (!ALWAYS_FLIP && prefersReducedMotion()) {
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        else if (hash === '#home' || hash === '#top')
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      runFlip(() => {
+        if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        else if (hash === '#home' || hash === '#top')
+          window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    },
+    [runFlip],
+  );
+
+  // INTRO FLIP: chạy 1 lần khi load lại trang chủ (pathname === '/')
+  // — đúng yêu cầu anh Dung: load lại trang chủ cũng thấy hiệu ứng lật
+  useEffect(() => {
+    if (mountPathRef.current !== '/') return;
+    const t = setTimeout(() => runFlip(), 350); // đợi trang render xong
+    return () => clearTimeout(t);
+  }, [runFlip]);
 
   return (
     <FlipContext.Provider value={{ flipTo }}>
