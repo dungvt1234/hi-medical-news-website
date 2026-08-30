@@ -2,6 +2,11 @@
 // Dữ liệu bài viết mẫu — Trang Tin tức & Sự kiện
 // ============================================================
 
+export type ArticleSection = {
+  heading?: string;
+  paragraphs: string[];
+};
+
 export type Article = {
   id: string;
   slug: string;
@@ -14,6 +19,7 @@ export type Article = {
   dateLabel: string;
   readTime: string;
   featured?: boolean;
+  content: ArticleSection[];
 };
 
 // Danh mục tabs (khớp với CategoryBar)
@@ -54,6 +60,36 @@ export const ARTICLES: Article[] = [
     dateLabel: '18/08/2026',
     readTime: '6 phút đọc',
     featured: true,
+    content: [
+      {
+        heading: 'Triệt lông không còn là nỗi lo',
+        paragraphs: [
+          'Từ lâu, triệt lông luôn là bài toán khó với nhiều chị em: phương pháp cũ gây đau rát, lông mọc lại nhanh, thậm chí để lại kích ứng, viêm nang lông. Với sự ra đời của công nghệ SMART OPT IDPL DELUXE, tất cả những lo lắng đó đã có lời giải.',
+          'SMART OPT IDPL DELUXE sử dụng bước sóng ánh sáng xung mạnh thông minh, tác động chọn lọc vào nang lông mà không gây tổn thương vùng da xung quanh. Cảm giác khi triệt êm ái như có luồng hơi ấm nhẹ lướt qua, hoàn toàn khác biệt so với các phương pháp truyền thống.',
+        ],
+      },
+      {
+        heading: 'Vì sao chị em tin chọn SMART OPT IDPL DELUXE?',
+        paragraphs: [
+          'Đầu tiên là tính an toàn: công nghệ này đã được kiểm định và ứng dụng rộng rãi tại nhiều quốc gia, phù hợp với nhiều loại da, kể cả da nhạy cảm. Thứ hai là hiệu quả lâu dài — sau một liệu trình đầy đủ theo phác đồ chuẩn y khoa, lông mọc lại rất chậm, mảnh và nhạt hơn hẳn, giúp chị em tiết kiệm thời gian và chi phí về lâu dài.',
+          'Ngoài ra, máy còn được tích hợp cơ chế làm mát bề mặt da liên tục, giảm tối đa cảm giác nóng, giúp buổi triệt lông trở thành khoảng thời gian thư giãn thực sự.',
+        ],
+      },
+      {
+        heading: 'Quy trình triệt lông chuẩn y khoa tại Hi Medical',
+        paragraphs: [
+          'Mỗi ca triệt lông tại Hi Medical đều bắt đầu bằng việc thăm khám, tư vấn và xác định loại da, tình trạng lông để chọn mức năng lượng phù hợp. Kỹ thuật viên sẽ vệ sinh vùng điều trị, cạo sạch lông bề mặt rồi tiến hành chiếu sáng theo từng vùng nhỏ, đảm bảo phủ đều và an toàn tuyệt đối.',
+          'Sau buổi triệt, đội ngũ chuyên môn sẽ hướng dẫn chi tiết cách chăm sóc da tại nhà: tránh nắng gắt, không tẩy da chết mạnh, dưỡng ẩm đầy đủ để da nhanh phục hồi và đạt kết quả tốt nhất.',
+        ],
+      },
+      {
+        heading: 'Lưu ý trước và sau khi triệt lông',
+        paragraphs: [
+          'Trước buổi triệt khoảng 2-3 ngày, chị em không nên nhổ hoặc wax lông vì sẽ làm mất gốc nang lông — thứ mà tia sáng cần tác động. Hạn chế tiếp xúc trực tiếp với ánh nắng mặt trời và không dùng mỹ phẩm chứa acid mạnh trên vùng điều trị.',
+          'Sau triệt, da có thể hơi ửng hồng nhẹ trong vài giờ — đây là phản ứng bình thường. Bôi kem dưỡng dịu nhẹ, mặc quần áo thoáng mát và kiên trì theo đúng lịch hẹn tái khám để đạt hiệu quả tối ưu nhất.',
+        ],
+      },
+    ],
   },
   {
     id: 'a2',
@@ -67,6 +103,36 @@ export const ARTICLES: Article[] = [
     date: '2026-08-15',
     dateLabel: '15/08/2026',
     readTime: '4 phút đọc',
+    content: [
+      {
+        heading: 'Phun mày ombre là gì?',
+        paragraphs: [
+          'Phun mày ombre là kỹ thuật tạo màu gradient cho chân mày: phần đầu mày nhạt tự nhiên, phần thân và đuôi mày đậm dần, tạo hiệu ứng mềm mại như được trang điểm khéo léo. Khác với phun xăm truyền thống với đường nét cứng, ombre mang đến vẻ đẹp thanh thoát, gần gũi.',
+          'Với những nàng bận rộn, phun mày ombre là giải pháp tối ưu: tỉnh dậy là đã có ngay đôi chân mày hoàn hảo, không cần mất 10-15 phút mỗi sáng để vẽ, lại luôn tự tin trong mọi hoàn cảnh, kể cả khi đi bơi hay tập thể thao.',
+        ],
+      },
+      {
+        heading: 'Vì sao ombre được yêu thích?',
+        paragraphs: [
+          'Điểm cộng lớn nhất của ombre là độ tự nhiên. Màu mực được pha theo tông da, tông tóc của từng người, cộng với kỹ thuật đưa mực nông — sâu khéo léo giúp chân mày có chiều sâu nhưng vẫn mềm mại, không bị "đơ" hay quá đậm.',
+          'Bên cạnh đó, thời gian phục hồi ngắn, bong tróc nhẹ sau 5-7 ngày và màu ổn định sau khoảng 1 tháng. Kết quả duy trì từ 1-2 năm tùy cơ địa, sau đó có thể dễ dàng dặm lại cho đẹp hơn.',
+        ],
+      },
+      {
+        heading: 'Quy trình thực hiện tại Hi Medical',
+        paragraphs: [
+          'Tại Hi Medical, trước khi phun, chuyên viên sẽ tư vấn và vẽ phác thảo dáng mày phù hợp với khuôn mặt, tỉ lệ mắt — mũi — miệng của từng khách. Khách được xem trước dáng mày và có thể điều chỉnh đến khi ưng ý mới tiến hành.',
+          'Toàn bộ quá trình sử dụng kim phun vô trùng dùng một lần, mực phun có nguồn gốc rõ ràng, đạt chứng nhận an toàn cho da. Kỹ thuật viên thao tác nhẹ nhàng, tỉ mỉ, đảm bảo độ chính xác và hạn chế tối đa cảm giác khó chịu.',
+        ],
+      },
+      {
+        heading: 'Chăm sóc sau khi phun',
+        paragraphs: [
+          'Sau khi phun, chân mày sẽ đậm hơn bình thường trong vài ngày đầu rồi bong nhẹ và nhạt dần. Tuyệt đối không bóc vảy, không thoa mỹ phẩm lên vùng mày, hạn chế nước và mồ hôi trong 24 giờ đầu.',
+          'Sau 4-6 tuần, khách quay lại dặm màu lần 2 (đã bao gồm trong liệu trình) để hoàn thiện dáng mày đẹp nhất. Chỉ với vài lần chăm sóc đơn giản, chị em sẽ sở hữu đôi chân mày ưng ý suốt cả năm.',
+        ],
+      },
+    ],
   },
   {
     id: 'a3',
@@ -80,6 +146,36 @@ export const ARTICLES: Article[] = [
     date: '2026-08-12',
     dateLabel: '12/08/2026',
     readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'Sai lầm 1: Rửa mặt quá nhiều lần',
+        paragraphs: [
+          'Nhiều bạn nghĩ da mụn là do bẩn nên rửa mặt liên tục, thậm chí 4-5 lần mỗi ngày. Thực tế, việc này làm mất lớp màng bảo vệ tự nhiên, khiến da càng tiết dầu nhiều hơn để bù đắp — mụn vì thế càng nặng. Chỉ nên rửa mặt tối đa 2 lần/ngày với sữa rửa mặt dịu nhẹ, phù hợp da dầu mụn.',
+          'Nước rửa quá nóng cũng là kẻ thù của da mụn. Hãy dùng nước mát hoặc nước ấm nhẹ, lau khô bằng khăn sạch riêng, tránh cọ xát mạnh làm tổn thương các nốt mụn.',
+        ],
+      },
+      {
+        heading: 'Sai lầm 2: Nặn mụn tại nhà',
+        paragraphs: [
+          'Nặn mụn bằng tay hoặc dụng cụ không vô trùng là nguyên nhân hàng đầu gây viêm nặng, nhiễm trùng và để lại sẹo lõm vĩnh viễn. Đặc biệt với mụn viêm, mụn bọc ở vùng chữ T, việc tự nặn còn có thể đẩy vi khuẩn vào sâu hơn, khiến ổ viêm lan rộng.',
+          'Nếu cần lấy nhân mụn, hãy đến cơ sở y tế uy tín để được thực hiện bằng dụng cụ vô trùng và kỹ thuật chuẩn, kết hợp với các bước điều trị chuyên sâu.',
+        ],
+      },
+      {
+        heading: 'Sai lầm 3: Lạm dụng tẩy da chết và sản phẩm khô cồn',
+        paragraphs: [
+          'Tẩy da chết quá thường xuyên hoặc dùng sản phẩm chứa cồn nồng độ cao khiến da khô căng, bong tróc, mất hàng rào bảo vệ. Da lúc này phản ứng bằng cách tiết dầu nhiều hơn, tạo điều kiện cho vi khuẩn P.acnes phát triển — vòng luẩn quẩn mụn cứ thế tiếp diễn.',
+          'Hãy chọn sản phẩm dịu nhẹ, ưu tiên thành phần kiềm dầu, kháng viêm lành tính và luôn dưỡng ẩm đầy đủ. Da đủ ẩm mới có thể tự cân bằng và phục hồi.',
+        ],
+      },
+      {
+        heading: 'Sai lầm 4 & 5: Tự ý dùng thuốc và "để yên cho tự hết"',
+        paragraphs: [
+          'Tự mua thuốc bôi, thuốc uống trị mụn mà không có chỉ định là rất nguy hiểm, có thể gây kháng kháng sinh, rối loạn nội tiết hoặc kích ứng nặng. Ngược lại, nhiều bạn lại chủ quan nghĩ mụn tuổi dậy thì "lớn lên sẽ tự hết" mà bỏ lỡ giai đoạn vàng điều trị, để lại sẹo và thâm lâu năm.',
+          'Điều trị mụn đúng chuẩn cần phác đồ cá nhân hóa: làm sạch, kiểm soát dầu, kháng viêm, kết hợp công nghệ ánh sáng và chế độ ăn uống, sinh hoạt khoa học. Chuyên gia da liễu sẽ đánh giá tình trạng da và xây dựng lộ trình phù hợp nhất cho từng bạn.',
+        ],
+      },
+    ],
   },
   {
     id: 'a4',
@@ -93,6 +189,36 @@ export const ARTICLES: Article[] = [
     date: '2026-08-10',
     dateLabel: '10/08/2026',
     readTime: '7 phút đọc',
+    content: [
+      {
+        heading: '10 năm sống chung với nám',
+        paragraphs: [
+          '"Tôi bị nám từ sau sinh bé thứ hai, ban đầu chỉ vài đốm nhỏ rồi lan rộng thành mảng hai bên gò má. 10 năm qua tôi thử đủ loại kem trộn, thuốc uống không rõ nguồn gốc, có lúc da còn tệ hơn trước", chị Thu Hà (38 tuổi, TP.HCM) mở đầu câu chuyện của mình.',
+          'Điều khiến chị quyết tâm tìm giải pháp triệt để là cảm giác tự ti mỗi khi gặp gỡ khách hàng trong công việc. "Làn da là thứ đầu tiên người khác nhìn thấy, tôi không thể cứ mãi che chắn bằng lớp trang điểm dày như thế".',
+        ],
+      },
+      {
+        heading: 'Quyết định điều trị tại Hi Medical',
+        paragraphs: [
+          'Tại Hi Medical, chị Thu Hà được thăm khám bằng hệ thống soi da chuyên sâu, xác định nám chân sâu kết hợp nám mảng. Bác sĩ xây dựng phác đồ kết hợp laser bước sóng kép, lăn kim siêu vi điểm và bộ dưỡng da chuyên biệt, chia thành 3 giai đoạn trong 3 tháng.',
+          '"Tôi ấn tượng nhất là sự tận tâm và minh bạch. Từng bước điều trị đều được giải thích rõ ràng, tôi hiểu mình đang làm gì và vì sao. Không hề có cảm giác bị bán liệu trình, mà là được đồng hành thực sự", chị chia sẻ.',
+        ],
+      },
+      {
+        heading: 'Kết quả sau 3 tháng',
+        paragraphs: [
+          'Sau 3 tháng kiên trì, các mảng nám của chị Thu Hà mờ trên 80%, bề mặt da mịn màng, đều màu và sáng hơn hẳn. Kết quả được đo lường cụ thể qua máy phân tích da trước và sau điều trị, không chỉ là cảm nhận chủ quan.',
+          '"Giờ tôi chỉ cần kem chống nắng và một lớp nền mỏng là đủ tự tin. Cảm giác nhẹ nhõm sau 10 năm thật khó diễn tả. Tôi chỉ ước mình đến sớm hơn để không phải mất nhiều năm như vậy", chị Thu Hà cười nói.',
+        ],
+      },
+      {
+        heading: 'Lời khuyên từ chuyên gia',
+        paragraphs: [
+          'Các bác sĩ da liễu Hi Medical nhấn mạnh: điều trị nám cần sự kiên trì và phác đồ đúng nguyên nhân. Nám không thể hết trong 1-2 buổi, nhưng với công nghệ hiện đại và sự tuân thủ của khách hàng, kết quả rõ rệt hoàn toàn có thể đạt được trong 3-6 tháng.',
+          'Đặc biệt, kem chống nắng là "vũ khí" quan trọng nhất chống nám tái phát. Hãy thoa lại sau mỗi 2-3 giờ nếu hoạt động ngoài trời và kết hợp che chắn vật lý để bảo vệ thành quả điều trị lâu dài.',
+        ],
+      },
+    ],
   },
   {
     id: 'a5',
@@ -106,6 +232,29 @@ export const ARTICLES: Article[] = [
     date: '2026-08-08',
     dateLabel: '08/08/2026',
     readTime: '3 phút đọc',
+    content: [
+      {
+        heading: 'Combo làm đẹp chỉ từ 168K',
+        paragraphs: [
+          'Chào mừng tháng 8, Hi Medical triển khai chương trình ưu đãi đặc biệt dành riêng cho khách hàng đặt lịch online: combo chăm sóc da mặt chuyên sâu kết hợp triệt lông vùng nhỏ chỉ từ 168.000đ. Mức giá chưa từng có, áp dụng cho khách hàng mới và khách hàng thân thiết giới thiệu bạn bè.',
+          'Combo bao gồm: buổi trị liệu chăm sóc da làm sạch sâu, cấp ẩm, se khít lỗ chân lông cùng kỹ thuật viên giàu kinh nghiệm và 1 vùng triệt lông nhỏ bằng công nghệ SMART OPT IDPL DELUXE êm ái, an toàn.',
+        ],
+      },
+      {
+        heading: 'Đối tượng áp dụng',
+        paragraphs: [
+          'Chương trình áp dụng cho tất cả khách hàng đặt lịch qua website, hotline hoặc Zalo trong tháng 8/2026. Mỗi khách hàng chỉ được sử dụng ưu đãi một lần, số lượng suất ưu đãi có hạn và được phân bổ theo ngày.',
+          'Để đảm bảo trải nghiệm tốt nhất, chúng tôi khuyến khích khách hàng đặt lịch trước ít nhất 1 ngày. Đội ngũ chăm sóc khách hàng sẽ liên hệ xác nhận và tư vấn liệu trình phù hợp với tình trạng da của bạn.',
+        ],
+      },
+      {
+        heading: 'Cách đăng ký nhanh nhất',
+        paragraphs: [
+          'Bạn chỉ cần gọi hotline 0799 390 790, nhắn tin Zalo hoặc bấm nút "Đặt lịch trải nghiệm" trên website để lại thông tin. Nhân viên Hi Medical sẽ phản hồi trong vòng 15 phút trong giờ hành chính.',
+          'Đừng bỏ lỡ cơ hội trải nghiệm dịch vụ chuẩn y khoa với mức giá ưu đãi nhất trong năm. Số lượng có hạn — hãy nhanh tay để dành cho mình một suất nhé!',
+        ],
+      },
+    ],
   },
   {
     id: 'a6',
@@ -119,6 +268,36 @@ export const ARTICLES: Article[] = [
     date: '2026-08-05',
     dateLabel: '05/08/2026',
     readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'Nguyên nhân gây quầng thâm mắt',
+        paragraphs: [
+          'Quầng thâm mắt đến từ nhiều nguyên nhân: thiếu ngủ, căng thẳng kéo dài, di truyền, lão hóa làm mỏng da vùng mắt hoặc tình trạng tăng sắc tố. Vùng da quanh mắt mỏng và nhạy cảm nhất trên cơ thể nên chỉ cần một chút thay đổi là lộ rõ sắc thâm.',
+          'Ngoài ra, việc trang điểm mắt thường xuyên, tẩy trang không kỹ khiến sắc tố tích tụ lâu ngày cũng góp phần làm vùng da dưới mắt ngày càng thâm sạm, kém tươi sáng.',
+        ],
+      },
+      {
+        heading: 'Công nghệ IPL bước sóng kép hoạt động thế nào?',
+        paragraphs: [
+          'IPL (Intense Pulsed Light) bước sóng kép phát ra ánh sáng xung cường độ cao, được chọn lọc để phá vỡ sắc tố melanin dư thừa dưới da, đồng thời kích thích sản sinh collagen — nền tảng giúp da mắt dày hơn, săn chắc hơn và che đi các mạch máu giãn gây thâm tím.',
+          'Với thiết kế đầu phát nhỏ gọn chuyên dụng cho vùng quanh mắt, công nghệ này tác động chính xác mà vẫn đảm bảo an toàn cho nhãn cầu nhờ kính bảo hộ chuyên dụng. Cảm giác trong buổi điều trị chỉ hơi ấm nhẹ, không đau, không nghỉ dưỡng.',
+        ],
+      },
+      {
+        heading: 'Kết quả sau 2 liệu trình',
+        paragraphs: [
+          'Nhiều khách hàng ghi nhận vùng thâm mắt sáng rõ sau 2 liệu trình, mỗi liệu trình cách nhau 3-4 tuần. Ánh nhìn trở nên tươi tỉnh hơn hẳn, quầng thâm giảm từ 50-70% tùy cơ địa và mức độ nặng nhẹ.',
+          'Bên cạnh điều trị, chuyên gia khuyên kết hợp kem dưỡng mắt chứa vitamin C, retinol nồng độ thấp và duy trì giấc ngủ đủ 7-8 tiếng để kéo dài hiệu quả, ngăn thâm quay trở lại.',
+        ],
+      },
+      {
+        heading: 'Ai nên điều trị IPL vùng mắt?',
+        paragraphs: [
+          'Phương pháp phù hợp với người bị thâm mắt do tăng sắc tố, mạch máu giãn hoặc lão hóa nhẹ. Trước khi điều trị, bác sĩ sẽ thăm khám để loại trừ các trường hợp thâm mắt do bệnh lý và tư vấn phác đồ phù hợp nhất.',
+          'Nếu bạn đang cảm thấy mệt mỏi vì đôi mắt lúc nào cũng "ngủ không đủ giấc", hãy đến Hi Medical để được soi da, phân tích tình trạng và nhận giải pháp cá nhân hóa ngay hôm nay.',
+        ],
+      },
+    ],
   },
   {
     id: 'a7',
@@ -132,6 +311,29 @@ export const ARTICLES: Article[] = [
     date: '2026-08-02',
     dateLabel: '02/08/2026',
     readTime: '4 phút đọc',
+    content: [
+      {
+        heading: 'Cột mốc chất lượng đáng tự hào',
+        paragraphs: [
+          'Hi Medical vừa chính thức được cấp chứng nhận ISO 9001:2015 cho toàn bộ hệ thống quản lý chất lượng dịch vụ thẩm mỹ. Đây là tiêu chuẩn quốc tế khắt khe về quy trình vận hành, kiểm soát chất lượng và sự hài lòng khách hàng.',
+          'Chứng nhận này không đến một cách dễ dàng: toàn bộ quy trình từ khâu tiếp nhận khách, thăm khám, tư vấn, thực hiện liệu trình đến chăm sóc sau điều trị đều phải được chuẩn hóa, ghi chép và kiểm tra nghiêm ngặt trong nhiều tháng liên tục.',
+        ],
+      },
+      {
+        heading: 'Ý nghĩa với khách hàng',
+        paragraphs: [
+          'Với khách hàng, ISO 9001:2015 là lời cam kết về sự an toàn và nhất quán: mỗi liệu trình đều tuân theo quy trình chuẩn, mỗi khách hàng đều được phục vụ với cùng chất lượng cao nhất, không phụ thuộc vào thời điểm hay kỹ thuật viên phụ trách.',
+          'Hệ thống quản lý chất lượng cũng giúp Hi Medical liên tục cải tiến: mọi phản hồi của khách hàng đều được ghi nhận, phân tích và chuyển hóa thành hành động nâng cấp dịch vụ cụ thể.',
+        ],
+      },
+      {
+        heading: 'Cam kết tiếp tục hoàn thiện',
+        paragraphs: [
+          'ISO 9001:2015 không phải đích đến mà là điểm khởi đầu. Hi Medical cam kết duy trì và nâng cao chuẩn chất lượng, tiếp tục đầu tư công nghệ mới, đào tạo đội ngũ và mở rộng hệ sinh thái dịch vụ chăm sóc sức khỏe và sắc đẹp toàn diện.',
+          'Cảm ơn tất cả khách hàng đã đồng hành. Mỗi sự tin tưởng của bạn chính là động lực để chúng tôi ngày càng hoàn thiện hơn nữa.',
+        ],
+      },
+    ],
   },
   {
     id: 'a8',
@@ -145,6 +347,29 @@ export const ARTICLES: Article[] = [
     date: '2026-07-28',
     dateLabel: '28/07/2026',
     readTime: '3 phút đọc',
+    content: [
+      {
+        heading: 'Bước tiến trong chiến lược hợp tác quốc tế',
+        paragraphs: [
+          'Hi Medical chính thức ký kết thỏa thuận hợp tác độc quyền với hãng mỹ phẩm dược liệu hàng đầu Hàn Quốc. Theo thỏa thuận, Hi Medical là đơn vị đầu tiên và duy nhất tại thị trường được phân phối và ứng dụng dòng sản phẩm chăm sóc da chuyên sâu của hãng trong liệu trình điều trị.',
+          'Sự hợp tác này đánh dấu bước tiến quan trọng trong chiến lược nâng cao chất lượng dịch vụ, mang đến cho khách hàng những công nghệ làm đẹp tiên tiến nhất từ xứ sở kim chi — quốc gia dẫn đầu xu hướng chăm sóc da châu Á.',
+        ],
+      },
+      {
+        heading: 'Công nghệ chiết xuất thảo dược tiên tiến',
+        paragraphs: [
+          'Dòng sản phẩm mới được nghiên cứu và phát triển dựa trên công nghệ chiết xuất thảo dược hiện đại: nhân sâm, trà xanh, rau má và nhiều dược liệu quý được tinh chế ở nhiệt độ thấp để giữ trọn hoạt chất, kết hợp với peptide và dưỡng chất phục hồi da chuyên sâu.',
+          'Toàn bộ sản phẩm trải qua quy trình kiểm nghiệm nghiêm ngặt, đạt các chứng nhận an toàn quốc tế, phù hợp với cả làn da nhạy cảm và da đang trong liệu trình điều trị chuyên sâu.',
+        ],
+      },
+      {
+        heading: 'Lợi ích cho khách hàng',
+        paragraphs: [
+          'Khách hàng của Hi Medical sẽ được trải nghiệm ngay dòng sản phẩm độc quyền trong các liệu trình chăm sóc da cao cấp, đồng thời nhận tư vấn từ đội ngũ chuyên môn đã được hãng đào tạo bài bản.',
+          'Bên cạnh đó, chương trình ưu đãi đặc biệt dành cho khách hàng thân thiết khi trải nghiệm liệu trình mới sẽ được công bố trong thời gian tới. Hãy theo dõi website và fanpage để không bỏ lỡ nhé!',
+        ],
+      },
+    ],
   },
   {
     id: 'a9',
@@ -158,6 +383,29 @@ export const ARTICLES: Article[] = [
     date: '2026-07-25',
     dateLabel: '25/07/2026',
     readTime: '4 phút đọc',
+    content: [
+      {
+        heading: 'Vì sao cuối tuần nên dành cho bản thân?',
+        paragraphs: [
+          'Một tuần làm việc với lịch trình dày đặc, áp lực công việc và những mối lo thường nhật khiến cơ thể tích tụ căng thẳng. Nếu không được "xả" kịp thời, stress sẽ biểu hiện qua làn da xỉn màu, quầng thâm mắt, mụn viêm và cảm giác mệt mỏi kéo dài.',
+          'Dành 60-90 phút cuối tuần cho một liệu trình spa không phải là xa xỉ, mà là khoản đầu tư thông minh cho sức khỏe thể chất lẫn tinh thần — để bạn bước vào tuần mới với năng lượng tràn đầy.',
+        ],
+      },
+      {
+        heading: 'Liệu trình gợi ý cho kỳ nghỉ ngắn',
+        paragraphs: [
+          'Tại Hi Medical, gợi ý hoàn hảo cho cuối tuần là kết hợp liệu trình chăm sóc da mặt chuyên sâu với massage thư giãn toàn thân. Quy trình làm sạch, tẩy da chết nhẹ nhàng, đắp mặt nạ dưỡng ẩm và massage vùng vai gáy giúp giải phóng mọi căng thẳng tích tụ.',
+          'Nếu có nhiều thời gian hơn, bạn có thể nâng cấp lên gói trị liệu toàn diện bao gồm cả chăm sóc cơ thể, giúp làn da mềm mại, săn chắc và tinh thần thư thái tuyệt đối.',
+        ],
+      },
+      {
+        heading: 'Mẹo để trọn vẹn ngày thư giãn',
+        paragraphs: [
+          'Để buổi spa đạt hiệu quả tốt nhất, hãy đến sớm 10-15 phút, uống đủ nước trước đó và hạn chế caffeine. Sau liệu trình, tránh trang điểm ngay, để da "thở" và tiếp tục bổ sung nước, ngủ sớm để cơ thể phục hồi sâu.',
+          'Quan trọng nhất: hãy tắt điện thoại trong thời gian trị liệu. Đó là khoảng thời gian hiếm hoi thuộc về riêng bạn — tận hưởng trọn vẹn để nạp lại năng lượng cho một tuần mới hiệu quả hơn.',
+        ],
+      },
+    ],
   },
 ];
 
@@ -167,4 +415,8 @@ export function getFeatured(articles: Article[] = ARTICLES): Article {
 
 export function getSidebar(articles: Article[] = ARTICLES): Article[] {
   return articles.filter((a) => !a.featured);
+}
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return ARTICLES.find((a) => a.slug === slug);
 }
