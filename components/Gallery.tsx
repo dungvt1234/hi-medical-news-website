@@ -1,47 +1,32 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Reveal from './Reveal';
 
-gsap.registerPlugin(ScrollTrigger);
-
 /**
- * Gallery — masonry/editorial grid 6 ảnh
- * Hover: scale 1.03 + overlay nhẹ + caption fade in
+ * Gallery — "Khoảnh khắc an nhiên" với hiệu ứng motion graphic
+ * 2 hàng ảnh chạy ngang liên tục (marquee), ngược chiều nhau
+ *
+ * Kỹ thuật:
+ * - CSS keyframes thuần (GPU: transform translateX) — không thư viện mới
+ * - Mỗi track chứa 2 bản copy → vòng lặp seamless (dịch -50%)
+ * - Hàng 1 chạy trái→phải, hàng 2 chạy phải→trái
+ * - Hover: tạm dừng hàng đó để xem ảnh
+ * - prefers-reduced-motion: tắt chuyển động, hiển thị tĩnh
  */
-const GALLERY = [
-  {
-    img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=900&auto=format&fit=crop',
-    caption: 'Lavender Ritual',
-    tall: true,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
-    caption: 'Glow Therapy',
-    tall: false,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
-    caption: 'Signature Facial',
-    tall: false,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop',
-    caption: 'Deep Rest Massage',
-    tall: true,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=900&auto=format&fit=crop',
-    caption: 'Không gian tĩnh lặng',
-    tall: false,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
-    caption: 'Sản phẩm cao cấp',
-    tall: false,
-  },
+const ROW_1 = [
+  '/images/gallery/an-nhien-1.jpg',
+  '/images/gallery/an-nhien-2.jpg',
+  '/images/gallery/an-nhien-3.jpg',
+  '/images/gallery/an-nhien-4.jpg',
+  '/images/gallery/an-nhien-7.jpg',
+];
+const ROW_2 = [
+  '/images/gallery/an-nhien-5.jpg',
+  '/images/gallery/an-nhien-6.jpg',
+  '/images/gallery/an-nhien-8.jpg',
+  '/images/gallery/an-nhien-2.jpg',
+  '/images/gallery/an-nhien-4.jpg',
 ];
 
 export default function Gallery() {
@@ -64,39 +49,35 @@ export default function Gallery() {
       { threshold: 0.1 }
     );
     obs.observe(el);
-
-    // Parallax nhẹ cho ảnh gallery theo scroll (tôn trọng reduced-motion)
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const imgs = el.querySelectorAll('figure img');
-      const ctx = gsap.context(() => {
-        imgs.forEach((img) => {
-          gsap.fromTo(
-            img,
-            { yPercent: -8 },
-            {
-              yPercent: 8,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: img.closest('figure'),
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true,
-              },
-            }
-          );
-        });
-      }, el);
-      return () => {
-        obs.disconnect();
-        ctx.revert();
-      };
-    }
-
     return () => obs.disconnect();
   }, []);
 
+  const renderTrack = (imgs: string[], dir: 'ltr' | 'rtl') => (
+    <div className={`marquee-track ${dir === 'rtl' ? 'marquee-rtl' : ''}`}>
+      {[0, 1].map((dup) => (
+        <div key={dup} className="marquee-group" aria-hidden={dup === 1}>
+          {imgs.map((src, i) => (
+            <figure
+              key={`${dup}-${i}`}
+              className="marquee-item group relative overflow-hidden rounded-2xl"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={src}
+                alt={`Khoảnh khắc an nhiên ${i + 1}`}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-night/60 via-transparent to-transparent opacity-50 transition-opacity duration-700 group-hover:opacity-80" />
+            </figure>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <section className="bg-night py-24 sm:py-32">
+    <section className="overflow-hidden bg-night py-24 sm:py-32">
       <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-16 text-center">
           <p className="eyebrow reveal mb-5 flex items-center justify-center gap-3">
@@ -108,32 +89,18 @@ export default function Gallery() {
             Khoảnh khắc <span className="italic text-rose">an nhiên.</span>
           </Reveal>
         </div>
+      </div>
 
-        {/* Masonry grid */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
-          {GALLERY.map((g, i) => (
-            <figure
-              key={i}
-              className={`reveal group relative overflow-hidden rounded-3xl ${
-                g.tall ? 'row-span-2' : ''
-              } ${i % 5 === 0 ? 'lg:col-span-2' : ''}`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={g.img}
-                alt={g.caption}
-                loading="lazy"
-                className="img-zoom h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
-              />
-              {/* Overlay nhẹ */}
-              <div className="absolute inset-0 bg-gradient-to-t from-night/70 via-transparent to-transparent opacity-60 transition-opacity duration-700 group-hover:opacity-90" />
-              {/* Caption fade in */}
-              <figcaption className="absolute bottom-0 left-0 right-0 translate-y-4 p-6 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
-                <span className="font-heading text-xl italic text-rose">{g.caption}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+      {/* Motion graphic: 2 hàng chạy ngang liên tục */}
+      <div className="relative flex flex-col gap-5 sm:gap-7">
+        {/* Hàng 1 — trái → phải */}
+        <div className="marquee marquee-left">{renderTrack(ROW_1, 'ltr')}</div>
+        {/* Hàng 2 — phải → trái */}
+        <div className="marquee marquee-right">{renderTrack(ROW_2, 'rtl')}</div>
+
+        {/* Fade 2 mép cho mượt */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-night to-transparent sm:w-40" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-night to-transparent sm:w-40" />
       </div>
     </section>
   );
