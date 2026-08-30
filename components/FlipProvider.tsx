@@ -96,22 +96,22 @@ export default function FlipProvider({ children }: { children: ReactNode }) {
       onComplete: () => gsap.set(overlay, { display: 'none' }),
     });
 
-    tl.to(overlay, { rotateY: 0, opacity: 1, duration: 0.3, ease: EASE_OUT }, 0)
-      .to(brand, { opacity: 1, y: 0, duration: 0.25, ease: EASE_OUT }, 0.08)
-      .to(shine, { xPercent: 320, duration: 0.6, ease: EASE_OUT }, 0.1)
-      // 300ms: scroll tới section (lật gần xong thì cuộn)
+    tl.to(overlay, { rotateY: 0, opacity: 1, duration: 0.45, ease: EASE_OUT }, 0)
+      .to(brand, { opacity: 1, y: 0, duration: 0.35, ease: EASE_OUT }, 0.12)
+      .to(shine, { xPercent: 320, duration: 0.75, ease: EASE_OUT }, 0.15)
+      // 450ms: scroll tới section (lật gần xong thì cuộn)
       .add(
         () => {
           if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' });
           else if (hash === '#home' || hash === '#top')
             window.scrollTo({ top: 0, behavior: 'auto' });
         },
-        0.3,
+        0.45,
       )
-      // 340ms: lật ra + vệt sáng thứ 2
-      .to(sweep, { opacity: 1, duration: 0.2, ease: EASE_OUT }, 0.34)
-      .to(sweep, { xPercent: 360, duration: 0.54, ease: EASE_OUT }, 0.34)
-      .to(overlay, { rotateY: -90, opacity: 0, duration: 0.3, ease: EASE_IN }, 0.34);
+      // 500ms: lật ra + vệt sáng thứ 2
+      .to(sweep, { opacity: 1, duration: 0.25, ease: EASE_OUT }, 0.5)
+      .to(sweep, { xPercent: 360, duration: 0.7, ease: EASE_OUT }, 0.5)
+      .to(overlay, { rotateY: -90, opacity: 0, duration: 0.45, ease: EASE_IN }, 0.5);
   }, []);
 
   return (
