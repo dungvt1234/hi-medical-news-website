@@ -49,14 +49,14 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Đóng drawer khi CinematicScroll bắt đầu cuộn tới section
+  // Đóng drawer khi PageFlip bắt đầu lật trang
   useEffect(() => {
-    const closeOnScroll = () => {
+    const closeOnFlip = () => {
       setOpen(false);
       setServicesOpen(false);
     };
-    window.addEventListener('cinematic-scroll-start', closeOnScroll);
-    return () => window.removeEventListener('cinematic-scroll-start', closeOnScroll);
+    window.addEventListener('pageflip-start', closeOnFlip);
+    return () => window.removeEventListener('pageflip-start', closeOnFlip);
   }, []);
 
   return (

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWidgets from '@/components/FloatingWidgets';
 import CinematicScroll from '@/components/CinematicScroll';
+import PageFlip from '@/components/PageFlip';
 
 export const metadata: Metadata = {
   title: 'Hi Medical Spa — Skincare & Beauty Luxury',
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Footer />
         <FloatingWidgets />
         <CinematicScroll />
+        <PageFlip />
       </body>
     </html>
   );
