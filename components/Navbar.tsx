@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useFlip } from './FlipProvider';
 
 /**
  * Navbar Midnight Luxury Spa
@@ -33,6 +35,20 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const { flipTo } = useFlip();
+
+  /**
+   * Flip page: nếu đang ở trang chủ và link là anchor (/#section) →
+   * chặn scroll mặc định, lật trang rồi cuộn tới section.
+   * Link route khác (/journal, /dich-vu/...) → điều hướng bình thường.
+   */
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('/#') && pathname === '/') {
+      e.preventDefault();
+      flipTo('#' + href.slice(2));
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -59,7 +75,11 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
-        <Link href="/#home" className="group flex items-center gap-3">
+        <Link
+          href="/#home"
+          onClick={(e) => handleNavClick(e, '/#home')}
+          className="group flex items-center gap-3"
+        >
           <img
             src="/logo.png"
             alt="Hi Medical"
@@ -83,6 +103,7 @@ export default function Navbar() {
               <div key={link.label} className="group relative">
                 <Link
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="flex items-center gap-1.5 text-sm font-bold text-ink drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)] transition-colors duration-300 hover:text-rose-deep"
                 >
                   {link.label}
@@ -133,6 +154,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-bold text-ink drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)] transition-colors duration-300 hover:text-rose-deep"
               >
                 {link.label}
@@ -145,6 +167,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/#contact"
+            onClick={(e) => handleNavClick(e, '/#contact')}
             className="hidden rounded-full border-2 border-rose bg-white/30 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.18em] text-rose-deep backdrop-blur-sm transition-all duration-300 hover:bg-rose hover:text-white sm:inline-flex"
           >
             Đặt lịch hẹn
@@ -216,7 +239,10 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, link.href);
+                  setOpen(false);
+                }}
                 className="border-b border-luxury/40 py-4 font-heading text-2xl text-ink transition-colors hover:text-rose-deep"
                 style={{ transitionDelay: `${i * 30}ms` }}
               >
@@ -226,7 +252,10 @@ export default function Navbar() {
           )}
           <Link
             href="/#contact"
-            onClick={() => setOpen(false)}
+            onClick={(e) => {
+              handleNavClick(e, '/#contact');
+              setOpen(false);
+            }}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-rose px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] text-white"
           >
             Đặt lịch hẹn

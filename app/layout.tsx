@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWidgets from '@/components/FloatingWidgets';
+import FlipProvider from '@/components/FlipProvider';
 
 export const metadata: Metadata = {
   title: 'Hi Medical Spa — Skincare & Beauty Luxury',
@@ -33,10 +34,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body text-ink antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <FloatingWidgets />
+        <FlipProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <FloatingWidgets />
+        </FlipProvider>
       </body>
     </html>
   );
