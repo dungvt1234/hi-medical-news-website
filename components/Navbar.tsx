@@ -49,6 +49,16 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // Đóng drawer khi BookTransition bắt đầu chuyển trang
+  useEffect(() => {
+    const closeOnTransition = () => {
+      setOpen(false);
+      setServicesOpen(false);
+    };
+    window.addEventListener('book-transition-start', closeOnTransition);
+    return () => window.removeEventListener('book-transition-start', closeOnTransition);
+  }, []);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
