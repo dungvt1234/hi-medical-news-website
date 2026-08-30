@@ -49,14 +49,14 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Đóng drawer khi BookTransition bắt đầu chuyển trang
+  // Đóng drawer khi CinematicScroll bắt đầu cuộn tới section
   useEffect(() => {
-    const closeOnTransition = () => {
+    const closeOnScroll = () => {
       setOpen(false);
       setServicesOpen(false);
     };
-    window.addEventListener('book-transition-start', closeOnTransition);
-    return () => window.removeEventListener('book-transition-start', closeOnTransition);
+    window.addEventListener('cinematic-scroll-start', closeOnScroll);
+    return () => window.removeEventListener('cinematic-scroll-start', closeOnScroll);
   }, []);
 
   return (
