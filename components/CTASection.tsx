@@ -88,7 +88,7 @@ export default function CTASection() {
           <div className="relative overflow-hidden rounded-[999px_999px_48px_48px] border border-luxury">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1000&auto=format&fit=crop"
+              src="/images/cta-quiet-luxury.jpg"
               alt="Trải nghiệm spa Hi Medical"
               className="aspect-[4/5] w-full object-cover"
             />
