@@ -49,16 +49,6 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Đóng drawer khi PageFlip bắt đầu lật trang
-  useEffect(() => {
-    const closeOnFlip = () => {
-      setOpen(false);
-      setServicesOpen(false);
-    };
-    window.addEventListener('pageflip-start', closeOnFlip);
-    return () => window.removeEventListener('pageflip-start', closeOnFlip);
-  }, []);
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
