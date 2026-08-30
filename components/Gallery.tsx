@@ -19,14 +19,18 @@ const ROW_1 = [
   '/images/gallery/an-nhien-2.jpg',
   '/images/gallery/an-nhien-3.jpg',
   '/images/gallery/an-nhien-4.jpg',
+  '/images/gallery/an-nhien-5.jpg',
+  '/images/gallery/an-nhien-6.jpg',
   '/images/gallery/an-nhien-7.jpg',
 ];
 const ROW_2 = [
-  '/images/gallery/an-nhien-5.jpg',
-  '/images/gallery/an-nhien-6.jpg',
   '/images/gallery/an-nhien-8.jpg',
-  '/images/gallery/an-nhien-2.jpg',
-  '/images/gallery/an-nhien-4.jpg',
+  '/images/gallery/an-nhien-9.jpg',
+  '/images/gallery/an-nhien-10.jpg',
+  '/images/gallery/an-nhien-11.jpg',
+  '/images/gallery/an-nhien-12.jpg',
+  '/images/gallery/an-nhien-13.jpg',
+  '/images/gallery/an-nhien-14.jpg',
 ];
 
 export default function Gallery() {
