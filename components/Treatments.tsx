@@ -162,17 +162,17 @@ export default function Treatments() {
       </div>
 
       {/* Track ngang — coverflow 3D, scroll-driven */}
-      <div ref={trackRef} className="flex w-max items-stretch pl-[42vw] pr-[14vw] will-change-transform">
+      <div ref={trackRef} className="flex w-max items-stretch pl-[38vw] pr-[10vw] will-change-transform">
         {SERVICES.map((t, i) => (
           <Link
             key={t.slug}
             href={`/dich-vu/${t.slug}`}
-            className={`t-card group relative mx-3 block shrink-0 overflow-hidden rounded-4xl border transition-[border-color,box-shadow] duration-500 ${
+            className={`t-card group relative mx-2 block shrink-0 overflow-hidden rounded-4xl border transition-[border-color,box-shadow] duration-500 ${
               t.special
                 ? 'border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
                 : 'border-luxury bg-night-2 hover:border-rose/40'
             }`}
-            style={{ width: 'min(30vw, 420px)', transformStyle: 'preserve-3d' }}
+            style={{ width: 'min(22vw, 320px)', transformStyle: 'preserve-3d' }}
           >
             {/* Ảnh */}
             <div className="relative aspect-[4/5] overflow-hidden">
