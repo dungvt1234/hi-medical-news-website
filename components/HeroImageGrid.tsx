@@ -9,28 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * HeroImageGrid — Hiệu ứng "hàng nghìn mảnh ảnh hội tụ"
  *
- * Chia ảnh thành lưới ô nhỏ (cols x rows). Mỗi ô là một <img> cùng nguồn,
- * dùng object-fit:cover + object-position để hiển thị đúng lát cắt của ảnh
- * (giống cách chia ảnh thành mảng ô). Vì dùng object-fit:cover, các ô ghép
- * khít thành ảnh hoàn chỉnh KHÔNG BỊ MÉO, không phụ thuộc tỷ lệ ảnh gốc.
+ * Chia ảnh thành lưới rất dày (COLS x ROWS ≈ hàng nghìn mảnh nhỏ, 30x38=1140).
+ * Mỗi mảnh là một "cửa sổ" chứa toàn bộ ảnh phóng lên (COLS x ROWS) lần rồi
+ * dịch chuyển để hiển thị đúng lát cắt (kỹ thuật sprite-sheet trimming).
+ * Vì ảnh phóng đều cả 2 trục, các mảnh ghép khít thành ảnh hoàn chỉnh —
+ * KHÔNG méo, KHÔNG lệch, không phụ thuộc tỉ lệ ảnh gốc.
  *
- * Khi cuộn tới hero, các ô bắt đầu rải rác khắp màn hình (translate + xoay),
- * rồi cùng lúc bay về vị trí grid → ghép thành ảnh. Sau khi xong, một vệt
- * ánh bạc lướt ngang qua ảnh.
+ * - Khi cuộn tới hero: các mảnh BAY TỪ RÌA MÀN HÌNH (ngoài viewport) hội tụ
+ *   về vị trí grid → ghép thành ảnh.
+ * - Sau khi hội tụ xong: vệt sáng chạy CHÉO TỪ TRÊN-XUỐNG qua ảnh.
  */
 
-const COLS = 6;
-const ROWS = 8;
-const CELL_W = 100 / COLS; // % chiều rộng mỗi ô
-const CELL_H = 100 / ROWS; // % chiều cao mỗi ô
+const COLS = 30;
+const ROWS = 38;
+const CELL_W = 100 / COLS; // % chiều rộng mỗi mảnh so với container
+const CELL_H = 100 / ROWS; // % chiều cao mỗi mảnh so với container
 
 interface HeroImageGridProps {
   src: string;
-  alt?: string;
   className?: string;
 }
 
-export default function HeroImageGrid({ src, alt, className }: HeroImageGridProps) {
+export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
 
@@ -41,15 +41,36 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
 
     const cells = Array.from(root.querySelectorAll<HTMLElement>('.slice'));
 
-    // 1) Trạng thái ban đầu: các ô rải rác khắp nơi, xoay ngẫu nhiên
+    // 1) Trạng thái ban đầu: mỗi mảnh xuất phát từ rìa màn hình (ngoài viewport)
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
     cells.forEach((cell) => {
-      const randX = gsap.utils.random(-35, 35) * 18; // px
-      const randY = gsap.utils.random(-35, 35) * 18; // px
-      const rot = gsap.utils.random(-300, 300); // độ
-      gsap.set(cell, { x: randX, y: randY, rotation: rot, opacity: 0, scale: 0.5 });
+      // Chọn ngẫu nhiên 1 trong 4 cạnh màn hình, rải vị trí dọc theo cạnh đó
+      const side = Math.floor(gsap.utils.random(0, 4));
+      let fromX: number;
+      let fromY: number;
+      if (side === 0) {
+        // Trên
+        fromX = gsap.utils.random(-vw * 0.3, vw * 1.3);
+        fromY = -vh * 0.3 - gsap.utils.random(0, 250);
+      } else if (side === 1) {
+        // Dưới
+        fromX = gsap.utils.random(-vw * 0.3, vw * 1.3);
+        fromY = vh * 1.3 + gsap.utils.random(0, 250);
+      } else if (side === 2) {
+        // Trái
+        fromX = -vw * 0.3 - gsap.utils.random(0, 250);
+        fromY = gsap.utils.random(-vh * 0.3, vh * 1.3);
+      } else {
+        // Phải
+        fromX = vw * 1.3 + gsap.utils.random(0, 250);
+        fromY = gsap.utils.random(-vh * 0.3, vh * 1.3);
+      }
+      const rot = gsap.utils.random(-220, 220);
+      gsap.set(cell, { x: fromX, y: fromY, rotation: rot, opacity: 0 });
     });
 
-    // 2) ScrollTrigger: khi hero lọt vào viewport → các ô bay về vị trí grid
+    // 2) ScrollTrigger: khi hero lọt vào viewport → mảnh bay về vị trí grid
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: root,
@@ -57,14 +78,16 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
         toggleActions: 'play none none reverse',
       },
       onComplete: () => {
-        // 3) Sau khi ghép xong → vệt ánh bạc lướt ngang
+        // 3) Vệt sáng chạy chéo từ trên-xuống: một dải nghiêng 135°
+        // trượt từ góc trái-trên ra góc phải-dưới.
         gsap.fromTo(
           shine,
-          { xPercent: -130, opacity: 0 },
+          { x: -shine.offsetWidth * 1.6, y: -shine.offsetHeight, opacity: 0 },
           {
-            xPercent: 130,
+            x: shine.offsetWidth * 1.6 + root.offsetWidth,
+            y: shine.offsetHeight,
             opacity: 1,
-            duration: 1.1,
+            duration: 1.3,
             ease: 'power2.inOut',
             onComplete: () => gsap.set(shine, { opacity: 0 }),
           }
@@ -76,20 +99,19 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
       x: 0,
       y: 0,
       rotation: 0,
-      scale: 1,
       opacity: 1,
-      duration: 1.2,
+      duration: 1.6,
       ease: 'power3.out',
       stagger: {
-        each: 0.02,
+        each: 0.004,
         from: 'random',
       },
     });
 
-    // Fallback: nếu ScrollTrigger không kích hoạt trong 5s, tự play
+    // Fallback: nếu ScrollTrigger không kích hoạt trong 6s, tự play
     const fallback = setTimeout(() => {
       if (tl.progress() < 0.1) tl.play();
-    }, 5000);
+    }, 6000);
 
     return () => {
       clearTimeout(fallback);
@@ -101,20 +123,16 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
   const cells = [];
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
-      /*
-       * Sprite-sheet trimming: mỗi cell là một "cửa sổ" nhỏ, bên trong chứa
-       * toàn bộ ảnh được phóng to lên (COLS x ROWS) lần rồi dịch chuyển để
-       * hiển thị đúng lát cắt. Vì ảnh phóng đều theo cả 2 trục, các cell ghép
-       * lại khít thành ảnh hoàn chỉnh — KHÔNG bị méo, KHÔNG bị lệch.
-       */
-      const imgW = COLS * 100; // % so với cell width
-      const imgH = ROWS * 100; // % so với cell height
-      const offX = -(c * 100); // % so với cell width
-      const offY = -(r * 100); // % so với cell height
+      /* Sprite-sheet trimming: img phóng lên (COLS x ROWS) lần, dịch trái/top
+         theo cột/hàng để hiển thị đúng lát cắt — ghép khít, không méo. */
+      const imgW = COLS * 100; // % so với mảnh width
+      const imgH = ROWS * 100; // % so với mảnh height
+      const offX = -(c * 100); // % so với mảnh width
+      const offY = -(r * 100); // % so với mảnh height
       cells.push(
         <div
           key={`${r}-${c}`}
-          className="slice absolute overflow-hidden"
+          className="slice will-change-transform absolute overflow-hidden"
           style={{
             left: `${c * CELL_W}%`,
             top: `${r * CELL_H}%`,
@@ -125,7 +143,7 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
-            alt={alt ?? ''}
+            alt=""
             draggable={false}
             className="absolute block"
             style={{
@@ -147,14 +165,20 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
       className={`relative h-full w-full overflow-hidden ${className ?? ''}`}
     >
       {cells}
-      {/* Vệt ánh bạc lướt ngang khi ảnh hội tụ xong */}
+      {/* Vệt sáng chạy chéo từ trên xuống: dải nghiêng 135°, bắt đầu ngoài
+          góc trên-trái rồi trượt qua xuống góc phải-dưới */}
       <div
         ref={shineRef}
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-24 opacity-0"
+        className="pointer-events-none absolute left-0 top-0 opacity-0"
         style={{
+          width: 260,
+          height: '200%',
+          top: '-50%',
+          transform: 'rotate(135deg)',
+          transformOrigin: 'center',
           background:
-            'linear-gradient(105deg, transparent 0%, rgba(220,225,255,0.0) 15%, rgba(226,232,255,0.55) 45%, rgba(255,255,255,0.9) 50%, rgba(226,232,255,0.55) 55%, transparent 85%)',
+            'linear-gradient(90deg, transparent 0%, rgba(235,240,255,0.0) 30%, rgba(238,243,255,0.4) 45%, rgba(255,255,255,0.95) 50%, rgba(238,243,255,0.4) 55%, rgba(235,240,255,0.0) 70%, transparent 100%)',
           filter: 'blur(2px)',
           mixBlendMode: 'screen',
         }}
