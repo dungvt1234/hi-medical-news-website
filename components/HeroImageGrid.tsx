@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * HeroImageGrid — Hiệu ứng "hàng nghìn mảnh ảnh hội tụ"
  *
- * Chia ảnh thành lưới rất dày (COLS x ROWS ≈ hàng nghìn mảnh nhỏ, 30x38=1140).
+ * Chia ảnh thành lưới rất dày (COLS x ROWS ≈ 500 mảnh nhỏ, 20x25).
  * Mỗi mảnh là một "cửa sổ" chứa toàn bộ ảnh phóng lên (COLS x ROWS) lần rồi
  * dịch chuyển để hiển thị đúng lát cắt (kỹ thuật sprite-sheet trimming).
  * Vì ảnh phóng đều cả 2 trục, các mảnh ghép khít thành ảnh hoàn chỉnh —
@@ -20,8 +20,8 @@ gsap.registerPlugin(ScrollTrigger);
  * - Sau khi hội tụ xong: vệt sáng chạy CHÉO TỪ TRÊN-XUỐNG qua ảnh.
  */
 
-const COLS = 30;
-const ROWS = 38;
+const COLS = 20;
+const ROWS = 25;
 const CELL_W = 100 / COLS; // % chiều rộng mỗi mảnh so với container
 const CELL_H = 100 / ROWS; // % chiều cao mỗi mảnh so với container
 
