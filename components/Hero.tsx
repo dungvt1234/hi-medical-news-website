@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
+import HeroImageGrid from './HeroImageGrid';
 
 /**
  * Hero — Midnight Luxury Spa
@@ -106,12 +107,10 @@ export default function Hero() {
             className="arch-mask relative aspect-[4/5] w-full opacity-0 transition-opacity duration-[1500ms]"
             style={{ boxShadow: '0 30px 80px rgba(139, 95, 199, 0.30)' }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/hero-chuyen-gia-da-lieu.jpg"
-              alt="Chuyên gia da liễu tư vấn tại Hi Medical"
-              className="h-full w-full object-cover"
-            />
+            {/* Ảnh hội tụ từ nhiều mảnh nhỏ (hero image grid) */}
+            <div className="absolute inset-0">
+              <HeroImageGrid src="/images/hero-chuyen-gia-da-lieu.jpg" />
+            </div>
             {/* Overlay nhẹ */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
             {/* Badge */}
