@@ -9,27 +9,26 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * HeroImageGrid — Hiệu ứng "hàng nghìn mảnh ảnh hội tụ"
  *
- * Chia ảnh thành lưới ô nhỏ (cols x rows). Mỗi ô là một lát cắt của cùng
- * một ảnh lớn (dùng background-position để hiển thị đúng phần của nó).
+ * Chia ảnh thành lưới ô nhỏ (cols x rows). Mỗi ô hiển thị một lát cắt của
+ * cùng một ảnh lớn (dùng background-position để hiển thị đúng phần của nó)
+ * và được xếp đúng vị trí grid (left/top theo cột & hàng).
  *
- * Khi cuộn tới hero, các ô bắt đầu ở vị trí ngẫu nhiên rải khắp màn hình,
- * có góc xoay riêng, rồi cùng lúc bay về vị trí đúng → ghép thành ảnh
+ * Khi cuộn tới hero, các ô bắt đầu ở vị trí ngẫu nhiên rải khắp màn hình
+ * (translate + xoay), rồi cùng lúc bay về vị trí grid → ghép thành ảnh
  * hoàn chỉnh. Sau khi ghép xong, một vệt ánh bạc lướt ngang qua ảnh.
- *
- * Lưu ý: ảnh được truyền vào phải là absolute path (đường dẫn tĩnh),
- * vì mỗi ô dùng ảnh đó làm background.
  */
 
-const COLS = 10;
-const ROWS = 12;
+const COLS = 6;
+const ROWS = 8;
+const CELL_W = 100 / COLS; // % chiều rộng mỗi ô
+const CELL_H = 100 / ROWS; // % chiều cao mỗi ô
 
 interface HeroImageGridProps {
   src: string;
-  alt?: string;
   className?: string;
 }
 
-export default function HeroImageGrid({ src, alt, className }: HeroImageGridProps) {
+export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
 
@@ -42,17 +41,17 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
 
     // 1) Trạng thái ban đầu: các ô rải rác khắp nơi, xoay ngẫu nhiên
     cells.forEach((cell) => {
-      const randX = gsap.utils.random(-50, 50) * 12; // px
-      const randY = gsap.utils.random(-50, 50) * 12; // px
-      const rot = gsap.utils.random(-420, 420); // độ
-      gsap.set(cell, { x: randX, y: randY, rotation: rot, opacity: 0, scale: 0.6 });
+      const randX = gsap.utils.random(-40, 40) * 16; // px
+      const randY = gsap.utils.random(-40, 40) * 16; // px
+      const rot = gsap.utils.random(-360, 360); // độ
+      gsap.set(cell, { x: randX, y: randY, rotation: rot, opacity: 0, scale: 0.5 });
     });
 
-    // 2) ScrollTrigger: khi hero lọt vào viewport → các ô bay về vị trí gốc
+    // 2) ScrollTrigger: khi hero lọt vào viewport → các ô bay về vị trí grid
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: root,
-        start: 'top 80%',
+        start: 'top 85%',
         toggleActions: 'play none none reverse',
       },
       onComplete: () => {
@@ -77,7 +76,7 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
       rotation: 0,
       scale: 1,
       opacity: 1,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'power3.out',
       stagger: {
         each: 0.02,
@@ -85,8 +84,14 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
       },
     });
 
+    // Tăng độ tin cậy: nếu ScrollTrigger không kích hoạt trong 5s, tự play
+    const fallback = setTimeout(() => {
+      if (tl.progress() < 0.1) tl.play();
+    }, 5000);
+
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      clearTimeout(fallback);
+      setTimeout(() => tl.scrollTrigger && tl.scrollTrigger.kill(), 0);
       tl.kill();
     };
   }, []);
@@ -94,16 +99,18 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
   const cells = [];
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
-      const px = (c / (COLS - 1)) * 100;
-      const py = (r / (ROWS - 1)) * 100;
       cells.push(
         <div
           key={`${r}-${c}`}
-          className="slice absolute inset-0"
+          className="slice absolute"
           style={{
+            left: `${c * CELL_W}%`,
+            top: `${r * CELL_H}%`,
+            width: `${CELL_W}%`,
+            height: `${CELL_H}%`,
             backgroundImage: `url(${src})`,
             backgroundSize: `${COLS * 100}% ${ROWS * 100}%`,
-            backgroundPosition: `${px}% ${py}%`,
+            backgroundPosition: `${c * CELL_W}% ${r * CELL_H}%`,
             backgroundRepeat: 'no-repeat',
           }}
         />
@@ -114,7 +121,7 @@ export default function HeroImageGrid({ src, alt, className }: HeroImageGridProp
   return (
     <div
       ref={rootRef}
-      className={`relative aspect-[4/5] w-full overflow-hidden ${className ?? ''}`}
+      className={`relative h-full w-full overflow-hidden ${className ?? ''}`}
     >
       {cells}
       {/* Vệt ánh bạc lướt ngang khi ảnh hội tụ xong */}
