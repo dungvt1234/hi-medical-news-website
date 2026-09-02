@@ -9,13 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * HeroImageGrid — Hiệu ứng "hàng nghìn mảnh ảnh hội tụ"
  *
- * Chia ảnh thành lưới ô nhỏ (cols x rows). Mỗi ô hiển thị một lát cắt của
- * cùng một ảnh lớn (dùng background-position để hiển thị đúng phần của nó)
- * và được xếp đúng vị trí grid (left/top theo cột & hàng).
+ * Chia ảnh thành lưới ô nhỏ (cols x rows). Mỗi ô là một <img> cùng nguồn,
+ * dùng object-fit:cover + object-position để hiển thị đúng lát cắt của ảnh
+ * (giống cách chia ảnh thành mảng ô). Vì dùng object-fit:cover, các ô ghép
+ * khít thành ảnh hoàn chỉnh KHÔNG BỊ MÉO, không phụ thuộc tỷ lệ ảnh gốc.
  *
- * Khi cuộn tới hero, các ô bắt đầu ở vị trí ngẫu nhiên rải khắp màn hình
- * (translate + xoay), rồi cùng lúc bay về vị trí grid → ghép thành ảnh
- * hoàn chỉnh. Sau khi ghép xong, một vệt ánh bạc lướt ngang qua ảnh.
+ * Khi cuộn tới hero, các ô bắt đầu rải rác khắp màn hình (translate + xoay),
+ * rồi cùng lúc bay về vị trí grid → ghép thành ảnh. Sau khi xong, một vệt
+ * ánh bạc lướt ngang qua ảnh.
  */
 
 const COLS = 6;
@@ -25,10 +26,11 @@ const CELL_H = 100 / ROWS; // % chiều cao mỗi ô
 
 interface HeroImageGridProps {
   src: string;
+  alt?: string;
   className?: string;
 }
 
-export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
+export default function HeroImageGrid({ src, alt, className }: HeroImageGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
 
@@ -41,9 +43,9 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
 
     // 1) Trạng thái ban đầu: các ô rải rác khắp nơi, xoay ngẫu nhiên
     cells.forEach((cell) => {
-      const randX = gsap.utils.random(-40, 40) * 16; // px
-      const randY = gsap.utils.random(-40, 40) * 16; // px
-      const rot = gsap.utils.random(-360, 360); // độ
+      const randX = gsap.utils.random(-35, 35) * 18; // px
+      const randY = gsap.utils.random(-35, 35) * 18; // px
+      const rot = gsap.utils.random(-300, 300); // độ
       gsap.set(cell, { x: randX, y: randY, rotation: rot, opacity: 0, scale: 0.5 });
     });
 
@@ -84,7 +86,7 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
       },
     });
 
-    // Tăng độ tin cậy: nếu ScrollTrigger không kích hoạt trong 5s, tự play
+    // Fallback: nếu ScrollTrigger không kích hoạt trong 5s, tự play
     const fallback = setTimeout(() => {
       if (tl.progress() < 0.1) tl.play();
     }, 5000);
@@ -99,21 +101,42 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
   const cells = [];
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
+      /*
+       * Sprite-sheet trimming: mỗi cell là một "cửa sổ" nhỏ, bên trong chứa
+       * toàn bộ ảnh được phóng to lên (COLS x ROWS) lần rồi dịch chuyển để
+       * hiển thị đúng lát cắt. Vì ảnh phóng đều theo cả 2 trục, các cell ghép
+       * lại khít thành ảnh hoàn chỉnh — KHÔNG bị méo, KHÔNG bị lệch.
+       */
+      const imgW = COLS * 100; // % so với cell width
+      const imgH = ROWS * 100; // % so với cell height
+      const offX = -(c * 100); // % so với cell width
+      const offY = -(r * 100); // % so với cell height
       cells.push(
         <div
           key={`${r}-${c}`}
-          className="slice absolute"
+          className="slice absolute overflow-hidden"
           style={{
             left: `${c * CELL_W}%`,
             top: `${r * CELL_H}%`,
             width: `${CELL_W}%`,
             height: `${CELL_H}%`,
-            backgroundImage: `url(${src})`,
-            backgroundSize: `${COLS * 100}% ${ROWS * 100}%`,
-            backgroundPosition: `${c * CELL_W}% ${r * CELL_H}%`,
-            backgroundRepeat: 'no-repeat',
           }}
-        />
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt ?? ''}
+            draggable={false}
+            className="absolute block"
+            style={{
+              left: `${offX}%`,
+              top: `${offY}%`,
+              width: `${imgW}%`,
+              height: `${imgH}%`,
+              maxWidth: 'none',
+            }}
+          />
+        </div>
       );
     }
   }
