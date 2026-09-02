@@ -45,11 +45,11 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
     // rồi sẽ thu nhỏ dần về đúng vị trí → ghép thành ảnh (cảm giác camera lùi xa).
     cells.forEach((cell) => {
       // Ngẫu nhiên mức phóng đại ban đầu (mảnh càng to khi càng "gần mắt")
-      const fromScale = gsap.utils.random(3, 6.5);
+      const fromScale = gsap.utils.random(6, 11);
       // Dịch nhẹ + xoay nhẹ quanh vị trí gốc tạo cảm giác lơ lửng trong không gian
-      const randX = gsap.utils.random(-60, 60);
-      const randY = gsap.utils.random(-60, 60);
-      const rot = gsap.utils.random(-40, 40);
+      const randX = gsap.utils.random(-120, 120);
+      const randY = gsap.utils.random(-120, 120);
+      const rot = gsap.utils.random(-70, 70);
       gsap.set(cell, {
         x: randX,
         y: randY,
@@ -60,10 +60,11 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
     });
 
     // 2) ScrollTrigger: khi hero lọt vào viewport → các mảnh thu nhỏ về đúng vị trí
+    // (mỗi lần cuộn vào hero là chạy lại hiệu ứng)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: root,
-        start: 'top 85%',
+        start: 'top 90%',
         toggleActions: 'play none none reverse',
       },
       onComplete: () => {
@@ -90,10 +91,10 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
       rotation: 0,
       scale: 1,
       opacity: 1,
-      duration: 1.6,
+      duration: 3,
       ease: 'power3.out',
       stagger: {
-        each: 0.004,
+        each: 0.006,
         from: 'center',
         grid: [ROWS, COLS],
       },
