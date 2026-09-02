@@ -3,11 +3,19 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Percent } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Reveal from './Reveal';
 
+gsap.registerPlugin(ScrollTrigger);
+
 /**
- * Signature Treatments — 4 cards dịch vụ
- * Style: dark navy, large image, minimal typography, hover zoom nhẹ
+ * Signature Treatments — horizontal scroll-driven 3D carousel
+ *
+ * - Cuộn dọc → section bị PIN, dải 6 card TRƯỢT NGANG theo cuộn (scrub).
+ * - Container có perspective; mỗi card có rotateY + translateZ + scale + blur
+ *   + opacity thay đổi theo vị trí so với trung tâm viewport (coverflow depth).
+ * - Card ở giữa: to, rõ, nổi bật. Card xa: lùi sâu, mờ, nhỏ lại (z-depth fading).
  */
 const SERVICES = [
   {
@@ -56,35 +64,77 @@ const SERVICES = [
 ];
 
 export default function Treatments() {
-  const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            el.querySelectorAll('.reveal').forEach((n, i) => {
-              setTimeout(() => n.classList.add('is-visible'), i * 120);
-            });
-            obs.disconnect();
-          }
+    const section = triggerRef.current;
+    const track = trackRef.current;
+    if (!section || !track) return;
+
+    const cards = Array.from(track.querySelectorAll<HTMLElement>('.t-card'));
+
+    // Đo theo từng lần refresh để responsive chuẩn
+    const getScroll = () => {
+      const total = track.scrollWidth - window.innerWidth;
+      return total > 0 ? total : 0;
+    };
+
+    const updateDepth = () => {
+      const center = window.innerWidth / 2;
+      const p = gsap.getProperty(track, 'x') as number;
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const diff = (cardCenter - center) / (window.innerWidth * 0.55); // chuẩn hoá
+        const abs = Math.min(Math.abs(diff), 1.6);
+        const rotY = diff * -30;
+        const tz = -abs * 320;
+        const scale = 1 - abs * 0.22;
+        const blur = abs * 2.5;
+        const opacity = 1 - abs * 0.6;
+        gsap.set(card, {
+          rotationY: rotY,
+          z: tz,
+          scale: Math.max(scale, 0.66),
+          opacity: Math.max(opacity, 0.35),
+          filter: `blur(${blur.toFixed(1)}px)`,
         });
-      },
-      { threshold: 0.15 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
+      });
+      void p;
+    };
+
+    const ctx = gsap.context(() => {
+      gsap.to(track, {
+        x: () => -getScroll(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: () => '+=' + Math.max(getScroll(), 1200),
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: updateDepth,
+        },
+      });
+    }, section);
+
+    // Cập nhật depth ban đầu
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+    updateDepth();
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="treatments" className="bg-night py-24 sm:py-32">
-      <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Heading */}
+    <section id="treatments" className="relative bg-night">
+      {/* Heading */}
+      <div className="mx-auto max-w-7xl px-5 pt-24 sm:px-8 sm:pt-32">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <p className="eyebrow reveal mb-5 flex items-center gap-3">
+            <p className="eyebrow mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-gold" />
               Signature Treatments
             </p>
@@ -96,26 +146,32 @@ export default function Treatments() {
           </div>
           <a
             href="#contact"
-            className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
           >
             Xem tất cả liệu trình
           </a>
         </div>
+      </div>
 
-        {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Horizontal 3D carousel (pinned) */}
+      <div
+        ref={triggerRef}
+        className="relative flex h-[90vh] items-center overflow-hidden"
+        style={{ perspective: '1400px' }}
+      >
+        <div ref={trackRef} className="flex w-max items-stretch gap-6 pl-[40vw] pr-[12vw] will-change-transform">
           {SERVICES.map((t, i) => (
             <Link
               key={t.slug}
               href={`/dich-vu/${t.slug}`}
-              className={`reveal group block overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow ${
+              className={`t-card group relative block w-[78vw] shrink-0 rounded-4xl border transition-[border-color,box-shadow] duration-500 will-change-transform sm:w-[60vw] lg:w-[38vw] ${
                 t.special
-                  ? 'relative border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
+                  ? 'border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
                   : 'border-luxury bg-night-2 hover:border-rose/40'
-              } ${i % 3 === 1 ? 'lg:mt-10' : ''}`}
+              }`}
             >
               {/* Ảnh */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-t-4xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={t.img}
@@ -124,11 +180,9 @@ export default function Treatments() {
                   className="img-zoom h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-transparent to-transparent" />
-                {/* Số thứ tự */}
-                <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80">
+                <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80 drop-shadow">
                   0{i + 1}
                 </span>
-                {/* Badge ưu đãi nổi bật */}
                 {t.special && (
                   <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#302642] shadow-glow">
                     <Percent className="h-3.5 w-3.5" />
