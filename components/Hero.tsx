@@ -48,6 +48,15 @@ export default function Hero() {
         <div className="absolute bottom-[22%] left-[45%] h-1 w-1 rounded-full bg-gold/60" />
       </div>
 
+      {/* Đàn mảnh ảnh phủ toàn hero: rải khắp màn hình rồi bị khung ảnh hút về,
+          hội tụ thành ảnh chuyên gia (hình chữ nhật) tại vị trí khung bên phải */}
+      <div className="absolute inset-0 z-[5]">
+        <HeroImageGrid
+          src="/images/hero-chuyen-gia-da-lieu.jpg"
+          archRef={imgRef}
+        />
+      </div>
+
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pt-24">
         {/* ---- Left: text ---- */}
         <div className="text-center lg:text-left">
@@ -104,15 +113,11 @@ export default function Hero() {
           />
           <div
             ref={imgRef}
-            className="arch-mask relative aspect-[4/5] w-full opacity-0 transition-opacity duration-[1500ms]"
+            className="relative aspect-[4/5] w-full rounded-[28px]"
             style={{ boxShadow: '0 30px 80px rgba(139, 95, 199, 0.30)' }}
           >
-            {/* Ảnh hội tụ từ nhiều mảnh nhỏ (hero image grid) */}
-            <div className="absolute inset-0">
-              <HeroImageGrid src="/images/hero-chuyen-gia-da-lieu.jpg" />
-            </div>
-            {/* Overlay nhẹ */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
+            {/* Overlay nhẹ tạo chiều sâu trên ảnh đã hội tụ */}
+            <div className="absolute inset-0 rounded-[28px] bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
             {/* Badge */}
             <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/40 bg-night/50 p-4 backdrop-blur-md">
               <p className="font-heading text-lg italic text-gold">Từ 2016</p>

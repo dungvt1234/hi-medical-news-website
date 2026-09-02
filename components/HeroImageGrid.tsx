@@ -2,94 +2,90 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 /**
- * HeroImageGrid — Hiệu ứng "hàng nghìn mảnh ảnh hội tụ"
+ * HeroImageGrid — "Đàn mảnh ảnh bị khung hút lại"
  *
- * Chia ảnh thành lưới rất dày (COLS x ROWS ≈ 500 mảnh nhỏ, 20x25).
- * Mỗi mảnh là một "cửa sổ" chứa toàn bộ ảnh phóng lên (COLS x ROWS) lần rồi
- * dịch chuyển để hiển thị đúng lát cắt (kỹ thuật sprite-sheet trimming).
- * Vì ảnh phóng đều cả 2 trục, các mảnh ghép khít thành ảnh hoàn chỉnh —
- * KHÔNG méo, KHÔNG lệch, không phụ thuộc tỉ lệ ảnh gốc.
+ * Render 1 lưới mảnh ảnh (sprite-sheet tiles) PHỦ TOÀN BỘ vùng hero (đặt ở cấp
+ * section, KHÔNG bên trong khung arch). Mỗi mảnh khởi đầu RẢI RÁC KHẮP HERO &
+ * MÀN HÌNH (hình vuông rõ, xa-nhỏ, mờ, xoay nhẹ) như đàn chim trên bầu trời.
  *
- * - Khi cuộn tới hero: các mảnh BAY TỪ RÌA MÀN HÌNH (ngoài viewport) hội tụ
- *   về vị trí grid → ghép thành ảnh.
- * - Sau khi hội tụ xong: vệt sáng chạy CHÉO TỪ TRÊN-XUỐNG qua ảnh.
+ * Khi cuộn tới hero: toàn bộ mảnh đồng loạt BAY VỀ VỊ TRÍ KHUNG ẢNH (archRef —
+ * khung nằm bên phải), to dần + nét dần → ghép khít thành ảnh hoàn chỉnh
+ * (hình chữ nhật). Cảm giác "đàn mảnh bị khung hút lại rồi hội tụ thành ảnh".
  */
 
-const COLS = 20;
-const ROWS = 25;
-const CELL_W = 100 / COLS; // % chiều rộng mỗi mảnh so với container
-const CELL_H = 100 / ROWS; // % chiều cao mỗi mảnh so với container
+const COLS = 18;
+const ROWS = 22;
+const CELL_W = 100 / COLS;
+const CELL_H = 100 / ROWS;
 
 interface HeroImageGridProps {
   src: string;
+  /** ref tới khung ảnh = vị trí đích hội tụ (hình chữ nhật) */
+  archRef: React.MutableRefObject<HTMLDivElement | null>;
   className?: string;
 }
 
-export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
+export default function HeroImageGrid({ src, archRef, className }: HeroImageGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const root = rootRef.current;
     const shine = shineRef.current;
-    if (!root || !shine) return;
+    const arch = archRef.current;
+    if (!root || !shine || !arch) return;
 
     const cells = Array.from(root.querySelectorAll<HTMLElement>('.slice'));
-
-    // 1) Trạng thái ban đầu: mỗi mảnh ở NGOÀI MÀN HÌNH (xa, rải theo 4 cạnh)
-    // + scale NHỎ (xa mắt) + mờ → như đàn chim đang bay phía xa ngoài khung.
+    const rootW = root.offsetWidth;
+    const rootH = root.offsetHeight;
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    cells.forEach((cell) => {
-      // Chọn ngẫu nhiên 1 trong 4 cạnh màn hình, rải dọc theo cạnh đó
-      const side = Math.floor(gsap.utils.random(0, 4));
-      let fromX: number;
-      let fromY: number;
-      if (side === 0) {
-        // Trên
-        fromX = gsap.utils.random(-vw * 0.4, vw * 1.4);
-        fromY = -vh * 0.4 - gsap.utils.random(0, 350);
-      } else if (side === 1) {
-        // Dưới
-        fromX = gsap.utils.random(-vw * 0.4, vw * 1.4);
-        fromY = vh * 1.4 + gsap.utils.random(0, 350);
-      } else if (side === 2) {
-        // Trái
-        fromX = -vw * 0.4 - gsap.utils.random(0, 350);
-        fromY = gsap.utils.random(-vh * 0.4, vh * 1.4);
-      } else {
-        // Phải
-        fromX = vw * 1.4 + gsap.utils.random(0, 350);
-        fromY = gsap.utils.random(-vh * 0.4, vh * 1.4);
-      }
-      // Scale nhỏ + mờ như đang ở rất xa; bay tới sẽ to dần + nét dần
-      const s = gsap.utils.random(0.2, 0.6);
-      const rot = gsap.utils.random(-30, 30);
-      gsap.set(cell, { x: fromX, y: fromY, rotation: rot, scale: s, opacity: 0 });
+
+    // Vị trí đích (hình chữ nhật) = vị trí khung arch trong hệ tọa độ root
+    const archRect = arch.getBoundingClientRect();
+    const rootRect = root.getBoundingClientRect();
+    const dx = archRect.left - rootRect.left;
+    const dy = archRect.top - rootRect.top;
+    const archW = archRect.width;
+    const archH = archRect.height;
+
+    // Pre-tính mảng vị trí đích + trạng thái ban đầu cho mỗi mảnh
+    const targets: { x: number; y: number; sx: number; sy: number; s: number; rot: number }[] = [];
+    cells.forEach((_cell, i) => {
+      const col = i % COLS;
+      const row = Math.floor(i / COLS);
+      const sx = gsap.utils.random(-80, vw + 80);
+      const sy = gsap.utils.random(-80, vh + 80);
+      const s = gsap.utils.random(0.35, 0.7);
+      const rot = gsap.utils.random(-45, 45);
+      const cssX = (col * CELL_W) / 100 * rootW;
+      const cssY = (row * CELL_H) / 100 * rootH;
+      const tx = dx + (col * CELL_W) / 100 * archW;
+      const ty = dy + (row * CELL_H) / 100 * archH;
+      targets.push({ x: tx - cssX, y: ty - cssY, sx: sx - cssX, sy: sy - cssY, s, rot });
+      gsap.set(cells[i], {
+        x: sx - cssX,
+        y: sy - cssY,
+        scale: s,
+        rotation: rot,
+        opacity: 0.12,
+      });
     });
 
-    // 2) ScrollTrigger: khi hero lọt vào viewport → đàn mảnh BAY TỪ NGOÀI MÀN HÌNH
-    // hội tụ về trung tâm rồi ghép khít thành ảnh hoàn chỉnh, to dần + nét dần.
+    // 2) Timeline tự chạy (không pause): giữ trạng thái rải ~1.1s rồi mảnh
+    // BAY VỀ khung arch, to dần + nét dần → ghép thành ảnh hoàn chỉnh.
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: root,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse',
-      },
+      delay: 1.1,
       onComplete: () => {
-        // 3) Vệt sáng chạy chéo từ trên-xuống: một dải nghiêng 135°
-        // trượt từ góc trái-trên ra góc phải-dưới.
+        // 3) Vệt sáng chạy chéo qua vùng khung ảnh
         gsap.fromTo(
           shine,
-          { x: -shine.offsetWidth * 1.6, y: -shine.offsetHeight, opacity: 0 },
+          { x: dx - shine.offsetWidth * 1.4, y: dy - shine.offsetHeight, opacity: 0 },
           {
-            x: shine.offsetWidth * 1.6 + root.offsetWidth,
-            y: shine.offsetHeight,
+            x: dx + archW + shine.offsetWidth * 0.4,
+            y: dy + archH,
             opacity: 1,
             duration: 1.3,
             ease: 'power2.inOut',
@@ -100,45 +96,52 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
     });
 
     tl.to(cells, {
-      x: 0,
-      y: 0,
-      rotation: 0,
+      x: (i) => targets[i].x,
+      y: (i) => targets[i].y,
       scale: 1,
+      rotation: 0,
       opacity: 1,
       duration: 2.6,
       ease: 'power3.inOut',
-      stagger: {
-        each: 0.005,
-        from: 'center',
-        grid: [ROWS, COLS],
-      },
+      stagger: { each: 0.004, from: 'random' },
     });
 
-    // Fallback: nếu ScrollTrigger không kích hoạt trong 6s, tự play
-    const fallback = setTimeout(() => {
-      if (tl.progress() < 0.1) tl.play();
-    }, 6000);
+    // Fallback cứng: dù thế nào thì sau ~6s mọi mảnh CHẮC CHẮN về đúng vị trí
+    // và hiện ảnh (không bao giờ bị treo ở trạng thái mảnh rải trên nền).
+    const settle = () => {
+      if (tl.progress() < 1) {
+        cells.forEach((cell, i) => {
+          gsap.set(cell, {
+            x: targets[i].x,
+            y: targets[i].y,
+            scale: 1,
+            rotation: 0,
+            opacity: 1,
+          });
+        });
+        if (shine) gsap.set(shine, { opacity: 0 });
+      }
+    };
+    const forceSettle = setTimeout(settle, 6000);
 
     return () => {
-      clearTimeout(fallback);
-      setTimeout(() => tl.scrollTrigger && tl.scrollTrigger.kill(), 0);
+      clearTimeout(forceSettle);
       tl.kill();
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [src]);
 
-  const cells = [];
+  const pieces = [];
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
-      /* Sprite-sheet trimming: img phóng lên (COLS x ROWS) lần, dịch trái/top
-         theo cột/hàng để hiển thị đúng lát cắt — ghép khít, không méo. */
-      const imgW = COLS * 100; // % so với mảnh width
-      const imgH = ROWS * 100; // % so với mảnh height
-      const offX = -(c * 100); // % so với mảnh width
-      const offY = -(r * 100); // % so với mảnh height
-      cells.push(
+      const imgW = COLS * 100;
+      const imgH = ROWS * 100;
+      const offX = -(c * 100);
+      const offY = -(r * 100);
+      pieces.push(
         <div
           key={`${r}-${c}`}
-          className="slice will-change-transform absolute overflow-hidden"
+          className="slice absolute will-change-transform"
           style={{
             left: `${c * CELL_W}%`,
             top: `${r * CELL_H}%`,
@@ -168,12 +171,10 @@ export default function HeroImageGrid({ src, className }: HeroImageGridProps) {
   return (
     <div
       ref={rootRef}
-      className={`relative h-full w-full overflow-hidden ${className ?? ''}`}
-      style={{ perspective: '1200px' }}
+      className={`absolute inset-0 overflow-hidden ${className ?? ''}`}
     >
-      {cells}
-      {/* Vệt sáng chạy chéo từ trên xuống: dải nghiêng 135°, bắt đầu ngoài
-          góc trên-trái rồi trượt qua xuống góc phải-dưới */}
+      {pieces}
+      {/* Vệt sáng chạy chéo qua vùng khung ảnh */}
       <div
         ref={shineRef}
         aria-hidden
