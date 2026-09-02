@@ -88,16 +88,16 @@ export default function Treatments() {
         const cardCenter = rect.left + rect.width / 2;
         const diff = (cardCenter - center) / (window.innerWidth * 0.55); // chuẩn hoá
         const abs = Math.min(Math.abs(diff), 1.6);
-        const rotY = diff * -30;
-        const tz = -abs * 320;
-        const scale = 1 - abs * 0.22;
-        const blur = abs * 2.5;
-        const opacity = 1 - abs * 0.6;
+        const rotY = diff * -55;
+        const tz = -abs * 420;
+        const scale = 1 - abs * 0.35;
+        const blur = abs * 3;
+        const opacity = 1 - abs * 0.7;
         gsap.set(card, {
           rotationY: rotY,
           z: tz,
-          scale: Math.max(scale, 0.66),
-          opacity: Math.max(opacity, 0.35),
+          scale: Math.max(scale, 0.6),
+          opacity: Math.max(opacity, 0.3),
           filter: `blur(${blur.toFixed(1)}px)`,
         });
       });
