@@ -6,50 +6,50 @@ import { Percent } from 'lucide-react';
 import Reveal from './Reveal';
 
 /**
- * Signature Treatments ΓÇö 4 cards dß╗ïch vß╗Ñ
- * Style: dark navy, large image, minimal typography, hover zoom nhß║╣
+ * Signature Treatments — 6 cards dịch vụ
+ * Style: dark navy, large image, minimal typography, hover zoom nhẹ
  */
 const SERVICES = [
   {
     slug: 'triet-long-cong-nghe-cao',
-    name: 'Triß╗çt l├┤ng c├┤ng nghß╗ç cao',
+    name: 'Triệt lông công nghệ cao',
     en: 'SMART OPT IDPL DELUXE',
-    desc: 'N├ích, tay, ch├ón, mß║╖t, bikini, to├án th├ón ΓÇö triß╗çt l├┤ng an to├án, ├¬m ├íi, hiß╗çu quß║ú l├óu d├ái.',
+    desc: 'Nách, tay, chân, mặt, bikini, toàn thân — triệt lông an toàn, êm ái, hiệu quả lâu dài.',
     img: '/images/triet-long-cong-nghe-cao.jpg',
   },
   {
     slug: 'dieu-tri-da-chuyen-sau',
-    name: 'Hß╗ù trß╗ú cß║úi thiß╗çn c├íc vß║Ñn ─æß╗ü da',
+    name: 'Hỗ trợ cải thiện các vấn đề da',
     en: 'Acne & Pigmentation',
-    desc: 'Mß╗Ñn, n├ím, th├óm, sß║╣o, quß║ºng th├óm mß║»t ΓÇö liß╗çu tr├¼nh an to├án vß╗¢i c├┤ng nghß╗ç laser & IPL hiß╗çn ─æß║íi.',
+    desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — liệu trình an toàn với công nghệ laser & IPL hiện đại.',
     img: '/images/dieu-tri-da-chuyen-sau.jpg',
   },
   {
     slug: 'cham-soc-da',
-    name: 'Ch─âm s├│c da',
+    name: 'Chăm sóc da',
     en: 'Luxury Skincare',
-    desc: 'L├ám sß║ích s├óu, d╞░ß╗íng ß║⌐m phß╗Ñc hß╗ôi, ─æß║»p mß║╖t nß║í v├á ch─âm s├│c da to├án th├ón.',
+    desc: 'Làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ và chăm sóc da toàn thân.',
     img: '/images/cham-soc-da.jpg',
   },
   {
     slug: 'tre-hoa-nang-co',
-    name: 'Trß║╗ h├│a & n├óng c╞í',
+    name: 'Trẻ hóa & nâng cơ',
     en: 'Rejuvenation',
-    desc: 'IPL, laser, Micro needle shoot ΓÇö gi├║p da s─ân chß║»c, t╞░╞íi trß║╗ h╞ín m├á kh├┤ng cß║ºn phß║½u thuß║¡t.',
+    desc: 'IPL, laser, Micro needle shoot — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
     img: '/images/tre-hoa-nang-co.jpg',
   },
   {
     slug: 'massage-thu-gian',
-    name: 'D╞░ß╗íng sinh thß║úo d╞░ß╗úc',
+    name: 'Dưỡng sinh thảo dược',
     en: 'Massage',
-    desc: 'Giß║úi tß╗Åa c─âng thß║│ng, l├ám dß╗ïu c╞í thß╗â v├á phß╗Ñc hß╗ôi n─âng l╞░ß╗úng sau nhß╗»ng ng├áy d├ái mß╗çt mß╗Åi.',
+    desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
     img: '/images/duong-sinh-thao-moc.jpg',
   },
   {
     slug: 'combo-uu-dai',
-    name: 'Combo ╞░u ─æ├úi',
+    name: 'Combo ưu đãi',
     en: 'Best Value',
-    desc: 'G├│i combo ch─âm s├│c to├án diß╗çn vß╗¢i mß╗⌐c gi├í ╞░u ─æ├úi hß║Ñp dß║½n ΓÇö d├ánh ri├¬ng cho kh├ích ─æß║╖t lß╗ïch online.',
+    desc: 'Gói combo chăm sóc toàn diện với mức giá ưu đãi hấp dẫn — dành riêng cho khách đặt lịch online.',
     img: '/images/combo-uu-dai.jpg',
     special: true,
   },
@@ -89,20 +89,20 @@ export default function Treatments() {
               Signature Treatments
             </p>
             <Reveal as="h2" className="font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
-              Liß╗çu tr├¼nh tuyß╗ân chß╗ìn cho
+              Liệu trình tuyển chọn cho
               <br />
-              <span className="italic text-rose-deep">mß╗ìi vß║╗ ─æß║╣p.</span>
+              <span className="italic text-rose-deep">mọi vẻ đẹp.</span>
             </Reveal>
           </div>
           <a
             href="#contact"
             className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
           >
-            Xem tß║Ñt cß║ú liß╗çu tr├¼nh
+            Xem tất cả liệu trình
           </a>
         </div>
 
-        {/* Grid 6 cards dß╗ïch vß╗Ñ ΓÇö combo ╞░u ─æ├úi nß╗òi bß║¡t */}
+        {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((t, i) => (
             <Link
@@ -114,7 +114,7 @@ export default function Treatments() {
                   : 'border-luxury bg-night-2 hover:border-rose/40'
               } ${i % 3 === 1 ? 'lg:mt-10' : ''}`}
             >
-              {/* ß║ónh */}
+              {/* ảnh */}
               <div className="relative aspect-[3/4] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -124,20 +124,20 @@ export default function Treatments() {
                   className="img-zoom h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-transparent to-transparent" />
-                {/* Sß╗æ thß╗⌐ tß╗▒ */}
+                {/* Số thứ tự */}
                 <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80">
                   0{i + 1}
                 </span>
-                {/* Badge ╞░u ─æ├úi nß╗òi bß║¡t */}
+                {/* Badge ưu đãi nổi bật */}
                 {t.special && (
                   <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#302642] shadow-glow">
                     <Percent className="h-3.5 w-3.5" />
-                    ╞»u ─æ├úi
+                    Ưu đãi
                   </span>
                 )}
               </div>
 
-              {/* Nß╗Öi dung */}
+              {/* Nội dung */}
               <div className="p-7">
                 <h3
                   className={`font-heading text-2xl font-medium transition-colors duration-500 ${
@@ -167,7 +167,7 @@ export default function Treatments() {
                     t.special ? 'text-gold' : 'text-rose-deep/80'
                   }`}
                 >
-                  Kh├ím ph├í <span aria-hidden>ΓåÆ</span>
+                  Khám phá <span aria-hidden>→</span>
                 </span>
               </div>
             </Link>
