@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import { Sparkles } from 'lucide-react';
-import HeroImageGrid from './HeroImageGrid';
 
 /**
  * Hero — Midnight Luxury Spa
@@ -48,19 +47,19 @@ export default function Hero() {
         <div className="absolute bottom-[22%] left-[45%] h-1 w-1 rounded-full bg-gold/60" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pt-24">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-5 pb-16 pt-24 sm:px-8 sm:pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pt-24 lg:pb-20">
         {/* ---- Left: text ---- */}
-        <div className="text-center lg:text-left">
-          <p className="eyebrow mb-6 flex items-center justify-center gap-3 lg:justify-start !text-white/90">
+        <div className="order-2 text-center lg:order-1 lg:text-left">
+          <p className="eyebrow mb-5 flex items-center justify-center gap-3 lg:justify-start !text-white/90">
             <span className="h-px w-10 bg-gold" />
             Hi Medical Skincare &amp; Beauty
           </p>
 
-          <h1 className="font-heading text-5xl font-light leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
             <img
               src="/images/moon.png"
               alt="moon"
-              className="mr-3 inline-block h-14 w-14 align-middle sm:h-16 sm:w-16"
+              className="mr-2 inline-block h-11 w-11 align-middle sm:h-16 sm:w-16 sm:mr-3"
             />
             Moonlight,
             <br />
@@ -69,54 +68,58 @@ export default function Hero() {
             a touch of <span className="italic text-gold">beauty.</span>
           </h1>
 
-          <p className="mx-auto mt-7 max-w-md text-base font-light leading-relaxed text-white/85 lg:mx-0">
+          <p className="mx-auto mt-6 max-w-md text-sm font-light leading-relaxed text-white/85 sm:text-base lg:mx-0">
             Bước vào thế giới tĩnh lặng dưới ánh trăng — nơi làn da được chăm sóc,
             tâm trí được thư giãn và vẻ đẹp tự nhiên được đánh thức.
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
               Đặt lịch ngay
             </a>
             <a
               href="#treatments"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-500 hover:border-gold hover:text-gold sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-500 hover:border-gold hover:text-gold sm:w-auto"
             >
               Xem liệu trình
             </a>
           </div>
 
-          <p className="mt-10 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-white/75 lg:justify-start">
+          <p className="mt-8 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-white/75 sm:mt-10 lg:justify-start">
             <Sparkles className="h-4 w-4 text-gold" />
             MỞ CỬA HÀNG NGÀY 9:00 — 18:00
           </p>
         </div>
 
         {/* ---- Right: arched image ---- */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div className="order-1 relative mx-auto w-full max-w-xs sm:max-w-md lg:order-2 lg:max-w-none">
           {/* Glow phía sau ảnh */}
           <div
             aria-hidden
-            className="absolute -inset-6 rounded-[999px_999px_48px_48px] bg-white/15 blur-3xl"
+            className="absolute -inset-4 rounded-[999px_999px_48px_48px] bg-white/15 blur-3xl lg:-inset-6"
           />
           <div
             ref={imgRef}
             className="arch-mask relative aspect-[4/5] w-full opacity-0 transition-opacity duration-[1500ms]"
             style={{ boxShadow: '0 30px 80px rgba(139, 95, 199, 0.30)' }}
           >
-            {/* Ảnh hội tụ từ nhiều mảnh nhỏ (hero image grid) */}
-            <div className="absolute inset-0">
-              <HeroImageGrid src="/images/hero-chuyen-gia-da-lieu.jpg" />
-            </div>
+            {/* Ảnh đơn giản (bỏ hiệu ứng mảnh hội tụ) */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/hero-chuyen-gia-da-lieu.jpg"
+              alt="Chuyên gia da liễu Hi Medical"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="eager"
+            />
             {/* Overlay nhẹ */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#302642]/30 via-transparent to-transparent" />
             {/* Badge */}
-            <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/40 bg-night/50 p-4 backdrop-blur-md">
-              <p className="font-heading text-lg italic text-gold">Từ 2016</p>
-              <p className="mt-1 text-xs tracking-wide text-white/85">
+            <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/40 bg-night/50 p-3 backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6 sm:p-4">
+              <p className="font-heading text-base italic text-gold sm:text-lg">Từ 2016</p>
+              <p className="mt-0.5 text-xs tracking-wide text-white/85 sm:mt-1">
                 Chuyên gia da liễu · Làm đẹp công nghệ cao
               </p>
             </div>
