@@ -62,6 +62,33 @@ const MENU: MenuItem[] = [
   },
 ];
 
+// ---------- Label dài: marquee chạy liên tục ----------
+function MarqueeText({ text }: { text: string }) {
+  return (
+    <span className="relative flex w-full items-center overflow-hidden">
+      <span
+        className="flex w-max shrink-0 items-center motion-reduce:w-auto motion-reduce:overflow-visible"
+        style={{ animation: 'nav-marquee 10s linear infinite' }}
+      >
+        <span className="whitespace-nowrap pr-10">{text}</span>
+        <span className="whitespace-nowrap pr-10" aria-hidden>
+          {text}
+        </span>
+      </span>
+      <style jsx>{`
+        @keyframes nav-marquee {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+    </span>
+  );
+}
+
 // ---------- Dropdown desktop ----------
 function NavItem({ item }: { item: MenuItem }) {
   const [open, setOpen] = useState(false);
@@ -107,7 +134,7 @@ function NavItem({ item }: { item: MenuItem }) {
                 className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-brand-50 hover:text-brand-600"
               >
                 {c.icon && <span className="text-gold-dark">{c.icon}</span>}
-                {c.label}
+                {c.label.length > 40 ? <MarqueeText text={c.label} /> : c.label}
               </Link>
             ))}
           </div>
@@ -302,7 +329,7 @@ export default function Header() {
                       onClick={() => setMobileOpen(false)}
                       className="block rounded-lg px-4 py-2.5 text-sm text-ink-light hover:bg-brand-50 hover:text-brand-600"
                     >
-                      {c.label}
+                      {c.label.length > 40 ? <MarqueeText text={c.label} /> : c.label}
                     </Link>
                   ))}
                 </div>
