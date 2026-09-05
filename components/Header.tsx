@@ -55,7 +55,7 @@ const MENU: MenuItem[] = [
     label: 'Tin tức',
     href: '/tin-tuc',
     children: [
-      { label: 'Báo chí nói về chúng tôi', href: '/tin-tuc/bao-chi' },
+      { label: 'ĐÓN NHỊP XU HƯỚNG LÀM ĐẸP TOÀN CẦU – CHỌN LỌC ĐỂ PHÙ HỢP VỚI NGƯỜI VIỆT', href: '/tin-tuc/bao-chi' },
       { label: 'Chương trình khuyến mãi', href: '/tin-tuc/khuyen-mai' },
       { label: 'Sự kiện', href: '/tin-tuc/su-kien' },
     ],

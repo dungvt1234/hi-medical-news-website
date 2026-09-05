@@ -25,7 +25,7 @@ export type Article = {
 // Danh mục tabs (khớp với CategoryBar)
 export const CATEGORIES = [
   { key: 'all', label: 'Tất cả' },
-  { key: 'press', label: 'Báo chí nói về chúng tôi' },
+  { key: 'press', label: 'ĐÓN NHỊP XU HƯỚNG LÀM ĐẸP TOÀN CẦU – CHỌN LỌC ĐỂ PHÙ HỢP VỚI NGƯỜI VIỆT' },
   { key: 'tips', label: 'Bí quyết làm đẹp' },
   { key: 'stories', label: 'Câu chuyện thành công' },
   { key: 'promo', label: 'Chương trình khuyến mãi' },
@@ -305,7 +305,7 @@ export const ARTICLES: Article[] = [
     title: 'Hi Medical đạt chuẩn quốc tế ISO 9001:2015 về quy trình thẩm mỹ an toàn',
     excerpt:
       'Sự kiện đánh dấu cột mốc quan trọng trong hành trình nâng cao chất lượng dịch vụ: toàn bộ quy trình thẩm mỹ tại Hi Medical được chứng nhận đạt chuẩn quốc tế.',
-    category: 'Báo chí nói về chúng tôi',
+    category: 'ĐÓN NHỊP XU HƯỚNG LÀM ĐẸP TOÀN CẦU – CHỌN LỌC ĐỂ PHÙ HỢP VỚI NGƯỜI VIỆT',
     categoryKey: 'press',
     image: IMG.flower,
     date: '2026-08-02',
