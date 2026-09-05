@@ -19,6 +19,7 @@ export type Article = {
   dateLabel: string;
   readTime: string;
   featured?: boolean;
+  video?: string;
   content: ArticleSection[];
 };
 
@@ -60,6 +61,7 @@ export const ARTICLES: Article[] = [
     dateLabel: '18/08/2026',
     readTime: '6 phút đọc',
     featured: true,
+    video: 'https://drive.google.com/file/d/1QbZohaPbadfq7hY7gpnlYhZnXzyDt3Nm/preview',
     content: [
       {
         heading: 'Triệt lông không còn là nỗi lo',

@@ -78,6 +78,26 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
           {article.excerpt}
         </p>
 
+        {article.video && (
+          <div className="mt-10">
+            <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose" />
+              Xem video giới thiệu
+            </p>
+            <div className="overflow-hidden rounded-3xl border border-luxury bg-night-2 p-3">
+              <div className="aspect-video overflow-hidden rounded-2xl">
+                <iframe
+                  src={article.video}
+                  title={`Video giới thiệu ${article.title}`}
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="mt-10 space-y-10">
           {article.content.map((section, i) => (
             <div key={i}>
