@@ -22,14 +22,19 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-night">
-      {/* Ảnh nền: ảnh anh Dung gửi */}
+      {/* Video nền: facial treatment spa (Mixkit, miễn phí) */}
       <div aria-hidden className="absolute inset-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-bg.jpg"
-          alt=""
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero-bg.jpg"
           className="h-full w-full object-cover"
-        />
+        >
+          <source src="/videos/hero-spa.mp4" type="video/mp4" />
+        </video>
         {/* Overlay gradient tối navy/đen: đậm trái (vùng chữ + logo) → nhạt phải (vẫn thấy ảnh) */}
         <div
           className="absolute inset-0"
