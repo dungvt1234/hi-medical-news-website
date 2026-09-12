@@ -124,11 +124,12 @@ let msgId = 0;
 const nextId = () => ++msgId;
 
 type ChatbotProps = {
-  /** Ẩn nút nổi + bong bóng riêng (dùng chung cụm liên hệ) */
+  /** Ẩn nút nổi riêng (dùng chung cụm liên hệ) */
   hideTrigger?: boolean;
   /** Điều khiển mở/đóng từ bên ngoài */
   externalOpen?: boolean;
   onExternalClose?: () => void;
+  onRequestOpen?: () => void;
   /** Neo khung chat bên phải (trên cụm liên hệ) */
   alignRight?: boolean;
 };
@@ -137,6 +138,7 @@ export default function Chatbot({
   hideTrigger = false,
   externalOpen,
   onExternalClose,
+  onRequestOpen,
   alignRight = false,
 }: ChatbotProps = {}) {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -347,17 +349,24 @@ export default function Chatbot({
       </>
       )}
 
-      {/* Bong bóng mời chat (ẩn khi gộp vào cụm liên hệ) */}
-      {!hideTrigger && !open && !bubbleDismissed && (
+      {/* Bong bóng mời chat */}
+      {!open && !bubbleDismissed && (
         <div
           role="button"
           tabIndex={0}
-          onClick={() => externalOpen === undefined && setInternalOpen(true)}
+          onClick={() => {
+            if (onRequestOpen) onRequestOpen();
+            else if (externalOpen === undefined) setInternalOpen(true);
+          }}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && externalOpen === undefined) setInternalOpen(true);
+            if (e.key !== 'Enter') return;
+            if (onRequestOpen) onRequestOpen();
+            else if (externalOpen === undefined) setInternalOpen(true);
           }}
           aria-label="Mở chat với Hi Medical"
-          className="relative mb-3 w-[210px] cursor-pointer rounded-2xl rounded-bl-md border border-luxury bg-white px-4 py-3 shadow-card motion-reduce:animate-none"
+          className={`relative mb-3 w-[220px] cursor-pointer rounded-2xl border border-luxury bg-white px-4 py-3 shadow-card motion-reduce:animate-none ${
+            alignRight ? 'rounded-br-md' : 'rounded-bl-md'
+          }`}
           style={{ animation: 'chat-nudge 4s ease-in-out infinite' }}
         >
           <button
@@ -371,12 +380,10 @@ export default function Chatbot({
           >
             <X className="h-3 w-3" />
           </button>
-          <p className="flex items-center gap-1.5 text-[13px] font-bold text-ink">
-            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-            Quý khách cần hỗ trợ?
-          </p>
-          <p className="mt-0.5 text-xs font-medium text-ink-light">
-            Chat ngay với Hi Medical
+          <p className="text-[13px] leading-snug text-ink">
+            <span className="mr-1.5 inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+            Chào bạn! Mình là trợ lý Hi Medical — hỏi mình về dịch vụ, ưu đãi hoặc đặt
+            lịch nhé.
           </p>
           <style jsx>{`
             @keyframes chat-nudge {

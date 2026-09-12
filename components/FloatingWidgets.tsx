@@ -135,6 +135,10 @@ export default function FloatingWidgets() {
       alignRight
       externalOpen={chatOpen}
       onExternalClose={() => setChatOpen(false)}
+      onRequestOpen={() => {
+        setChatOpen(true);
+        setOpen(false);
+      }}
     />
     </>
   );
