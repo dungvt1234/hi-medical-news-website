@@ -124,6 +124,7 @@ const nextId = () => ++msgId;
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
+  const [bubbleDismissed, setBubbleDismissed] = useState(false);
   const [typing, setTyping] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMsg[]>([
@@ -277,6 +278,53 @@ export default function Chatbot() {
           </button>
         </form>
       </div>
+
+      {/* Bong bóng mời chat */}
+      {!open && !bubbleDismissed && (
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => setOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') setOpen(true);
+          }}
+          aria-label="Mở chat với Hi Medical"
+          className="relative mb-3 w-[210px] cursor-pointer rounded-2xl rounded-bl-md border border-brand-100 bg-white px-4 py-3 shadow-card motion-reduce:animate-none"
+          style={{ animation: 'chat-nudge 4s ease-in-out infinite' }}
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setBubbleDismissed(true);
+            }}
+            aria-label="Ẩn bong bóng chat"
+            className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-night-3 text-[10px] font-bold text-white shadow-card hover:bg-ink"
+          >
+            <X className="h-3 w-3" />
+          </button>
+          <p className="flex items-center gap-1.5 text-[13px] font-bold text-ink">
+            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+            Quý khách cần hỗ trợ?
+          </p>
+          <p className="mt-0.5 text-xs font-medium text-ink-light">
+            Chat ngay với Hi Medical
+          </p>
+          <style jsx>{`
+            @keyframes chat-nudge {
+              0%,
+              88%,
+              100% {
+                transform: translateY(0);
+              }
+              92%,
+              96% {
+                transform: translateY(-6px);
+              }
+            }
+          `}</style>
+        </div>
+      )}
 
       {/* Nút nổi mở/đóng */}
       <button
