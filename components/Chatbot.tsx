@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { MessageCircle, X, Send } from 'lucide-react';
 
 /**
@@ -204,16 +205,30 @@ export default function Chatbot() {
                 </div>
                 {m.links && (
                   <div className="mt-2 flex flex-wrap gap-1.5">
-                    {m.links.map((l) => (
-                      <a
-                        key={l.label}
-                        href={l.href}
-                        {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-700"
-                      >
-                        {l.label}
-                      </a>
-                    ))}
+                    {m.links.map((l) =>
+                      l.external || l.href.startsWith('tel:') ? (
+                        <a
+                          key={l.label}
+                          href={l.href}
+                          {...(l.external
+                            ? { target: '_blank', rel: 'noopener noreferrer' }
+                            : {})}
+                          className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-700"
+                        >
+                          {l.label}
+                          {l.external ? ' ↗' : ''}
+                        </a>
+                      ) : (
+                        <Link
+                          key={l.label}
+                          href={l.href}
+                          onClick={() => setOpen(false)}
+                          className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-700"
+                        >
+                          Xem chi tiết →
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
