@@ -54,18 +54,36 @@ export default function JournalPage() {
       <div className="sticky top-[72px] z-20 border-b border-luxury bg-night/90 backdrop-blur-md lg:top-[120px]">
         <div className="no-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) => (
-            <button
-              key={c.key}
-              type="button"
-              onClick={() => setActiveCat(c.key)}
-              className={`shrink-0 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                activeCat === c.key
-                  ? 'border-rose bg-rose text-white'
-                  : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose-deep'
-              }`}
-            >
-              {c.label}
-            </button>
+            {c.label.length > 40 ? (
+              <div className="relative overflow-hidden">
+                <span
+                  className="inline-flex w-max shrink-0 motion-reduce:w-auto motion-reduce:overflow-visible"
+                  style={{ animation: 'tab-marquee 12s linear infinite' }}
+                >
+                  <span className="whitespace-nowrap pr-10">{c.label}</span>
+                  <span className="whitespace-nowrap pr-10" aria-hidden>{c.label}</span>
+                </span>
+                <style jsx>{`
+                  @keyframes tab-marquee {
+                    from { transform: translateX(0); }
+                    to { transform: translateX(-50%); }
+                  }
+                `}</style>
+              </div>
+            ) : (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => setActiveCat(c.key)}
+                className={`shrink-0 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                  activeCat === c.key
+                    ? 'border-rose bg-rose text-white'
+                    : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose-deep'
+                }`}
+              >
+                {c.label}
+              </button>
+            )}
           ))}
         </div>
       </div>
