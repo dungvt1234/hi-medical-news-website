@@ -69,8 +69,8 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled
-          ? 'border-b border-luxury bg-night/95 py-3 shadow-glow'
-          : 'border-b border-white/10 bg-white/30 py-6'
+          ? 'border-b border-luxury bg-night/95 py-2 shadow-glow sm:py-3'
+          : 'border-b border-white/10 bg-white/30 py-3 sm:py-6'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -83,7 +83,7 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="Hi Medical"
-            className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-24"
           />
           <span className="leading-tight">
             <span className="block font-heading text-xl font-semibold tracking-wide text-ink">

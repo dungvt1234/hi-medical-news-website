@@ -51,7 +51,7 @@ export default function JournalPage() {
       </section>
 
       {/* Category tabs */}
-      <div className="sticky top-[68px] z-20 border-b border-luxury bg-night/90 backdrop-blur-md">
+      <div className="sticky top-[72px] z-20 border-b border-luxury bg-night/90 backdrop-blur-md lg:top-[120px]">
         <div className="no-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) => (
             <button
