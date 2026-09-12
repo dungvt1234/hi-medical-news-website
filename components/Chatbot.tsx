@@ -123,10 +123,34 @@ function findAnswer(input: string): { text: string; links?: ChatLink[] } {
 let msgId = 0;
 const nextId = () => ++msgId;
 
-export default function Chatbot() {
-  const [open, setOpen] = useState(false);
+type ChatbotProps = {
+  /** Ẩn nút nổi + bong bóng riêng (dùng chung cụm liên hệ) */
+  hideTrigger?: boolean;
+  /** Điều khiển mở/đóng từ bên ngoài */
+  externalOpen?: boolean;
+  onExternalClose?: () => void;
+  /** Neo khung chat bên phải (trên cụm liên hệ) */
+  alignRight?: boolean;
+};
+
+export default function Chatbot({
+  hideTrigger = false,
+  externalOpen,
+  onExternalClose,
+  alignRight = false,
+}: ChatbotProps = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
   const [bubbleDismissed, setBubbleDismissed] = useState(false);
   const [typing, setTyping] = useState(false);
+
+  const open = externalOpen ?? internalOpen;
+  const handleToggle = () => {
+    if (externalOpen === undefined) setInternalOpen((v) => !v);
+  };
+  const handleClose = () => {
+    setInternalOpen(false);
+    onExternalClose?.();
+  };
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMsg[]>([
     {
@@ -164,11 +188,17 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 left-4 z-50 flex flex-col items-start sm:left-6">
+    <div
+      className={
+        alignRight
+          ? 'fixed bottom-[88px] right-4 z-50 flex flex-col items-end sm:right-6'
+          : 'fixed bottom-6 left-4 z-50 flex flex-col items-start sm:left-6'
+      }
+    >
       {/* Lớp nền: bấm ra ngoài để đóng chat */}
       <div
         aria-hidden
-        onClick={() => setOpen(false)}
+        onClick={handleClose}
         className={`fixed inset-0 -z-10 bg-night/60 backdrop-blur-[1px] transition-opacity duration-300 ${
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
@@ -183,7 +213,7 @@ export default function Chatbot() {
       >
         {/* Header */}
         <div className="flex items-center gap-3 bg-gradient-to-r from-rose to-rose-deep px-4 py-3.5">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white font-heading text-lg font-bold text-brand-700">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white font-heading text-lg font-bold text-rose-deep">
             H
           </span>
           <div className="min-w-0 flex-1">
@@ -195,7 +225,7 @@ export default function Chatbot() {
           </div>
           <button
             type="button"
-            onClick={() => setOpen(false)}
+            onClick={handleClose}
             aria-label="Đóng chat"
             className="flex h-8 w-8 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
           >
@@ -230,7 +260,7 @@ export default function Chatbot() {
                         <Link
                           key={l.label}
                           href={l.href}
-                          onClick={() => setOpen(false)}
+                          onClick={handleClose}
                           className="rounded-full bg-gold px-4 py-1.5 text-xs font-bold text-[#302642] shadow-card transition-all hover:bg-[#F3D97A]"
                         >
                           Xem chi tiết →
@@ -302,14 +332,14 @@ export default function Chatbot() {
         </form>
       </div>
 
-      {/* Bong bóng mời chat */}
-      {!open && !bubbleDismissed && (
+      {/* Bong bóng mời chat (ẩn khi gộp vào cụm liên hệ) */}
+      {!hideTrigger && !open && !bubbleDismissed && (
         <div
           role="button"
           tabIndex={0}
-          onClick={() => setOpen(true)}
+          onClick={() => externalOpen === undefined && setInternalOpen(true)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') setOpen(true);
+            if (e.key === 'Enter' && externalOpen === undefined) setInternalOpen(true);
           }}
           aria-label="Mở chat với Hi Medical"
           className="relative mb-3 w-[210px] cursor-pointer rounded-2xl rounded-bl-md border border-luxury bg-white px-4 py-3 shadow-card motion-reduce:animate-none"
@@ -349,10 +379,11 @@ export default function Chatbot() {
         </div>
       )}
 
-      {/* Nút nổi mở/đóng */}
+      {/* Nút nổi mở/đóng (ẩn khi gộp vào cụm liên hệ) */}
+      {!hideTrigger && (
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={handleToggle}
         aria-label={open ? 'Đóng chat' : 'Mở chat với Hi Medical'}
         aria-expanded={open}
         className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-rose to-rose-deep text-white shadow-card transition-all hover:scale-105"
@@ -362,6 +393,7 @@ export default function Chatbot() {
           <span aria-hidden className="absolute inset-0 rounded-full bg-rose/40 animate-pulse-ring" />
         )}
       </button>
+      )}
     </div>
   );
 }

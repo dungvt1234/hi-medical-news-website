@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { MessageCircle, X, Phone } from 'lucide-react';
 import { ARTICLES } from '@/lib/articles';
+import Chatbot from './Chatbot';
 
 /**
  * Floating widgets cố định góc dưới bên phải (theme Midnight Luxury):
@@ -12,9 +13,11 @@ import { ARTICLES } from '@/lib/articles';
  */
 export default function FloatingWidgets() {
   const [open, setOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   const latest = ARTICLES[0];
 
   return (
+    <>
     <div className="fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 sm:right-6">
       {/* Cụm nút phụ (hiện khi mở) */}
       <div
@@ -34,6 +37,22 @@ export default function FloatingWidgets() {
             {latest.title}
           </p>
         </a>
+
+        {/* Chat với Hi Medical */}
+        <button
+          type="button"
+          onClick={() => {
+            setChatOpen(true);
+            setOpen(false);
+          }}
+          aria-label="Chat với Hi Medical"
+          className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-rose text-white shadow-card transition-transform hover:scale-110"
+        >
+          <MessageCircle className="h-5 w-5" />
+          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-lg bg-night-3 px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-card transition-opacity group-hover:opacity-100">
+            Chat với Hi Medical
+          </span>
+        </button>
 
         {/* Zalo */}
         <a
@@ -83,7 +102,10 @@ export default function FloatingWidgets() {
       {/* Nút tròn chính */}
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (chatOpen) setChatOpen(false);
+          setOpen((v) => !v);
+        }}
         aria-label={open ? 'Đóng trợ giúp' : 'Mở trợ giúp'}
         aria-expanded={open}
         className="relative flex h-14 w-14 items-center justify-center rounded-full bg-rose text-white shadow-card transition-all hover:scale-105"
@@ -98,5 +120,14 @@ export default function FloatingWidgets() {
         )}
       </button>
     </div>
+
+    {/* Khung chat — mở từ cụm liên hệ, neo bên phải */}
+    <Chatbot
+      hideTrigger
+      alignRight
+      externalOpen={chatOpen}
+      onExternalClose={() => setChatOpen(false)}
+    />
+    </>
   );
 }
