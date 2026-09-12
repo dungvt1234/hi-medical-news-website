@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWidgets from '@/components/FloatingWidgets';
+import Chatbot from '@/components/Chatbot';
 import FlipProvider from '@/components/FlipProvider';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <FloatingWidgets />
+          <Chatbot />
         </FlipProvider>
       </body>
     </html>
