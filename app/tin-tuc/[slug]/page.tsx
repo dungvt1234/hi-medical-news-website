@@ -153,10 +153,10 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
           </h3>
           <div className="grid gap-5 sm:grid-cols-3">
             {fallbackRelated.map((a) => (
-              <Link
+              <a
                 key={a.id}
                 href={`/tin-tuc/${a.slug}`}
-                className="group overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
+                className="group block overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -176,10 +176,10 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                   </h4>
                   <p className="mt-2 flex items-center gap-1 text-[11px] text-ink-light">
                     {a.dateLabel}
-                    <ArrowUpRight className="ml-auto h-3.5 w-3.5 text-gold" />
-                  </p>
-                </div>
-              </Link>
+<ArrowUpRight className="ml-auto h-3.5 w-3.5 text-gold" />
+                    </p>
+                  </div>
+                </a>
             ))}
           </div>
         </div>
