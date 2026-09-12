@@ -175,7 +175,7 @@ export default function Chatbot() {
       />
       {/* Khung chat */}
       <div
-        className={`mb-4 flex h-[400px] max-h-[calc(100dvh-14rem)] w-[290px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-luxury bg-white shadow-2xl transition-all duration-300 sm:h-[480px] sm:max-h-[calc(100dvh-10rem)] sm:w-[340px] ${
+        className={`mb-3 flex h-[360px] max-h-[calc(100dvh-16rem)] w-[250px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-luxury bg-white shadow-2xl transition-all duration-300 sm:mb-4 sm:h-[480px] sm:max-h-[calc(100dvh-10rem)] sm:w-[340px] ${
           open ? 'visible translate-y-0 scale-100 opacity-100' : 'invisible pointer-events-none translate-y-4 scale-95 opacity-0'
         }`}
         role="dialog"
