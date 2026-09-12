@@ -86,7 +86,7 @@ export default function JournalPage() {
             {activeCat === 'all' && (
               <Link
                 href={`/tin-tuc/${featured.slug}`}
-                className="group mb-10 grid overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow lg:grid-cols-2"
+                className="group mb-10 grid touch-manipulation overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] lg:grid-cols-2"
               >
                 <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -149,7 +149,7 @@ export default function JournalPage() {
                 {rest.map((a) => (
                   <article
                     key={a.id}
-                    className="group overflow-hidden rounded-3xl border border-luxury bg-night-2 transition-all duration-500 hover:-translate-y-1 hover:border-rose/40 hover:shadow-glow"
+                    className="group overflow-hidden rounded-3xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
                   >
                     <Link href={`/tin-tuc/${a.slug}`} className="block h-full">
                     <div className="relative aspect-[16/10] overflow-hidden">
@@ -184,7 +184,7 @@ export default function JournalPage() {
                 {rest.map((a) => (
                   <article
                     key={a.id}
-                    className="group grid gap-5 overflow-hidden rounded-3xl border border-luxury bg-night-2 p-4 transition-all duration-500 hover:border-rose/40 hover:shadow-glow sm:grid-cols-[200px_1fr] sm:p-5"
+                    className="group grid touch-manipulation gap-5 overflow-hidden rounded-3xl border border-luxury bg-night-2 p-4 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:grid-cols-[200px_1fr] sm:p-5"
                   >
                     <Link href={`/tin-tuc/${a.slug}`} className="contents">
                     <div className="relative aspect-[16/10] overflow-hidden rounded-2xl sm:aspect-auto">

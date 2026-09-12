@@ -156,7 +156,7 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
               <Link
                 key={a.id}
                 href={`/tin-tuc/${a.slug}`}
-                className="group overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 hover:-translate-y-1 hover:border-rose/40 hover:shadow-glow"
+                className="group overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
