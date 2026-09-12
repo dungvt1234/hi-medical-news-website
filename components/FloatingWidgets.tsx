@@ -19,12 +19,19 @@ export default function FloatingWidgets() {
   return (
     <>
     <div className="fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 sm:right-6">
-      {/* Cụm nút phụ (hiện khi mở) */}
-      <div
-        className={`flex flex-col items-end gap-3 transition-all duration-300 ${
-          open ? 'visible translate-y-0 opacity-100' : 'invisible pointer-events-none translate-y-3 opacity-0'
-        }`}
+      {/* Cụm nút phụ — chỉ render khi mở (tránh khối tàng hình chặn tap) */}
+      {open && (
+      <div className="flex flex-col items-end gap-3 motion-reduce:animate-none"
+        style={{ animation: 'cluster-in .25s cubic-bezier(.22,1,.36,1)' }}
       >
+        <style jsx>{`
+          @keyframes cluster-in {
+            from {
+              opacity: 0;
+              transform: translateY(12px);
+            }
+          }
+        `}</style>
         {/* Bài viết mới nhất */}
         <a
           href="/journal"
@@ -98,6 +105,7 @@ export default function FloatingWidgets() {
           </span>
         </a>
       </div>
+      )}
 
       {/* Nút tròn chính */}
       <button

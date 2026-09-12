@@ -195,22 +195,35 @@ export default function Chatbot({
           : 'fixed bottom-6 left-4 z-50 flex flex-col items-start sm:left-6'
       }
     >
-      {/* Lớp nền: bấm ra ngoài để đóng chat */}
+      {/* Lớp nền: bấm ra ngoài để đóng chat — chỉ render khi mở */}
+      {open && (
+      <>
       <div
         aria-hidden
         onClick={handleClose}
-        className={`fixed inset-0 -z-10 bg-night/60 backdrop-blur-[1px] transition-opacity duration-300 ${
-          open ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className="fixed inset-0 z-40 bg-night/60 backdrop-blur-[1px] motion-reduce:animate-none"
+        style={{ animation: 'chat-fade-in .25s ease-out' }}
       />
-      {/* Khung chat */}
+      {/* Khung chat — chỉ render khi mở */}
       <div
-        className={`mb-3 flex h-[360px] max-h-[calc(100dvh-16rem)] w-[250px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-luxury bg-white shadow-2xl transition-all duration-300 sm:mb-4 sm:h-[480px] sm:max-h-[calc(100dvh-10rem)] sm:w-[340px] ${
-          open ? 'visible translate-y-0 scale-100 opacity-100' : 'invisible pointer-events-none translate-y-4 scale-95 opacity-0'
-        }`}
+        className="relative z-50 mb-3 flex h-[360px] max-h-[calc(100dvh-16rem)] w-[250px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-luxury bg-white shadow-2xl motion-reduce:animate-none sm:mb-4 sm:h-[480px] sm:max-h-[calc(100dvh-10rem)] sm:w-[340px]"
+        style={{ animation: 'chat-panel-in .28s cubic-bezier(.22,1,.36,1)' }}
         role="dialog"
         aria-label="Chat với Hi Medical"
       >
+        <style jsx>{`
+          @keyframes chat-panel-in {
+            from {
+              opacity: 0;
+              transform: translateY(16px) scale(0.96);
+            }
+          }
+          @keyframes chat-fade-in {
+            from {
+              opacity: 0;
+            }
+          }
+        `}</style>
         {/* Header */}
         <div className="flex items-center gap-3 bg-gradient-to-r from-rose to-rose-deep px-4 py-3.5">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white font-heading text-lg font-bold text-rose-deep">
@@ -331,6 +344,8 @@ export default function Chatbot({
           </button>
         </form>
       </div>
+      </>
+      )}
 
       {/* Bong bóng mời chat (ẩn khi gộp vào cụm liên hệ) */}
       {!hideTrigger && !open && !bubbleDismissed && (
