@@ -53,9 +53,9 @@ export default function JournalPage() {
       {/* Category tabs */}
       <div className="sticky top-[72px] z-20 border-b border-luxury bg-night/90 backdrop-blur-md lg:top-[120px]">
         <div className="no-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-4 sm:px-8">
-          {CATEGORIES.map((c) => (
-            {c.label.length > 40 ? (
-              <div className="relative overflow-hidden">
+          {CATEGORIES.map((c) =>
+            c.label.length > 40 ? (
+              <div key={c.key} className="relative overflow-hidden">
                 <span
                   className="inline-flex w-max shrink-0 motion-reduce:w-auto motion-reduce:overflow-visible"
                   style={{ animation: 'tab-marquee 12s linear infinite' }}
@@ -83,8 +83,8 @@ export default function JournalPage() {
               >
                 {c.label}
               </button>
-            )}
-          ))}
+            )
+          )}
         </div>
       </div>
 
