@@ -174,7 +174,7 @@ export default function Chatbot() {
         aria-label="Chat với Hi Medical"
       >
         {/* Header */}
-        <div className="flex items-center gap-3 bg-gradient-to-r from-brand-600 to-brand-800 px-4 py-3.5">
+        <div className="flex items-center gap-3 bg-gradient-to-r from-rose to-rose-deep px-4 py-3.5">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white font-heading text-lg font-bold text-brand-700">
             H
           </span>
@@ -200,7 +200,7 @@ export default function Chatbot() {
           {messages.map((m) =>
             m.from === 'bot' ? (
               <div key={m.id} className="max-w-[85%]">
-                <div className="rounded-2xl rounded-tl-md border border-brand-100 bg-white px-3.5 py-2.5 text-[13.5px] leading-relaxed text-ink shadow-sm">
+                <div className="rounded-2xl rounded-tl-md border border-luxury bg-white px-3.5 py-2.5 text-[13.5px] leading-relaxed text-ink shadow-sm">
                   {m.text}
                 </div>
                 {m.links && (
@@ -213,7 +213,7 @@ export default function Chatbot() {
                           {...(l.external
                             ? { target: '_blank', rel: 'noopener noreferrer' }
                             : {})}
-                          className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-700"
+                          className="rounded-full bg-gold px-3.5 py-1.5 text-xs font-bold text-[#302642] shadow-card transition-all hover:bg-[#F3D97A]"
                         >
                           {l.label}
                           {l.external ? ' ↗' : ''}
@@ -223,7 +223,7 @@ export default function Chatbot() {
                           key={l.label}
                           href={l.href}
                           onClick={() => setOpen(false)}
-                          className="rounded-full bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-brand-700"
+                          className="rounded-full bg-gold px-4 py-1.5 text-xs font-bold text-[#302642] shadow-card transition-all hover:bg-[#F3D97A]"
                         >
                           Xem chi tiết →
                         </Link>
@@ -241,11 +241,11 @@ export default function Chatbot() {
             )
           )}
           {typing && (
-            <div className="flex max-w-[85%] items-center gap-1 rounded-2xl rounded-tl-md border border-brand-100 bg-white px-4 py-3 shadow-sm">
+            <div className="flex max-w-[85%] items-center gap-1 rounded-2xl rounded-tl-md border border-luxury bg-white px-4 py-3 shadow-sm">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
-                  className="h-1.5 w-1.5 animate-bounce rounded-full bg-brand-400"
+                  className="h-1.5 w-1.5 animate-bounce rounded-full bg-rose"
                   style={{ animationDelay: `${i * 150}ms` }}
                 />
               ))}
@@ -260,7 +260,7 @@ export default function Chatbot() {
               key={q}
               type="button"
               onClick={() => send(q)}
-              className="shrink-0 whitespace-nowrap rounded-full border border-brand-200 bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700 transition-colors hover:bg-brand-100"
+              className="shrink-0 whitespace-nowrap rounded-full border border-rose/30 bg-[#F5F1FA] px-3 py-1.5 text-xs font-semibold text-rose-deep transition-colors hover:bg-cream"
             >
               {q}
             </button>
@@ -281,7 +281,7 @@ export default function Chatbot() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Nhập câu hỏi của bạn..."
             aria-label="Nhập câu hỏi"
-            className="w-full rounded-full border border-brand-100 bg-[#F5F1FA] px-4 py-2.5 text-sm text-ink outline-none placeholder:text-ink-light focus:border-brand-400"
+            className="w-full rounded-full border border-luxury bg-[#F5F1FA] px-4 py-2.5 text-sm text-ink outline-none placeholder:text-ink-light focus:border-rose"
           />
           <button
             type="submit"
@@ -304,7 +304,7 @@ export default function Chatbot() {
             if (e.key === 'Enter') setOpen(true);
           }}
           aria-label="Mở chat với Hi Medical"
-          className="relative mb-3 w-[210px] cursor-pointer rounded-2xl rounded-bl-md border border-brand-100 bg-white px-4 py-3 shadow-card motion-reduce:animate-none"
+          className="relative mb-3 w-[210px] cursor-pointer rounded-2xl rounded-bl-md border border-luxury bg-white px-4 py-3 shadow-card motion-reduce:animate-none"
           style={{ animation: 'chat-nudge 4s ease-in-out infinite' }}
         >
           <button
