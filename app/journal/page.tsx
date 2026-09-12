@@ -51,7 +51,7 @@ export default function JournalPage() {
       </section>
 
       {/* Category tabs */}
-      <div className="sticky top-[72px] z-20 border-b border-luxury bg-night/90 backdrop-blur-md lg:top-[120px]">
+      <div className="sticky top-[72px] z-20 border-b border-luxury bg-night lg:top-[120px]">
         <div className="no-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) =>
             c.label.length > 40 ? (
@@ -75,7 +75,7 @@ export default function JournalPage() {
                 key={c.key}
                 type="button"
                 onClick={() => setActiveCat(c.key)}
-                className={`shrink-0 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                className={`shrink-0 touch-manipulation rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                   activeCat === c.key
                     ? 'border-rose bg-rose text-white'
                     : 'border-luxury text-ink-light hover:border-rose/60 hover:text-rose-deep'
