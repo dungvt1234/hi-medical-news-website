@@ -165,6 +165,14 @@ export default function Chatbot() {
 
   return (
     <div className="fixed bottom-6 left-4 z-50 flex flex-col items-start sm:left-6">
+      {/* Lớp nền: bấm ra ngoài để đóng chat */}
+      <div
+        aria-hidden
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 -z-10 bg-night/60 backdrop-blur-[1px] transition-opacity duration-300 ${
+          open ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      />
       {/* Khung chat */}
       <div
         className={`mb-4 flex h-[480px] max-h-[calc(100dvh-10rem)] w-[340px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-2xl transition-all duration-300 ${
