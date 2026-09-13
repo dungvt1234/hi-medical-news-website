@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Percent } from 'lucide-react';
-import Reveal from './Reveal';
 import { SERVICES } from '@/lib/services';
 
 /**
@@ -45,11 +44,11 @@ export default function Treatments() {
               <span className="h-px w-10 bg-gold" />
               Signature Treatments
             </p>
-            <Reveal as="h2" className="font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
+            <h2 className="reveal font-heading text-4xl font-light leading-tight text-ink sm:text-5xl">
               Liệu trình tuyển chọn cho
               <br />
               <span className="italic text-rose-deep">mọi vẻ đẹp.</span>
-            </Reveal>
+            </h2>
           </div>
         </div>
 
