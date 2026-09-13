@@ -101,7 +101,7 @@ export const ARTICLES: Article[] = [
       'Chống lão hoá không phải làm thật nhiều treatment hay chọn phương pháp thật mạnh — điều quan trọng là hiểu làn da đang cần gì. Hi Medical chia sẻ cách trẻ hoá chủ động, đúng lúc và đúng nhu cầu da.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.skincare,
+    image: '/images/chong-lao-hoa-30-cover.jpg',
     date: '2026-09-13',
     dateLabel: '13/09/2026',
     readTime: '3 phút đọc',
