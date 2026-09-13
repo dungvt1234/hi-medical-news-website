@@ -1,30 +1,25 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import { Percent } from 'lucide-react';
+import { SERVICES } from '@/lib/services';
 
 /**
- * GalleryDeck — Deck: scroll-driven 3D carousel (theo mẫu Mộc Không fx-deck).
- * - Section cao, pin sticky h-screen; quãng cuộn đẩy dải ảnh chạy ngang.
- * - Ảnh giữa rõ; ảnh ngoài tâm nghiêng rotateY + lùi translateZ + nhỏ + mờ dần.
- * - Điều khiển: cuộn trang, kéo/vuốt ngang, nút ‹ ›. HUD đếm 01—08 + caption.
- * - prefers-reduced-motion: hiện lưới tĩnh, không animation.
- * - Click ảnh → onSelect(i) mở lightbox (do Gallery quản lý).
+ * TreatmentsDeck — Deck: scroll-driven 3D carousel cho khối Liệu trình.
+ * - Section cao, pin sticky h-screen; cuộn trang đẩy dải thẻ chạy ngang.
+ * - Thẻ giữa rõ; thẻ bên nghiêng rotateY + lùi translateZ + mờ dần.
+ * - Điều khiển: cuộn trang, kéo/vuốt ngang, nút ‹ ›. HUD đếm 01—06 + tên dịch vụ.
+ * - Bấm thẻ → sang trang chi tiết (tự chặn click nếu vừa kéo).
+ * - prefers-reduced-motion: lưới tĩnh.
  */
 
-export type DeckImage = { src: string; alt: string; caption: string };
-
 const TUNING = { maxN: 2.2, depth: 340, tilt: 32, shrink: 0.07, fade: 0.38, minOpacity: 0.16 };
-// Mỗi ảnh chiếm ~46vh quãng cuộn
 const VH_PER_CARD = 46;
 
-export default function GalleryDeck({
-  images,
-  onSelect,
-}: {
-  images: DeckImage[];
-  onSelect: (i: number) => void;
-}) {
-  const secRef = useRef<HTMLElement>(null);
+export default function TreatmentsDeck() {
+  const router = useRouter();
+  const secRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -32,6 +27,7 @@ export default function GalleryDeck({
   const captionRef = useRef<HTMLParagraphElement>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const movedRef = useRef(false);
 
   const reduced =
     typeof window !== 'undefined' &&
@@ -50,12 +46,10 @@ export default function GalleryDeck({
     const N = cards.length;
     if (!N) return;
 
-    // Alias non-null cho các closure (TS không giữ narrowing trong function lồng)
     const secEl: HTMLElement = sec;
     const pinEl: HTMLDivElement = pin;
     const stageEl: HTMLDivElement = stage;
     const trackEl: HTMLDivElement = track;
-
     const prevBtn = prevRef.current;
     const nextBtn = nextRef.current;
 
@@ -77,7 +71,6 @@ export default function GalleryDeck({
     let snapDur = 0;
 
     function measure() {
-      if (!secEl) return;
       const vh = window.innerHeight;
       drive = Math.max(1, secEl.offsetHeight - vh);
       cardW = cards[0].offsetWidth;
@@ -88,7 +81,6 @@ export default function GalleryDeck({
     }
 
     function scrollFrac() {
-      if (!secEl) return 0;
       const sy = window.pageYOffset || document.documentElement.scrollTop || 0;
       const secT = secEl.getBoundingClientRect().top + sy;
       let p = (sy - secT) / drive;
@@ -105,9 +97,8 @@ export default function GalleryDeck({
       const fi = Math.max(0, Math.min(N - 1, Math.round(f * (N - 1))));
       if (fi !== front) {
         front = fi;
-        if (countRef.current)
-          countRef.current.textContent = `0${fi + 1} — 0${N}`;
-        if (captionRef.current) captionRef.current.textContent = images[fi]?.caption ?? '';
+        if (countRef.current) countRef.current.textContent = `0${fi + 1} — 0${N}`;
+        if (captionRef.current) captionRef.current.textContent = SERVICES[fi]?.name ?? '';
         for (let c = 0; c < N; c++) {
           if (c === fi) cards[c].classList.add('is-front');
           else cards[c].classList.remove('is-front');
@@ -179,9 +170,9 @@ export default function GalleryDeck({
       request();
     }
 
-    // Kéo/vuốt: chỉ bắt khi ý định ngang rõ (vuốt dọc vẫn cuộn trang)
     const onDown = (e: PointerEvent) => {
       if (e.button !== 0) return;
+      movedRef.current = false;
       candidate = { x: e.clientX, y: e.clientY, active: false };
     };
     const onMove = (e: PointerEvent) => {
@@ -203,6 +194,7 @@ export default function GalleryDeck({
         }
       }
       if (mode === 'drag') {
+        if (Math.abs(e.clientX - dragStartX) > 8) movedRef.current = true;
         dragFrac = Math.max(0, Math.min(1, dragBase + (dragStartX - e.clientX) / span));
         request();
       }
@@ -246,82 +238,117 @@ export default function GalleryDeck({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reduced]);
 
+  const goDetail = (slug: string) => (e: React.MouseEvent | React.KeyboardEvent) => {
+    if (movedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      movedRef.current = false;
+      return;
+    }
+    if ('key' in e && e.key !== 'Enter' && e.key !== ' ') return;
+    if ('key' in e) e.preventDefault();
+    router.push(`/dich-vu/${slug}`);
+  };
+
   // Giảm chuyển động: lưới tĩnh
   if (reduced) {
     return (
-      <div className="mx-auto grid max-w-7xl gap-5 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
-        {images.map((img, i) => (
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {SERVICES.map((t) => (
           <button
-            key={img.src}
+            key={t.slug}
             type="button"
-            onClick={() => onSelect(i)}
-            className="group relative aspect-[3/4] overflow-hidden rounded-2xl"
+            onClick={() => router.push(`/dich-vu/${t.slug}`)}
+            className="block overflow-hidden rounded-4xl border border-luxury bg-night-2 text-left"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full object-cover" />
+            <div className="relative aspect-[3/4] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={t.img} alt={t.name} loading="lazy" className="h-full w-full object-cover" />
+            </div>
+            <div className="p-7">
+              <h3 className="font-heading text-2xl font-medium text-ink">{t.name}</h3>
+              <p className="mt-2.5 text-sm font-light leading-relaxed text-ink-light">{t.tagline}</p>
+            </div>
           </button>
         ))}
       </div>
     );
   }
 
-  const secHeight = `calc(100vh + ${images.length * VH_PER_CARD}vh)`;
+  const secHeight = `calc(100vh + ${SERVICES.length * VH_PER_CARD}vh)`;
 
   return (
-    <section ref={secRef} style={{ height: secHeight }} className="relative">
+    <div ref={secRef} style={{ height: secHeight }} className="relative">
       <div ref={pinRef} className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-        {/* Stage 3D */}
         <div ref={stageRef} style={{ perspective: '1200px' }} className="w-full">
           <div ref={trackRef} className="flex w-max gap-5 will-change-transform sm:gap-7">
-            {images.map((img, i) => (
-              <figure
-                key={img.src}
+            {SERVICES.map((t) => (
+              <article
+                key={t.slug}
                 data-deck-card
-                onClick={() => onSelect(i)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    onSelect(i);
-                  }
-                }}
-                role="button"
+                onClick={goDetail(t.slug)}
+                onKeyDown={goDetail(t.slug)}
+                role="link"
                 tabIndex={0}
-                aria-label={`${img.alt} — xem ảnh to`}
-                className="group relative h-[52vh] w-[78vw] shrink-0 cursor-pointer overflow-hidden rounded-3xl border border-luxury/40 shadow-card will-change-transform sm:h-[56vh] sm:w-[440px]"
+                aria-label={`${t.name} — xem chi tiết`}
+                className={`group w-[78vw] shrink-0 cursor-pointer overflow-hidden rounded-4xl border transition-colors duration-500 will-change-transform sm:w-[380px] ${
+                  t.special
+                    ? 'border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56]'
+                    : 'border-luxury bg-night-2'
+                }`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading={i < 2 ? 'eager' : 'lazy'}
-                  draggable={false}
-                  className="h-full w-full select-none object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/70 via-transparent to-transparent" />
-                <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-6 text-left">
-                  <p className="font-heading text-2xl font-light text-white sm:text-3xl">{img.caption}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">
-                    Hi Medical · {String(i + 1).padStart(2, '0')}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={t.img}
+                    alt={t.name}
+                    loading="lazy"
+                    draggable={false}
+                    className="h-full w-full select-none object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-transparent to-transparent" />
+                  {t.special && (
+                    <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#302642] shadow-glow">
+                      <Percent className="h-3.5 w-3.5" />
+                      Ưu đãi
+                    </span>
+                  )}
+                </div>
+                <div className="p-6 sm:p-7">
+                  <h3
+                    className={`font-heading text-2xl font-medium ${
+                      t.special ? 'text-white' : 'text-ink'
+                    }`}
+                  >
+                    {t.name}
+                  </h3>
+                  {t.en && (
+                    <p className={`mt-1.5 font-heading text-sm italic ${t.special ? 'text-gold' : 'text-rose-deep/90'}`}>
+                      {t.en}
+                    </p>
+                  )}
+                  <p className={`mt-2.5 line-clamp-2 text-sm font-light leading-relaxed ${t.special ? 'text-[#D8C8F0]' : 'text-ink-light'}`}>
+                    {t.tagline}
                   </p>
-                </figcaption>
-              </figure>
+                </div>
+              </article>
             ))}
           </div>
         </div>
 
-        {/* HUD: đếm + caption + nút */}
+        {/* HUD */}
         <div className="mx-auto mt-8 flex w-full max-w-7xl items-center gap-5 px-5 sm:px-8">
           <span ref={countRef} className="font-heading text-xl italic text-rose-deep">
-            01 — {String(images.length).padStart(2, '0')}
+            01 — 06
           </span>
           <p ref={captionRef} className="min-w-0 flex-1 truncate font-heading text-lg text-ink">
-            {images[0]?.caption ?? ''}
+            {SERVICES[0]?.name ?? ''}
           </p>
           <div className="flex shrink-0 gap-2">
             <button
               ref={prevRef}
               type="button"
-              aria-label="Ảnh trước"
+              aria-label="Liệu trình trước"
               className="flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-luxury text-ink transition-all hover:border-rose/60 hover:text-rose-deep disabled:opacity-30"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -331,7 +358,7 @@ export default function GalleryDeck({
             <button
               ref={nextRef}
               type="button"
-              aria-label="Ảnh sau"
+              aria-label="Liệu trình sau"
               className="flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-luxury text-ink transition-all hover:border-rose/60 hover:text-rose-deep disabled:opacity-30"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -341,6 +368,6 @@ export default function GalleryDeck({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

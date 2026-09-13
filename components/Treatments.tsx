@@ -1,9 +1,7 @@
 ﻿'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { Percent } from 'lucide-react';
-import { SERVICES } from '@/lib/services';
+import TreatmentsDeck from './TreatmentsDeck';
 
 /**
  * Signature Treatments — 6 cards dịch vụ
@@ -52,77 +50,8 @@ export default function Treatments() {
           </div>
         </div>
 
-        {/* Mobile: dải vuốt ngang (snap) · Desktop: lưới 3 cột */}
-        <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
-          {SERVICES.map((t, i) => (
-            <Link
-              key={t.slug}
-              href={`/dich-vu/${t.slug}`}
-              className={`reveal group block w-[85%] shrink-0 snap-center overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow sm:w-auto ${
-                t.special
-                  ? 'relative border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
-                  : 'border-luxury bg-night-2 hover:border-rose/40'
-              } ${i % 3 === 1 ? 'lg:mt-10' : ''}`}
-            >
-              {/* ảnh */}
-              <div className="relative aspect-[3/4] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  loading="lazy"
-                  className="img-zoom h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-night-2 via-transparent to-transparent" />
-                {/* Số thứ tự */}
-                <span className="absolute right-5 top-5 font-heading text-lg italic text-rose-deep/80">
-                  0{i + 1}
-                </span>
-                {/* Badge ưu đãi nổi bật */}
-                {t.special && (
-                  <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#302642] shadow-glow">
-                    <Percent className="h-3.5 w-3.5" />
-                    Ưu đãi
-                  </span>
-                )}
-              </div>
-
-              {/* Nội dung */}
-              <div className="p-7">
-                <h3
-                  className={`font-heading text-2xl font-medium transition-colors duration-500 ${
-                    t.special ? 'text-white group-hover:text-gold' : 'text-ink group-hover:text-rose-deep'
-                  }`}
-                >
-                  {t.name}
-                </h3>
-                {t.en && (
-                  <p
-                    className={`mt-1.5 font-heading text-sm italic ${
-                      t.special ? 'text-gold' : 'text-rose-deep/90'
-                    }`}
-                  >
-                    {t.en}
-                  </p>
-                )}
-                <p
-                  className={`mt-2.5 text-sm font-light leading-relaxed ${
-                    t.special ? 'text-[#D8C8F0]' : 'text-ink-light'
-                  }`}
-                >
-                  {t.tagline}
-                </p>
-                <span
-                  className={`mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] opacity-0 transition-all duration-500 group-hover:opacity-100 ${
-                    t.special ? 'text-gold' : 'text-rose-deep/80'
-                  }`}
-                >
-                  Khám phá <span aria-hidden>→</span>
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* Deck: cuộn đẩy dải liệu trình 3D */}
+        <TreatmentsDeck />
       </div>
     </section>
   );
