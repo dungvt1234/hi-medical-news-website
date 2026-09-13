@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { href: '/#about', label: 'Giới thiệu' },
   { href: '/#experience', label: 'Trải nghiệm' },
   { href: '/journal', label: 'Bài viết' },
+  { href: '/feedback', label: 'Đánh giá' },
   { href: '/#contact', label: 'Liên hệ' },
 ];
 
