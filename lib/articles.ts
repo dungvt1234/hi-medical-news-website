@@ -233,7 +233,7 @@ export const ARTICLES: Article[] = [
       'Chương trình ưu đãi đặc biệt dành riêng cho khách hàng đặt lịch online trong tháng 8. Nhanh tay đăng ký để nhận combo làm đẹp toàn diện với giá cực hấp dẫn.',
     category: 'Chương trình khuyến mãi',
     categoryKey: 'promo',
-    image: IMG.cream,
+    image: '/images/combo-uu-dai-cover.png',
     date: '2026-08-08',
     dateLabel: '08/08/2026',
     readTime: '3 phút đọc',
