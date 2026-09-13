@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE = 'https://hi-medical-news.vercel.app';
+const BASE = 'https://himedicalskin.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {

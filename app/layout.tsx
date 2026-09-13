@@ -7,7 +7,7 @@ import FlipProvider from '@/components/FlipProvider';
 import { SalonJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hi-medical-news.vercel.app'),
+  metadataBase: new URL('https://himedicalskin.com'),
   title: {
     default: 'Hi Medical Spa — Triệt lông, Trị nám & Chăm sóc da tại TP.HCM',
     template: '%s | Hi Medical',

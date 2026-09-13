@@ -1,4 +1,4 @@
-const BASE = 'https://hi-medical-news.vercel.app';
+const BASE = 'https://himedicalskin.com';
 
 /** Thông tin spa dùng chung cho schema */
 export const SALON = {

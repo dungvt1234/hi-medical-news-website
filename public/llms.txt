@@ -17,4 +17,4 @@
 - Đánh giá khách hàng: /feedback
 
 ## Sitemap
-- https://hi-medical-news.vercel.app/sitemap.xml
+- https://himedicalskin.com/sitemap.xml

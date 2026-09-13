@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { ARTICLES } from '@/lib/articles';
 import { SERVICES } from '@/lib/services';
 
-const BASE = 'https://hi-medical-news.vercel.app';
+const BASE = 'https://himedicalskin.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
