@@ -178,9 +178,6 @@ export default function JournalPage() {
                         loading="lazy"
                         className="img-zoom h-full w-full object-cover"
                       />
-                      <span className="absolute left-4 top-4 rounded-full bg-night/70 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-deep backdrop-blur-sm">
-                        {a.category}
-                      </span>
                     </div>
                     <div className="p-6">
                       <h3 className="line-clamp-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
