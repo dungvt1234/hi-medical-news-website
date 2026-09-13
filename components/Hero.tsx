@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Sparkles } from 'lucide-react';
 
 /**
@@ -12,6 +12,13 @@ import { Sparkles } from 'lucide-react';
 export default function Hero() {
   const imgRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  // Mobile: chỉ hiện ảnh poster (đỡ tải video ~14MB) — desktop mới phát video
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const wide = window.matchMedia('(min-width: 768px)').matches;
+    if (wide) setShowVideo(true);
+  }, []);
 
   // Slow image reveal khi mount
   useEffect(() => {
@@ -48,20 +55,29 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-night">
-      {/* Video nền: facial treatment spa (Mixkit, miễn phí) */}
+      {/* Nền Hero: desktop phát video, mobile hiện ảnh tĩnh */}
       <div aria-hidden className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/hero-bg.jpg"
-          className="h-full w-full object-cover"
-        >
-          <source src="/videos/hero-spa.mp4" type="video/mp4" />
-        </video>
+        {showVideo ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/hero-bg.jpg"
+            className="h-full w-full object-cover"
+          >
+            <source src="/videos/hero-spa.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src="/images/hero-bg.jpg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        )}
         {/* Overlay gradient tối navy/đen: đậm trái (vùng chữ + logo) → nhạt phải (vẫn thấy ảnh) */}
         <div
           className="absolute inset-0"
