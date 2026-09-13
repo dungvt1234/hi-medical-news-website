@@ -51,12 +51,6 @@ export default function Treatments() {
               <span className="italic text-rose-deep">mọi vẻ đẹp.</span>
             </Reveal>
           </div>
-          <a
-            href="#contact"
-            className="reveal inline-flex shrink-0 items-center gap-2 rounded-full border border-luxury px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-ink transition-all duration-500 hover:border-rose/60 hover:text-rose-deep"
-          >
-            Xem tất cả liệu trình
-          </a>
         </div>
 
         {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
