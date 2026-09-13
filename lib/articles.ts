@@ -360,37 +360,37 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'a8',
-    slug: 'hop-tac-cong-nghe-my-pham-han-quoc',
-    title: 'Hi Medical ký kết hợp tác độc quyền với hãng mỹ phẩm dược liệu Hàn Quốc',
+    slug: 'hop-tac-quoc-te',
+    title: 'Hi Medical mở rộng hợp tác quốc tế về công nghệ và mỹ phẩm chuyên sâu',
     excerpt:
-      'Thỏa thuận hợp tác mang đến cho khách hàng dòng sản phẩm chăm sóc da chuyên sâu với công nghệ chiết xuất thảo dược tiên tiến từ Hàn Quốc.',
+      'Mạng lưới đối tác quốc tế mang đến cho khách hàng công nghệ làm đẹp tiên tiến và dòng sản phẩm chăm sóc da chuyên sâu được chuyển giao chính hãng.',
     category: 'Đối tác',
     categoryKey: 'partner',
     image: IMG.massage,
-    date: '2026-07-28',
-    dateLabel: '28/07/2026',
+    date: '2026-09-13',
+    dateLabel: '13/09/2026',
     readTime: '3 phút đọc',
     video: 'https://drive.google.com/file/d/1uEkZ0t-FdZwQrIK4uT7d6UyH7BsC4rtL/preview',
     content: [
       {
         heading: 'Bước tiến trong chiến lược hợp tác quốc tế',
         paragraphs: [
-          'Hi Medical chính thức ký kết thỏa thuận hợp tác độc quyền với hãng mỹ phẩm dược liệu hàng đầu Hàn Quốc. Theo thỏa thuận, Hi Medical là đơn vị đầu tiên và duy nhất tại thị trường được phân phối và ứng dụng dòng sản phẩm chăm sóc da chuyên sâu của hãng trong liệu trình điều trị.',
-          'Sự hợp tác này đánh dấu bước tiến quan trọng trong chiến lược nâng cao chất lượng dịch vụ, mang đến cho khách hàng những công nghệ làm đẹp tiên tiến nhất từ xứ sở kim chi — quốc gia dẫn đầu xu hướng chăm sóc da châu Á.',
+          'Hi Medical chính thức mở rộng mạng lưới hợp tác quốc tế với các hãng công nghệ thẩm mỹ và mỹ phẩm chuyên sâu từ những cường quốc làm đẹp trên thế giới. Theo thỏa thuận, Hi Medical được chuyển giao chính hãng công nghệ, sản phẩm và quy trình đào tạo để ứng dụng trực tiếp trong liệu trình điều trị.',
+          'Sự hợp tác này đánh dấu bước tiến quan trọng trong chiến lược nâng cao chất lượng dịch vụ, mang đến cho khách hàng những giải pháp làm đẹp tiên tiến, đạt chuẩn quốc tế.',
         ],
       },
       {
-        heading: 'Công nghệ chiết xuất thảo dược tiên tiến',
+        heading: 'Công nghệ và sản phẩm chuyển giao chính hãng',
         paragraphs: [
-          'Dòng sản phẩm mới được nghiên cứu và phát triển dựa trên công nghệ chiết xuất thảo dược hiện đại: nhân sâm, trà xanh, rau má và nhiều dược liệu quý được tinh chế ở nhiệt độ thấp để giữ trọn hoạt chất, kết hợp với peptide và dưỡng chất phục hồi da chuyên sâu.',
-          'Toàn bộ sản phẩm trải qua quy trình kiểm nghiệm nghiêm ngặt, đạt các chứng nhận an toàn quốc tế, phù hợp với cả làn da nhạy cảm và da đang trong liệu trình điều trị chuyên sâu.',
+          'Các dòng sản phẩm và thiết bị trong khuôn khổ hợp tác được nghiên cứu, kiểm nghiệm nghiêm ngặt theo tiêu chuẩn quốc tế: chiết xuất thảo dược, peptide phục hồi và hoạt chất chuyên sâu cho từng loại da, phù hợp cả làn da nhạy cảm và da đang trong liệu trình điều trị.',
+          'Đội ngũ chuyên môn của Hi Medical được đối tác đào tạo bài bản, từ soi da, xây dựng phác đồ đến vận hành công nghệ — đảm bảo mỗi liệu trình đạt đúng chuẩn của hãng.',
         ],
       },
       {
         heading: 'Lợi ích cho khách hàng',
         paragraphs: [
-          'Khách hàng của Hi Medical sẽ được trải nghiệm ngay dòng sản phẩm độc quyền trong các liệu trình chăm sóc da cao cấp, đồng thời nhận tư vấn từ đội ngũ chuyên môn đã được hãng đào tạo bài bản.',
-          'Bên cạnh đó, chương trình ưu đãi đặc biệt dành cho khách hàng thân thiết khi trải nghiệm liệu trình mới sẽ được công bố trong thời gian tới. Hãy theo dõi website và fanpage để không bỏ lỡ nhé!',
+          'Khách hàng của Hi Medical được trải nghiệm công nghệ và sản phẩm quốc tế chính hãng trong các liệu trình cao cấp, với phác đồ cá nhân hoá theo tình trạng da của từng người.',
+          'Bên cạnh đó, các chương trình ưu đãi dành cho khách hàng thân thiết khi trải nghiệm liệu trình mới sẽ được công bố trong thời gian tới. Hãy theo dõi website và fanpage để không bỏ lỡ nhé!',
         ],
       },
     ],
