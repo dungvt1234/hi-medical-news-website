@@ -190,7 +190,7 @@ export const ARTICLES: Article[] = [
       'Chị Thu Hà (38 tuổi, TP.HCM) chia sẻ hành trình điều trị nám chân sâu với công nghệ laser hiện đại và phác đồ chuẩn y khoa tại Hi Medical.',
     category: 'Câu chuyện thành công',
     categoryKey: 'stories',
-    image: IMG.salon,
+    image: '/images/xoa-nam-thu-ha-cover.png',
     date: '2026-08-10',
     dateLabel: '10/08/2026',
     readTime: '7 phút đọc',
