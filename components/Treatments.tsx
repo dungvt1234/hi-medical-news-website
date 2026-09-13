@@ -4,56 +4,13 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Percent } from 'lucide-react';
 import Reveal from './Reveal';
+import { SERVICES } from '@/lib/services';
 
 /**
  * Signature Treatments — 6 cards dịch vụ
  * Style: dark navy, large image, minimal typography, hover zoom nhẹ
+ * Dữ liệu dùng chung từ lib/services (đồng bộ ảnh với /dich-vu và trang chi tiết)
  */
-const SERVICES = [
-  {
-    slug: 'triet-long-cong-nghe-cao',
-    name: 'Triệt lông công nghệ cao',
-    en: 'SMART OPT IDPL DELUXE',
-    desc: 'Nách, tay, chân, mặt, bikini, toàn thân — triệt lông an toàn, êm ái, hiệu quả lâu dài.',
-    img: '/images/triet-long-cong-nghe-cao.jpg',
-  },
-  {
-    slug: 'dieu-tri-da-chuyen-sau',
-    name: 'Hỗ trợ cải thiện các vấn đề da',
-    en: 'Acne & Pigmentation',
-    desc: 'Mụn, nám, thâm, sẹo, quầng thâm mắt — liệu trình an toàn với công nghệ laser & IPL hiện đại.',
-    img: '/images/dieu-tri-da-chuyen-sau.jpg',
-  },
-  {
-    slug: 'cham-soc-da',
-    name: 'Chăm sóc da',
-    en: 'Luxury Skincare',
-    desc: 'Làm sạch sâu, dưỡng ẩm phục hồi, đắp mặt nạ và chăm sóc da toàn thân.',
-    img: '/images/cham-soc-da.jpg',
-  },
-  {
-    slug: 'tre-hoa-nang-co',
-    name: 'Trẻ hóa & nâng cơ',
-    en: 'Rejuvenation',
-    desc: 'IPL, laser, Micro needle shoot — giúp da săn chắc, tươi trẻ hơn mà không cần phẫu thuật.',
-    img: '/images/tre-hoa-nang-co.jpg',
-  },
-  {
-    slug: 'massage-thu-gian',
-    name: 'Dưỡng sinh thảo dược',
-    en: 'Massage',
-    desc: 'Giải tỏa căng thẳng, làm dịu cơ thể và phục hồi năng lượng sau những ngày dài mệt mỏi.',
-    img: '/images/duong-sinh-thao-moc.jpg',
-  },
-  {
-    slug: 'combo-uu-dai',
-    name: 'Combo ưu đãi',
-    en: 'Best Value',
-    desc: 'Gói combo chăm sóc toàn diện với mức giá ưu đãi hấp dẫn — dành riêng cho khách đặt lịch online.',
-    img: '/images/combo-uu-dai.jpg',
-    special: true,
-  },
-];
 
 export default function Treatments() {
   const ref = useRef<HTMLDivElement>(null);
@@ -160,7 +117,7 @@ export default function Treatments() {
                     t.special ? 'text-[#D8C8F0]' : 'text-ink-light'
                   }`}
                 >
-                  {t.desc}
+                  {t.tagline}
                 </p>
                 <span
                   className={`mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] opacity-0 transition-all duration-500 group-hover:opacity-100 ${
