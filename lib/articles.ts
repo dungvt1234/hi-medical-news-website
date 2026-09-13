@@ -269,7 +269,7 @@ export const ARTICLES: Article[] = [
       'Quầng thâm mắt khiến gương mặt luôn mệt mỏi, già hơn tuổi. Công nghệ IPL bước sóng kép giúp mờ thâm, kích thích collagen, trả lại vùng da mắt sáng khỏe.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.candles,
+    image: '/images/tham-quang-mat-cover.jpg',
     date: '2026-08-05',
     dateLabel: '05/08/2026',
     readTime: '5 phút đọc',
