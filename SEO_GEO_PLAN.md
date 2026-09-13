@@ -62,7 +62,7 @@ phân cấp H1→H2→H3 chuẩn ở trang chi tiết, `lang="vi"`, NAP nhất q
 - [ ] 2–3 bài/tuần trong 3–6 tháng đầu, ưu tiên long-tail giao dịch
       (“triệt lông bikini giá bao nhiêu”, “trị nám ở đâu hiệu quả review”).
 - [ ] Refresh nội dung theo quý, audit link nội bộ, test prompt
-      (“spa trị mụn tốt Quận 1?”) trên ChatGPT/Gemini/Perplexity để check trích dẫn.
+      (“spa trị mụn tốt Vũng Tàu?”) trên ChatGPT/Gemini/Perplexity để check trích dẫn.
 
 ## 4. NGUYÊN TẮC GEO (để AI trích dẫn)
 Định nghĩa trước 40–60 từ → heading câu hỏi → số liệu cụ thể → bảng/bước/FAQ →

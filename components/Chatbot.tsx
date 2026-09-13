@@ -68,7 +68,7 @@ const FAQ: FaqRule[] = [
   },
   {
     keys: ['dia chi', 'o dau', 'duong', 'quan', 'chi nhanh', 'den truc tiep'],
-    text: 'Địa chỉ: 123 Nguyễn Trãi, Q.1, TP. Hồ Chí Minh. Bạn có thể ghé trực tiếp trong giờ mở cửa hoặc đặt lịch online trước nhé.',
+    text: 'Địa chỉ: 49 Nguyễn Bỉnh Khiêm, Phường Vũng Tàu, TP. Hồ Chí Minh. Bạn có thể ghé trực tiếp trong giờ mở cửa hoặc đặt lịch online trước nhé.',
   },
   {
     keys: ['sdt', 'dien thoai', 'hotline', 'lien he', 'zalo', 'tu van', 'hoi'],

@@ -138,7 +138,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
-                  123 Nguyễn Trãi, Q.1,
+                  49 Nguyễn Bỉnh Khiêm, P. Vũng Tàu,
                   <br />
                   TP. Hồ Chí Minh
                 </span>

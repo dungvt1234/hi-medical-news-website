@@ -4,7 +4,7 @@ const BASE = 'https://himedicalskin.com';
 export const SALON = {
   name: 'Hi Medical Skincare & Beauty',
   telephone: '+84 799 390 790',
-  address: '123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh',
+  address: '49 Nguyễn Bỉnh Khiêm, Phường Vũng Tàu, TP. Hồ Chí Minh',
 };
 
 export function SalonJsonLd() {
@@ -21,8 +21,8 @@ export function SalonJsonLd() {
         priceRange: '₫₫',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '123 Nguyễn Trãi',
-          addressLocality: 'Quận 1, TP. Hồ Chí Minh',
+          streetAddress: '49 Nguyễn Bỉnh Khiêm',
+          addressLocality: 'Phường Vũng Tàu, TP. Hồ Chí Minh',
           addressCountry: 'VN',
         },
         areaServed: 'TP. Hồ Chí Minh',

@@ -41,7 +41,7 @@
 8. `massage-cổ-vai-gáy-giá-bao-nhiêu-TPHCM`
 
 **Đợt 3 — local + niềm tin:**
-9. `spa-quận-1-uy-tín` (địa chỉ + bản đồ + review Google)
+9. `spa-vung-tau-uy-tin` (địa chỉ + bản đồ + review Google)
 10. `triệt-lông-nam-giới` (phân khúc khách nam đang tăng)
 
 ## D. LỊCH TRIỂN KHAI
