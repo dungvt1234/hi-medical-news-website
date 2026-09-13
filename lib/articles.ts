@@ -228,7 +228,7 @@ export const ARTICLES: Article[] = [
   {
     id: 'a5',
     slug: 'uu-dai-thang-8-combo-lam-dep',
-    title: 'Ưu đãi tháng 8: Combo chăm sóc da + triệt lông chỉ từ 168K — số lượng có hạn',
+    title: 'Ưu đãi tháng 8: Combo chăm sóc da + triệt lông, số lượng có hạn',
     excerpt:
       'Chương trình ưu đãi đặc biệt dành riêng cho khách hàng đặt lịch online trong tháng 8. Nhanh tay đăng ký để nhận combo làm đẹp toàn diện với giá cực hấp dẫn.',
     category: 'Chương trình khuyến mãi',
@@ -239,9 +239,9 @@ export const ARTICLES: Article[] = [
     readTime: '3 phút đọc',
     content: [
       {
-        heading: 'Combo làm đẹp chỉ từ 168K',
+        heading: 'Combo làm đẹp tháng 8',
         paragraphs: [
-          'Chào mừng tháng 8, Hi Medical triển khai chương trình ưu đãi đặc biệt dành riêng cho khách hàng đặt lịch online: combo chăm sóc da mặt chuyên sâu kết hợp triệt lông vùng nhỏ chỉ từ 168.000đ. Mức giá chưa từng có, áp dụng cho khách hàng mới và khách hàng thân thiết giới thiệu bạn bè.',
+          'Chào mừng tháng 8, Hi Medical triển khai chương trình ưu đãi đặc biệt dành riêng cho khách hàng đặt lịch online: combo chăm sóc da mặt chuyên sâu kết hợp triệt lông vùng nhỏ. Mức giá ưu đãi áp dụng cho khách hàng mới và khách hàng thân thiết giới thiệu bạn bè.',
           'Combo bao gồm: buổi trị liệu chăm sóc da làm sạch sâu, cấp ẩm, se khít lỗ chân lông cùng kỹ thuật viên giàu kinh nghiệm và 1 vùng triệt lông nhỏ bằng công nghệ SMART OPT IDPL DELUXE êm ái, an toàn.',
         ],
       },
