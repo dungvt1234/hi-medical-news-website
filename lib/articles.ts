@@ -366,7 +366,7 @@ export const ARTICLES: Article[] = [
       'Mạng lưới đối tác quốc tế mang đến cho khách hàng công nghệ làm đẹp tiên tiến và dòng sản phẩm chăm sóc da chuyên sâu được chuyển giao chính hãng.',
     category: 'Đối tác',
     categoryKey: 'partner',
-    image: IMG.massage,
+    image: '/images/hop-tac-quoc-te-cover.jpg',
     date: '2026-09-13',
     dateLabel: '13/09/2026',
     readTime: '3 phút đọc',
