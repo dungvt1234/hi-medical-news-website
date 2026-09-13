@@ -52,13 +52,13 @@ export default function Treatments() {
           </div>
         </div>
 
-        {/* Grid 6 cards dịch vụ — combo ưu đãi nổi bật */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile: dải vuốt ngang (snap) · Desktop: lưới 3 cột */}
+        <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
           {SERVICES.map((t, i) => (
             <Link
               key={t.slug}
               href={`/dich-vu/${t.slug}`}
-              className={`reveal group block overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow ${
+              className={`reveal group block w-[85%] shrink-0 snap-center overflow-hidden rounded-4xl border transition-all duration-700 hover:-translate-y-1.5 hover:shadow-glow sm:w-auto ${
                 t.special
                   ? 'relative border-gold bg-gradient-to-b from-[#3A2E56] via-[#4A3A6B] to-[#3A2E56] shadow-[0_0_35px_rgba(232,201,90,0.18)] hover:border-[#F3D97A]'
                   : 'border-luxury bg-night-2 hover:border-rose/40'
