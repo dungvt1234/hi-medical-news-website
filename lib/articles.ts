@@ -273,6 +273,7 @@ export const ARTICLES: Article[] = [
     date: '2026-08-05',
     dateLabel: '05/08/2026',
     readTime: '5 phút đọc',
+    video: 'https://drive.google.com/file/d/1TqRPXaEi6z7Nl0S-jSuJTwHO_XULt4If/preview',
     content: [
       {
         heading: 'Nguyên nhân gây quầng thâm mắt',
