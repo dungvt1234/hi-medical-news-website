@@ -3,9 +3,10 @@ import { Star, Quote, ArrowRight } from 'lucide-react';
 import { FEEDBACKS } from '@/lib/feedbacks';
 
 export const metadata = {
-  title: 'Đánh giá khách hàng | Hi Medical',
+  title: 'Đánh giá khách hàng spa tại TP.HCM',
   description:
     'Khách hàng nói gì về Hi Medical Skincare & Beauty — những chia sẻ thật sau liệu trình chăm sóc da, triệt lông và điều trị chuyên sâu.',
+  alternates: { canonical: '/feedback' },
 };
 
 function Stars({ rating }: { rating: number }) {

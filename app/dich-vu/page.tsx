@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { SERVICES } from '@/lib/services';
 
 export const metadata = {
-  title: 'Dịch vụ — Hi Medical Skincare & Beauty',
+  title: 'Dịch vụ Spa & Điều trị da tại TP.HCM',
   description:
     'Khám phá các dịch vụ chăm sóc sắc đẹp an toàn tại Hi Medical: triệt lông công nghệ cao, điều trị da chuyên sâu, chăm sóc da, trẻ hóa & nâng cơ, massage thư giãn và combo ưu đãi.',
+  alternates: { canonical: '/dich-vu' },
 };
 
 export default function DichVuPage() {

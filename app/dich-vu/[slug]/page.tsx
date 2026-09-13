@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SERVICES, getService } from '@/lib/services';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const dynamicParams = false;
 
@@ -12,8 +13,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const sv = getService(params.slug);
   if (!sv) return { title: 'Không tìm thấy dịch vụ' };
   return {
-    title: `${sv.name} — Hi Medical Skincare & Beauty`,
-    description: sv.tagline,
+    title: `${sv.name} tại TP.HCM`,
+    description: `${sv.tagline} Đặt lịch tư vấn miễn phí: 0799 390 790.`,
+    alternates: { canonical: `/dich-vu/${sv.slug}` },
+    openGraph: {
+      title: `${sv.name} | Hi Medical`,
+      description: sv.tagline,
+      images: [{ url: sv.img, alt: sv.name }],
+    },
   };
 }
 
@@ -25,6 +32,13 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
   return (
     <main className="bg-night">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Trang chủ', path: '/' },
+          { name: 'Dịch vụ', path: '/dich-vu' },
+          { name: sv.name, path: `/dich-vu/${sv.slug}` },
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="relative h-[420px] sm:h-[480px]">

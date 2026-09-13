@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CalendarDays, Clock, ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { ARTICLES, getArticleBySlug } from '@/lib/articles';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 // Pre-render tất cả trang chi tiết bài viết
 export function generateStaticParams() {
@@ -12,8 +13,16 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
   if (!article) return { title: 'Bài viết không tồn tại' };
   return {
-    title: `${article.title} | Hi Medical`,
+    title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `/tin-tuc/${article.slug}` },
+    openGraph: {
+      type: 'article',
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: article.date,
+      images: [{ url: article.image, alt: article.title }],
+    },
   };
 }
 
@@ -27,6 +36,14 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
 
   return (
     <main className="min-h-screen bg-night">
+      <ArticleJsonLd article={article} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Trang chủ', path: '/' },
+          { name: 'Bài viết', path: '/journal' },
+          { name: article.title, path: `/tin-tuc/${article.slug}` },
+        ]}
+      />
       {/* Hero bài viết */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">

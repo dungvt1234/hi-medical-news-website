@@ -1,0 +1,20 @@
+# Hi Medical Skincare & Beauty — TP.HCM
+
+> Spa & điều trị da chuẩn y khoa tại 123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh.
+> Mở cửa Thứ 2 – Chủ nhật, 09:00–18:00. Hotline/Zalo: 0799 390 790.
+
+## Dịch vụ
+- Triệt lông công nghệ cao SMART OPT IDPL DELUXE: /dich-vu/triet-long-cong-nghe-cao
+- Hỗ trợ cải thiện các vấn đề da (mụn, nám, thâm, sẹo): /dich-vu/dieu-tri-da-chuyen-sau
+- Chăm sóc da Luxury Skincare: /dich-vu/cham-soc-da
+- Trẻ hoá & nâng cơ (IPL, laser, Micro needle shoot): /dich-vu/tre-hoa-nang-co
+- Dưỡng sinh thảo dược, massage thư giãn: /dich-vu/massage-thu-gian
+- Combo ưu đãi: /dich-vu/combo-uu-dai
+- Tất cả dịch vụ: /dich-vu
+
+## Bài viết & kiến thức
+- Trang bài viết: /journal
+- Đánh giá khách hàng: /feedback
+
+## Sitemap
+- https://hi-medical-news.vercel.app/sitemap.xml
