@@ -11,6 +11,7 @@ import { Sparkles } from 'lucide-react';
  */
 export default function Hero() {
   const imgRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Slow image reveal khi mount
   useEffect(() => {
@@ -20,16 +21,42 @@ export default function Hero() {
     return () => clearTimeout(t);
   }, []);
 
+  // Video Hero: poster hiện trước, chỉ phát khi vào màn hình,
+  // tạm dừng khi ra khỏi màn hình; tôn trọng giảm chuyển động / tiết kiệm dữ liệu
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const conn = (navigator as unknown as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    const saveData =
+      conn?.saveData === true || ['slow-2g', '2g'].includes(conn?.effectiveType ?? '');
+    if (reduce || saveData) {
+      video.pause();
+      video.removeAttribute('autoplay');
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(video);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-night">
       {/* Video nền: facial treatment spa (Mixkit, miễn phí) */}
       <div aria-hidden className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/images/hero-bg.jpg"
           className="h-full w-full object-cover"
         >
