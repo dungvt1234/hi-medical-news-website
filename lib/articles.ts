@@ -313,7 +313,7 @@ export const ARTICLES: Article[] = [
       'Cập nhật xu hướng làm đẹp thế giới, chọn lọc để phù hợp với người Việt — 10 năm Hi Medical kiến tạo hành trình chăm sóc da an toàn, cá nhân hoá và hiệu quả bền vững.',
     category: 'ĐÓN NHỊP XU HƯỚNG LÀM ĐẸP TOÀN CẦU – CHỌN LỌC ĐỂ PHÙ HỢP VỚI NGƯỜI VIỆT',
     categoryKey: 'press',
-    image: IMG.flower,
+    image: '/images/cau-chuyen-hi-medical-cover.jpg',
     date: '2026-09-01',
     dateLabel: '01/09/2026',
     readTime: '5 phút đọc',
