@@ -100,7 +100,7 @@ export default function Gallery() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={src}
-                  alt={`Khoảnh khắc an nhiên ${globalIdx + 1}`}
+                  alt={`Không gian spa Hi Medical ${globalIdx + 1}`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
                 />

@@ -90,7 +90,7 @@ export default function Hero() {
           <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
             <img
               src="/images/moon.png"
-              alt="moon"
+              alt=""
               className="mr-2 inline-block h-11 w-11 align-middle sm:h-16 sm:w-16 sm:mr-3"
             />
             Moonlight,

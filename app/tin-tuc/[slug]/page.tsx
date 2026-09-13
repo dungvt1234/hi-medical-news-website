@@ -170,7 +170,7 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
           </h3>
           <div className="grid gap-5 sm:grid-cols-3">
             {fallbackRelated.map((a) => (
-              <a
+              <Link
                 key={a.id}
                 href={`/tin-tuc/${a.slug}`}
                 className="group block overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
@@ -195,8 +195,8 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                     {a.dateLabel}
 <ArrowUpRight className="ml-auto h-3.5 w-3.5 text-gold" />
                     </p>
-                  </div>
-                </a>
+                   </div>
+                </Link>
             ))}
           </div>
         </div>

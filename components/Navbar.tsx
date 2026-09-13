@@ -83,7 +83,7 @@ export default function Navbar() {
         >
           <img
             src="/logo.png"
-            alt="Hi Medical"
+            alt="Hi Medical Skincare & Beauty"
             className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-24"
           />
           <span className="leading-tight">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import { ARTICLES, CATEGORIES } from '@/lib/articles';
 import { LayoutGrid, Rows3 } from 'lucide-react';
 
@@ -101,7 +102,7 @@ export default function JournalPage() {
           <>
             {/* Featured (khi xem Tất cả) */}
             {activeCat === 'all' && (
-              <a
+              <Link
                 href={`/tin-tuc/${featured.slug}`}
                 className="group mb-10 grid touch-manipulation overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] lg:grid-cols-2"
               >
@@ -128,7 +129,7 @@ export default function JournalPage() {
                     {featured.dateLabel} · {featured.readTime}
                   </p>
                 </div>
-              </a>
+              </Link>
             )}
 
             {/* Tiêu đề + toggle view */}
@@ -168,7 +169,7 @@ export default function JournalPage() {
                     key={a.id}
                     className="group overflow-hidden rounded-3xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
                   >
-                    <a href={`/tin-tuc/${a.slug}`} className="block h-full">
+                    <Link href={`/tin-tuc/${a.slug}`} className="block h-full">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -192,7 +193,7 @@ export default function JournalPage() {
                         {a.dateLabel} · {a.readTime}
                       </p>
                     </div>
-                    </a>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -203,7 +204,7 @@ export default function JournalPage() {
                     key={a.id}
                     className="group grid touch-manipulation gap-5 overflow-hidden rounded-3xl border border-luxury bg-night-2 p-4 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:grid-cols-[200px_1fr] sm:p-5"
                   >
-                    <a href={`/tin-tuc/${a.slug}`} className="contents">
+                    <Link href={`/tin-tuc/${a.slug}`} className="contents">
                     <div className="relative aspect-[16/10] overflow-hidden rounded-2xl sm:aspect-auto">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -227,7 +228,7 @@ export default function JournalPage() {
                         {a.dateLabel} · {a.readTime}
                       </p>
                     </div>
-                    </a>
+                    </Link>
                   </article>
                 ))}
               </div>
