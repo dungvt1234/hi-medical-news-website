@@ -101,42 +101,26 @@ export default function JournalPage() {
           <>
             {/* Featured (khi xem Tất cả) */}
             {activeCat === 'all' && (
-              <article className="group mb-10 grid overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow lg:grid-cols-2">
-                <div className="relative aspect-[16/10] overflow-hidden bg-black lg:aspect-auto lg:min-h-[320px]">
-                  {featured.video ? (
-                    <iframe
-                      src={featured.video}
-                      title={`Video ${featured.title}`}
-                      className="absolute inset-0 h-full w-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <a href={`/tin-tuc/${featured.slug}`} className="block h-full w-full">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={featured.image}
-                        alt={featured.title}
-                        className="img-zoom h-full w-full object-cover"
-                      />
-                    </a>
-                  )}
-                  {featured.video && (
-                    <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-rose px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                      ▶ Video
-                    </span>
-                  )}
+              <a
+                href={`/tin-tuc/${featured.slug}`}
+                className="group mb-10 grid touch-manipulation overflow-hidden rounded-4xl border border-luxury bg-night-2 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] lg:grid-cols-2"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={featured.image}
+                    alt={featured.title}
+                    className="img-zoom h-full w-full object-cover"
+                  />
                 </div>
                 <div className="flex flex-col justify-center p-8 lg:p-12">
                   <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose" />
                     {featured.category}
                   </p>
-                  <a href={`/tin-tuc/${featured.slug}`} className="touch-manipulation">
-                    <h2 className="font-heading text-3xl font-light leading-snug text-ink transition-colors group-hover:text-rose-deep sm:text-4xl">
-                      {featured.title}
-                    </h2>
-                  </a>
+                  <h2 className="font-heading text-3xl font-light leading-snug text-ink transition-colors group-hover:text-rose-deep sm:text-4xl">
+                    {featured.title}
+                  </h2>
                   <p className="mt-4 line-clamp-3 text-sm font-light leading-relaxed text-ink-light">
                     {featured.excerpt}
                   </p>
@@ -144,7 +128,7 @@ export default function JournalPage() {
                     {featured.dateLabel} · {featured.readTime}
                   </p>
                 </div>
-              </article>
+              </a>
             )}
 
             {/* Tiêu đề + toggle view */}
@@ -184,37 +168,23 @@ export default function JournalPage() {
                     key={a.id}
                     className="group overflow-hidden rounded-3xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-black">
-                      {a.video ? (
-                        <iframe
-                          src={a.video}
-                          title={`Video ${a.title}`}
-                          className="absolute inset-0 h-full w-full"
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <a href={`/tin-tuc/${a.slug}`} className="block h-full w-full">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={a.image}
-                            alt={a.title}
-                            loading="lazy"
-                            className="img-zoom h-full w-full object-cover"
-                          />
-                        </a>
-                      )}
-                      <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-night/70 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-deep backdrop-blur-sm">
-                        {a.video ? '▶ Video' : a.category}
+                    <a href={`/tin-tuc/${a.slug}`} className="block h-full">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={a.image}
+                        alt={a.title}
+                        loading="lazy"
+                        className="img-zoom h-full w-full object-cover"
+                      />
+                      <span className="absolute left-4 top-4 rounded-full bg-night/70 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-deep backdrop-blur-sm">
+                        {a.category}
                       </span>
                     </div>
                     <div className="p-6">
-                      <a href={`/tin-tuc/${a.slug}`} className="block">
-                        <h3 className="line-clamp-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
-                          {a.title}
-                        </h3>
-                      </a>
+                      <h3 className="line-clamp-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
+                        {a.title}
+                      </h3>
                       <p className="mt-3 line-clamp-2 text-sm font-light leading-relaxed text-ink-light">
                         {a.excerpt}
                       </p>
@@ -222,6 +192,7 @@ export default function JournalPage() {
                         {a.dateLabel} · {a.readTime}
                       </p>
                     </div>
+                    </a>
                   </article>
                 ))}
               </div>
@@ -232,37 +203,23 @@ export default function JournalPage() {
                     key={a.id}
                     className="group grid touch-manipulation gap-5 overflow-hidden rounded-3xl border border-luxury bg-night-2 p-4 transition-all duration-500 hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:grid-cols-[200px_1fr] sm:p-5"
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black sm:aspect-auto sm:min-h-[140px]">
-                      {a.video ? (
-                        <iframe
-                          src={a.video}
-                          title={`Video ${a.title}`}
-                          className="absolute inset-0 h-full w-full"
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <a href={`/tin-tuc/${a.slug}`} className="block h-full w-full">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={a.image}
-                            alt={a.title}
-                            loading="lazy"
-                            className="img-zoom h-full w-full object-cover"
-                          />
-                        </a>
-                      )}
+                    <a href={`/tin-tuc/${a.slug}`} className="contents">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl sm:aspect-auto">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={a.image}
+                        alt={a.title}
+                        loading="lazy"
+                        className="img-zoom h-full w-full object-cover"
+                      />
                     </div>
                     <div className="flex flex-col justify-center">
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
-                        {a.video ? '▶ Video · ' : ''}{a.category}
+                        {a.category}
                       </p>
-                      <a href={`/tin-tuc/${a.slug}`} className="block">
-                        <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
-                          {a.title}
-                        </h3>
-                      </a>
+                      <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-ink transition-colors group-hover:text-rose-deep">
+                        {a.title}
+                      </h3>
                       <p className="mt-2 line-clamp-2 text-sm font-light text-ink-light">
                         {a.excerpt}
                       </p>
@@ -270,6 +227,7 @@ export default function JournalPage() {
                         {a.dateLabel} · {a.readTime}
                       </p>
                     </div>
+                    </a>
                   </article>
                 ))}
               </div>

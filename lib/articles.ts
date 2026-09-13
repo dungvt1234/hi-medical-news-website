@@ -56,7 +56,7 @@ export const ARTICLES: Article[] = [
       'Không còn lo lắng về việc triệt lông đau rát, lông mọc lại nhanh hay kích ứng da — công nghệ SMART OPT IDPL DELUXE tại Hi Medical giúp làm sạch lông an toàn, êm ái, hiệu quả lâu dài chỉ sau một liệu trình chuẩn y khoa.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.laser,
+    image: '/images/triet-long-cover.png',
     date: '2026-08-18',
     dateLabel: '18/08/2026',
     readTime: '6 phút đọc',

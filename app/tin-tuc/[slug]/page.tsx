@@ -69,9 +69,22 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
               {article.readTime}
             </span>
           </div>
+        </div>
+      </section>
 
-          {article.video && (
-            <div className="mt-8 overflow-hidden rounded-3xl border border-white/20 bg-black/40 p-2 backdrop-blur-sm">
+      {/* Nội dung trọn bộ */}
+      <section className="mx-auto max-w-3xl px-5 pb-16 sm:px-8">
+        <p className="border-l-2 border-gold pl-5 font-heading text-xl font-light italic leading-relaxed text-ink-light sm:text-2xl">
+          {article.excerpt}
+        </p>
+
+        {article.video && (
+          <div className="mt-10">
+            <p className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-deep">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose" />
+              Xem video giới thiệu
+            </p>
+            <div className="overflow-hidden rounded-3xl border border-luxury bg-night-2 p-3">
               <div className="aspect-video overflow-hidden rounded-2xl">
                 <iframe
                   src={article.video}
@@ -82,17 +95,8 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                 />
               </div>
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* Nội dung trọn bộ */}
-      <section className="mx-auto max-w-3xl px-5 pb-16 sm:px-8">
-        <p className="border-l-2 border-gold pl-5 font-heading text-xl font-light italic leading-relaxed text-ink-light sm:text-2xl">
-          {article.excerpt}
-        </p>
-
-        {/* Video đã hiển thị ở hero phía trên nếu có — tránh load 2 lần */}
+          </div>
+        )}
 
         <div className="mt-10 space-y-10">
           {article.content.map((section, i) => (
@@ -154,27 +158,14 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                 href={`/tin-tuc/${a.slug}`}
                 className="group block overflow-hidden rounded-2xl border border-luxury bg-night-2 transition-all duration-500 touch-manipulation hover:border-rose/40 hover:shadow-glow active:scale-[0.99] sm:hover:-translate-y-1"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-black">
-                  {a.video ? (
-                    <iframe
-                      src={a.video}
-                      title={`Video ${a.title}`}
-                      className="absolute inset-0 h-full w-full"
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={a.image}
-                        alt={a.title}
-                        loading="lazy"
-                        className="img-zoom h-full w-full object-cover"
-                      />
-                    </>
-                  )}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={a.image}
+                    alt={a.title}
+                    loading="lazy"
+                    className="img-zoom h-full w-full object-cover"
+                  />
                 </div>
                 <div className="p-4">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-rose-deep">
