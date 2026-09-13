@@ -32,7 +32,7 @@ export function SalonJsonLd() {
           opens: '09:00',
           closes: '18:00',
         },
-        sameAs: ['https://zalo.me/0799390790'],
+        sameAs: ['https://zalo.me/0799390790', 'https://www.facebook.com/ChamSocDaVungTau'],
       },
       {
         '@type': 'WebSite',

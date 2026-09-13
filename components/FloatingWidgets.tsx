@@ -79,7 +79,7 @@ export default function FloatingWidgets() {
 
         {/* Messenger */}
         <a
-          href="https://m.me/himedical"
+          href="https://m.me/ChamSocDaVungTau"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat Messenger"

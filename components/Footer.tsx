@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/ChamSocDaVungTau"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
