@@ -147,7 +147,7 @@ export const ARTICLES: Article[] = [
       'Rửa mặt quá nhiều, nặn mụn tại nhà, lạm dụng sản phẩm tẩy da chết… là những sai lầm phổ biến. Chuyên gia da liễu Hi Medical chỉ ra cách điều trị đúng chuẩn.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.facial,
+    image: '/images/mun-tuoi-day-thi-cover.png',
     date: '2026-08-12',
     dateLabel: '12/08/2026',
     readTime: '5 phút đọc',
