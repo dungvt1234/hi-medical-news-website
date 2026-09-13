@@ -64,6 +64,28 @@ export default function FeedbackPage() {
               <p className="mt-5 flex-1 font-heading text-lg font-light italic leading-relaxed text-ink sm:text-xl">
                 “{fb.content}”
               </p>
+              {fb.images && fb.images.length > 0 && (
+                <div className="mt-5 grid grid-cols-3 gap-2">
+                  {fb.images.map((src) => (
+                    <a
+                      key={src}
+                      href={src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/img relative aspect-square overflow-hidden rounded-2xl border border-luxury/60"
+                      aria-label={`Xem ảnh feedback của ${fb.name}`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={src}
+                        alt={`Feedback của ${fb.name}`}
+                        loading="lazy"
+                        className="img-zoom h-full w-full object-cover"
+                      />
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="mt-7 flex items-center gap-4 border-t border-luxury/60 pt-5">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-rose/10 font-heading text-lg font-semibold text-rose-deep">
                   {fb.name.charAt(0)}

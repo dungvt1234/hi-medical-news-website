@@ -11,6 +11,8 @@ export type Feedback = {
   rating: number;
   content: string;
   dateLabel: string;
+  /** Ảnh feedback thật (chụp màn hình/chat/trước-sau) — để trong public/images/feedbacks/ */
+  images?: string[];
 };
 
 export const FEEDBACKS: Feedback[] = [
