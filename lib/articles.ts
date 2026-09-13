@@ -370,6 +370,7 @@ export const ARTICLES: Article[] = [
     date: '2026-07-28',
     dateLabel: '28/07/2026',
     readTime: '3 phút đọc',
+    video: 'https://drive.google.com/file/d/1uEkZ0t-FdZwQrIK4uT7d6UyH7BsC4rtL/preview',
     content: [
       {
         heading: 'Bước tiến trong chiến lược hợp tác quốc tế',
