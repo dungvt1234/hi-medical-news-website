@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SERVICES, getService } from '@/lib/services';
-import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/JsonLd';
 
 export const dynamicParams = false;
 
@@ -60,6 +60,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
   return (
     <main className="bg-night">
+      <ServiceJsonLd service={{ slug: sv.slug, name: sv.name, tagline: sv.tagline }} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Trang chủ', path: '/' },
