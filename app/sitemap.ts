@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/dich-vu`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/journal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/feedback`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/lien-he`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     ...SERVICES.map((s) => ({
       url: `${BASE}/dich-vu/${s.slug}`,
       lastModified: now,

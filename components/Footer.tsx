@@ -112,7 +112,8 @@ export default function Footer() {
                 ['/#about', 'Giới thiệu'],
                 ['/#experience', 'Trải nghiệm'],
                 ['/journal', 'Bài viết'],
-                ['/#contact', 'Liên hệ'],
+                ['/lien-he', 'Liên hệ'],
+                ['/#contact', 'Đặt lịch'],
               ].map(([href, label]) => (
                 <li key={label}>
                   <Link href={href} className="transition-colors duration-300 hover:text-gold">
