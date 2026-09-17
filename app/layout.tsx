@@ -9,11 +9,11 @@ import { SalonJsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   metadataBase: new URL('https://himedicalskin.com'),
   title: {
-    default: 'Hi Medical Spa — Triệt lông, Trị nám & Chăm sóc da tại TP.HCM',
+    default: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     template: '%s | Hi Medical',
   },
   description:
-    'Hi Medical Skincare & Beauty TP.HCM — triệt lông SMART OPT IDPL, điều trị mụn/nám, trẻ hoá và chăm sóc da chuẩn y khoa. Mở cửa 09:00–18:00. Đặt lịch: 0799 390 790.',
+    'Hi Medical Skincare & Beauty — 49 Nguyễn Bỉnh Khiêm, Vũng Tàu. Triệt lông SMART OPT IDPL, trị mụn/nám, trẻ hoá chuẩn y khoa. Đặt lịch: 0799 390 790.',
   keywords: [
     'spa cao cấp',
     'skincare',
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'vi_VN',
     siteName: 'Hi Medical Skincare & Beauty',
-    title: 'Hi Medical Spa — Triệt lông, Trị nám & Chăm sóc da tại TP.HCM',
+    title: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     description:
-      'Trải nghiệm spa cao cấp tại TP.HCM — triệt lông, điều trị da và trẻ hoá chuẩn y khoa. Đặt lịch: 0799 390 790.',
+      'Trải nghiệm spa cao cấp tại Vũng Tàu — triệt lông, điều trị da và trẻ hoá chuẩn y khoa. Đặt lịch: 0799 390 790.',
     images: [{ url: '/logo.png', width: 512, height: 512, alt: 'Hi Medical Skincare & Beauty' }],
   },
   twitter: {
     card: 'summary',
-    title: 'Hi Medical Spa — Skincare & Beauty TP.HCM',
+    title: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     description:
-      'Triệt lông, trị nám, trẻ hoá và chăm sóc da chuẩn y khoa tại TP.HCM. Đặt lịch: 0799 390 790.',
+      'Triệt lông, trị nám, trẻ hoá và chăm sóc da chuẩn y khoa tại Vũng Tàu. Đặt lịch: 0799 390 790.',
     images: ['/logo.png'],
   },
   robots: { index: true, follow: true },

@@ -9,16 +9,44 @@ export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
+const SEO: Record<string, { title: string; desc: string }> = {
+  'triet-long-cong-nghe-cao': {
+    title: 'Triệt lông vĩnh viễn tại Vũng Tàu',
+    desc: 'Triệt lông êm ái, hiệu quả lâu dài bằng SMART OPT IDPL DELUXE tại Hi Medical, 49 Nguyễn Bỉnh Khiêm, Vũng Tàu. Tư vấn miễn phí: 0799 390 790.',
+  },
+  'dieu-tri-da-chuyen-sau': {
+    title: 'Trị mụn, nám & thâm tại Vũng Tàu',
+    desc: 'Điều trị mụn, nám, thâm, sẹo bằng laser & IPL hiện đại theo phác đồ riêng từng làn da tại Hi Medical Vũng Tàu. Đặt lịch: 0799 390 790.',
+  },
+  'cham-soc-da': {
+    title: 'Chăm sóc da mặt chuyên sâu tại Vũng Tàu',
+    desc: 'Facial làm sạch sâu, dưỡng ẩm phục hồi trong không gian tĩnh lặng tại Hi Medical, 49 Nguyễn Bỉnh Khiêm, Vũng Tàu. Đặt lịch: 0799 390 790.',
+  },
+  'tre-hoa-nang-co': {
+    title: 'Trẻ hoá & nâng cơ không phẫu thuật tại Vũng Tàu',
+    desc: 'Trẻ hoá, săn chắc da bằng IPL, laser và Micro needle shoot tại Hi Medical Vũng Tàu. Tư vấn miễn phí: 0799 390 790.',
+  },
+  'massage-thu-gian': {
+    title: 'Massage dưỡng sinh thảo dược tại Vũng Tàu',
+    desc: 'Massage thư giãn, giải toả căng thẳng bằng thảo dược tại Hi Medical, 49 Nguyễn Bỉnh Khiêm, Vũng Tàu. Đặt lịch: 0799 390 790.',
+  },
+  'combo-uu-dai': {
+    title: 'Combo spa ưu đãi tại Vũng Tàu',
+    desc: 'Combo chăm sóc toàn diện giá ưu đãi dành riêng khách đặt lịch online tại Hi Medical Vũng Tàu. Đặt lịch: 0799 390 790.',
+  },
+};
+
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const sv = getService(params.slug);
   if (!sv) return { title: 'Không tìm thấy dịch vụ' };
+  const seo = SEO[params.slug];
   return {
-    title: `${sv.name} tại TP.HCM`,
-    description: `${sv.tagline} Đặt lịch tư vấn miễn phí: 0799 390 790.`,
+    title: seo?.title ?? `${sv.name} tại Vũng Tàu`,
+    description: seo?.desc ?? `${sv.tagline} Đặt lịch tư vấn miễn phí: 0799 390 790.`,
     alternates: { canonical: `/dich-vu/${sv.slug}` },
     openGraph: {
-      title: `${sv.name} | Hi Medical`,
-      description: sv.tagline,
+      title: `${seo?.title ?? sv.name} | Hi Medical`,
+      description: seo?.desc ?? sv.tagline,
       images: [{ url: sv.img, alt: sv.name }],
     },
   };
@@ -60,7 +88,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <span className="text-gold">{sv.name}</span>
             </nav>
             <h1 className="font-heading text-4xl font-medium leading-tight text-white sm:text-5xl">
-              {sv.name}
+              {sv.name}{' '}
+              <span className="font-light italic text-gold/90">tại Vũng Tàu</span>
             </h1>
             <p className="mt-2 font-heading text-lg italic text-gold">{sv.en}</p>
             <p className="mt-4 max-w-2xl text-sm font-light leading-relaxed text-white/80">

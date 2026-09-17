@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { SERVICES } from '@/lib/services';
 
 export const metadata = {
-  title: 'Dịch vụ Spa & Điều trị da tại TP.HCM',
+  title: 'Dịch vụ spa & điều trị da tại Vũng Tàu',
   description:
     'Khám phá các dịch vụ chăm sóc sắc đẹp an toàn tại Hi Medical: triệt lông công nghệ cao, điều trị da chuyên sâu, chăm sóc da, trẻ hóa & nâng cơ, massage thư giãn và combo ưu đãi.',
   alternates: { canonical: '/dich-vu' },
@@ -18,7 +18,7 @@ export default function DichVuPage() {
             <span className="h-px w-8 bg-gold" /> Our Services <span className="h-px w-8 bg-gold" />
           </p>
           <h1 className="mt-5 font-heading text-4xl font-medium leading-tight text-ink sm:text-6xl">
-            Dịch vụ của <span className="italic text-[#7A4FB3]">chúng tôi</span>
+            Dịch vụ spa tại <span className="italic text-[#7A4FB3]">Vũng Tàu</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base font-light leading-relaxed text-[#6E6285]">
             Từ triệt lông công nghệ cao đến điều trị da chuyên sâu — mỗi liệu trình đều được

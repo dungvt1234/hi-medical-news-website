@@ -104,16 +104,9 @@ export default function Hero() {
           </p>
 
           <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            <img
-              src="/images/moon.png"
-              alt=""
-              className="mr-2 inline-block h-11 w-11 align-middle sm:h-16 sm:w-16 sm:mr-3"
-            />
-            Moonlight,
+            Spa &amp; trị liệu da
             <br />
-            floral scent &amp;
-            <br />
-            a touch of <span className="italic text-gold">beauty.</span>
+            đẳng cấp tại <span className="italic text-gold">Vũng Tàu.</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-sm font-light leading-relaxed text-white/85 sm:text-base lg:mx-0">
