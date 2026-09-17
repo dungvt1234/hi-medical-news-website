@@ -431,6 +431,157 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: 'a10',
+    slug: 'bang-gia-triet-long-vinh-vien-2026',
+    title: 'Bảng giá triệt lông vĩnh viễn 2026: giá từng vùng và cách chọn công nghệ',
+    excerpt:
+      'Triệt lông vĩnh viễn giá bao nhiêu năm 2026? Tổng hợp giá tham khảo theo từng vùng (nách, tay, chân, bikini, toàn thân) và so sánh IPL, Diode Laser, SMART OPT để bạn chọn đúng.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.laser,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '6 phút đọc',
+    content: [
+      {
+        heading: 'Triệt lông vĩnh viễn giá bao nhiêu?',
+        paragraphs: [
+          'Năm 2026, giá triệt lông vĩnh viễn trên thị trường dao động rất rộng: từ khoảng 200.000đ cho vùng nhỏ như nách, mép đến 15–20 triệu cho gói toàn thân, tùy công nghệ, số buổi và cơ sở thực hiện.',
+          'Dưới đây là mức giá tham khảo phổ biến: nách 200.000–1.500.000đ/liệu trình, ria mép 300.000–1.200.000đ, nửa tay 2–8 triệu, toàn chân 7–20 triệu, bikini 3–10 triệu, toàn thân 15–80 triệu. Giá chính xác tại Hi Medical được báo trước khi làm — nhắn Zalo 0799 390 790 để nhận báo giá theo vùng của bạn.',
+        ],
+      },
+      {
+        heading: 'IPL, Diode Laser và SMART OPT khác nhau thế nào?',
+        paragraphs: [
+          'IPL là ánh sáng xung phổ rộng, giá mềm nhất, phù hợp lông tơ mảnh nhưng hiệu quả lâu dài kém hơn laser. Diode Laser tác động sâu vào nang lông, hiệu quả mạnh với lông dày, đen — được xem là công nghệ quốc dân hiện nay.',
+          'SMART OPT IDPL DELUXE là thế hệ ánh sáng xung thông minh: kiểm soát năng lượng chuẩn xác từng xung, tích hợp làm mát bề mặt da nên êm ái hơn hẳn, đặc biệt phù hợp da nhạy cảm và các vùng mỏng yếu như mặt, bikini.',
+        ],
+      },
+      {
+        heading: 'Mua lẻ từng buổi hay mua gói liệu trình?',
+        paragraphs: [
+          'Mua lẻ phù hợp khi muốn trải nghiệm thử hoặc dặm lại sau khi đã triệt nơi khác. Mua gói liệu trình (thường 6–12 buổi) tiết kiệm 20–40% so với mua lẻ và thường kèm chính sách bảo hành, dặm lại.',
+          'Lưu ý quan trọng: hỏi rõ tổng chi phí trọn gói trước khi bắt đầu, bao gồm gel làm mát, kem phục hồi và số buổi dặm — cơ sở uy tín luôn báo giá minh bạch, không phát sinh.',
+        ],
+      },
+      {
+        heading: 'Vì sao nên triệt lông tại Hi Medical Vũng Tàu?',
+        paragraphs: [
+          'Mỗi ca triệt tại Hi Medical đều bắt đầu bằng thăm khám loại da, tình trạng lông để chọn mức năng lượng phù hợp — không làm đại trà một mức cho mọi người.',
+          'Đặt lịch trước ít nhất 1 ngày qua hotline 0799 390 790 hoặc Zalo để được tư vấn miễn phí và nhận báo giá chính xác theo vùng bạn cần triệt.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a11',
+    slug: 'tri-nam-bang-laser-gia-bao-nhieu',
+    title: 'Trị nám bằng laser giá bao nhiêu? Bảng giá và yếu tố ảnh hưởng',
+    excerpt:
+      'Trị nám bằng laser giá bao nhiêu năm 2026? Giá tham khảo theo từng phương pháp (peel, laser, meso) và 5 yếu tố quyết định chi phí để bạn không bị “vẽ liệu trình”.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.facial,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'Trị nám bằng laser giá bao nhiêu?',
+        paragraphs: [
+          'Giá trị nám trên thị trường năm 2026 dao động từ vài trăm nghìn đến hàng chục triệu tùy phương pháp: kem bôi và peel nhẹ từ 200.000–1.000.000đ/lần, laser 800.000–2.500.000đ/lần, meso 1.000.000–3.000.000đ/lần, liệu trình trọn gói thường 5–15 triệu.',
+          'Con số cuối cùng phụ thuộc vào loại nám (nám mảng, nám chân sâu, tàn nhang), diện tích, công nghệ và số buổi. Cách duy nhất biết chính xác là soi da thăm khám — Hi Medical soi da và báo giá trước khi làm, liên hệ 0799 390 790.',
+        ],
+      },
+      {
+        heading: '5 yếu tố quyết định chi phí trị nám',
+        paragraphs: [
+          'Thứ nhất là loại nám: nám chân sâu khó hơn nám mảng nên tốn nhiều buổi hơn. Thứ hai là diện tích vùng điều trị. Thứ ba là công nghệ — laser thế hệ mới chi phí cao hơn nhưng ít buổi hơn.',
+          'Thứ tư là số buổi trong phác đồ, và thứ năm là chế độ bảo hành, dặm lại. Hãy hỏi rõ cả 5 điểm này ở bất kỳ cơ sở nào trước khi xuống tiền — đó là cách tránh bị vẽ thêm liệu trình.',
+        ],
+      },
+      {
+        heading: 'Vì sao nám hay tái phát sau điều trị?',
+        paragraphs: [
+          'Nguyên nhân số một là chống nắng không kỹ sau điều trị. Tia UV kích thích melanin hoạt động trở lại, nám mờ rồi đậm lại trong vài tháng. Nguyên nhân thứ hai là điều trị sai nguyên nhân — ví dụ nám nội tiết mà chỉ bôi ngoài.',
+          'Bởi vậy phác đồ đúng phải gồm: điều trị + phục hồi hàng rào da + chống nắng nghiêm ngặt + tái khám theo lịch. Đây cũng là quy trình Hi Medical áp dụng cho mọi ca nám.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a12',
+    slug: 'triet-long-bikini-co-dau-khong',
+    title: 'Triệt lông bikini có đau không? Giải đáp từ A đến Z cho người mới',
+    excerpt:
+      'Triệt lông bikini có đau không, có ngượng không, cần chuẩn bị gì? Giải đáp mọi thắc mắc nhạy cảm nhất để bạn tự tin bước vào buổi triệt đầu tiên.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.candles,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '4 phút đọc',
+    content: [
+      {
+        heading: 'Triệt lông bikini có đau không?',
+        paragraphs: [
+          'Với công nghệ hiện đại có đầu làm lạnh như SMART OPT IDPL DELUXE, cảm giác chỉ như hơi ấm nhẹ lướt qua — hoàn toàn khác với wax nóng hay nhổ. Vùng bikini da mỏng nên sẽ nhạy hơn nách một chút, nhưng kỹ thuật viên điều chỉnh năng lượng theo ngưỡng chịu đựng của từng người.',
+          'Nếu bạn từng ám ảnh vì wax đau điếng, hãy yên tâm: triệt bằng ánh sáng công nghệ cao êm hơn rất nhiều và không để lại vết thâm, viêm nang lông như wax.',
+        ],
+      },
+      {
+        heading: 'Đi triệt bikini có ngượng không?',
+        paragraphs: [
+          'Đây là lo lắng phổ biến nhất và hoàn toàn bình thường. Tại các cơ sở chuyên nghiệp, buổi triệt diễn ra riêng tư một-kèm-một với kỹ thuật viên nữ, chỉ để lộ đúng vùng cần làm, thời gian mỗi buổi chỉ 10–20 phút.',
+          'Mẹo nhỏ: đặt lịch vào khung giờ vắng, mặc váy thoải mái để thay đồ nhanh. Sau buổi đầu tiên, hầu hết khách đều nói “biết thế đi sớm hơn”.',
+        ],
+      },
+      {
+        heading: 'Cần chuẩn bị và kiêng gì?',
+        paragraphs: [
+          'Trước buổi triệt 2–3 ngày: không nhổ, wax (giữ gốc nang lông để tia sáng tác động), hạn chế nắng gắt vùng điều trị. Sau triệt: mặc đồ thoáng, dưỡng ẩm dịu nhẹ, tránh tẩy da chết mạnh vài ngày.',
+          'Giá triệt bikini thị trường khoảng 3–10 triệu/liệu trình tùy công nghệ. Nhắn Zalo Hi Medical 0799 390 790 để được báo giá chính xác và tư vấn riêng tư, miễn phí.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a13',
+    slug: 'hifu-gia-bao-nhieu-giu-duoc-bao-lau',
+    title: 'HIFU giá bao nhiêu, giữ được bao lâu? Ai nên làm?',
+    excerpt:
+      'HIFU giá bao nhiêu năm 2026, hiệu quả giữ được bao lâu, có đau không và ai phù hợp? Tổng hợp từ A đến Z trước khi bạn quyết định nâng cơ không phẫu thuật.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.skincare,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'HIFU giá bao nhiêu?',
+        paragraphs: [
+          'Giá HIFU trên thị trường dao động lớn theo vùng và số shot: vùng nhỏ (trán, mắt) từ 2–5 triệu, full mặt 8–20 triệu, mặt + cổ 12–30 triệu. Công nghệ chính hãng, đầu tip mới và tay nghề là 3 yếu tố tạo nên chênh lệch giá.',
+          'Cảnh giác với HIFU giá rẻ bất thường — đầu tip tái sử dụng hoặc máy không rõ nguồn gốc vừa kém hiệu quả vừa nguy cơ bỏng. Hãy hỏi rõ loại máy, số shot và đầu tip mới hay không trước khi làm.',
+        ],
+      },
+      {
+        heading: 'HIFU có đau không, giữ được bao lâu?',
+        paragraphs: [
+          'Cảm giác khi làm là nóng châm chích từng điểm, mức độ tùy ngưỡng chịu đau — hầu hết khách chịu được mà không cần ủ tê. Sau làm da có thể ửng nhẹ vài giờ rồi hết, sinh hoạt bình thường.',
+          'Hiệu quả săn chắc thấy rõ sau 1–3 tháng (thời gian collagen tái tạo) và duy trì khoảng 12–18 tháng tùy tuổi tác, cơ địa và cách chăm sóc. Duy trì nhắc lại mỗi năm giúp giữ kết quả ổn định.',
+        ],
+      },
+      {
+        heading: 'Ai nên và không nên làm HIFU?',
+        paragraphs: [
+          'Phù hợp nhất: từ 28–55 tuổi, da bắt đầu chảy xệ nhẹ, nọng cằm, rãnh cười sâu nhưng chưa muốn phẫu thuật. Trẻ hoá chủ động từ sớm luôn nhẹ nhàng và bền hơn.',
+          'Nên thăm khám trước nếu da đang viêm, mụn mủ nặng, có bệnh lý hoặc vừa can thiệp thẩm mỹ khác. Hi Medical tư vấn miễn phí tình trạng da trước mọi liệu trình trẻ hoá — đặt lịch 0799 390 790.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getFeatured(articles: Article[] = ARTICLES): Article {
