@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     title: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     description:
       'Trải nghiệm spa cao cấp tại Vũng Tàu — triệt lông, điều trị da và trẻ hoá chuẩn y khoa. Đặt lịch: 0799 390 790.',
-    images: [{ url: '/logo.png', width: 512, height: 512, alt: 'Hi Medical Skincare & Beauty' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Hi Medical Skincare & Beauty' }],
   },
   twitter: {
     card: 'summary',
     title: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     description:
       'Triệt lông, trị nám, trẻ hoá và chăm sóc da chuẩn y khoa tại Vũng Tàu. Đặt lịch: 0799 390 790.',
-    images: ['/logo.png'],
+    images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
 };
