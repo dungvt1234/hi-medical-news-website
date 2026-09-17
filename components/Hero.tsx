@@ -104,14 +104,15 @@ export default function Hero() {
           </p>
 
           <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Spa &amp; trị liệu da
+            Chăm Sóc Da &amp; Triệt Lông
             <br />
-            đẳng cấp tại <span className="italic text-gold">Vũng Tàu.</span>
+            <span className="italic text-gold">Tại Vũng Tàu</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-sm font-light leading-relaxed text-white/85 sm:text-base lg:mx-0">
-            Bước vào thế giới tĩnh lặng dưới ánh trăng — nơi làn da được chăm sóc,
-            tâm trí được thư giãn và vẻ đẹp tự nhiên được đánh thức.
+            Hi Medical Skincare &amp; Beauty cung cấp dịch vụ chăm sóc da, triệt
+            lông và các liệu trình làm đẹp tại Vũng Tàu, với quy trình tư vấn
+            phù hợp với từng nhu cầu.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
@@ -119,19 +120,23 @@ export default function Hero() {
               href="#contact"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-rose-deep hover:shadow-glow sm:w-auto"
             >
-              Đặt lịch ngay
+              ĐẶT LỊCH NGAY
             </a>
             <a
               href="#treatments"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-500 hover:border-gold hover:text-gold sm:w-auto"
             >
-              Xem liệu trình
+              XEM DỊCH VỤ
             </a>
           </div>
 
-          <p className="mt-8 flex items-center justify-center gap-2 text-xs tracking-[0.2em] text-white/75 sm:mt-10 lg:justify-start">
+          <p className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs tracking-[0.2em] text-white/75 sm:mt-10 lg:justify-start">
             <Sparkles className="h-4 w-4 text-gold" />
-            MỞ CỬA HÀNG NGÀY 9:00 — 18:00
+            <span>📍 49 Nguyễn Bỉnh Khiêm, Vũng Tàu</span>
+            <span aria-hidden>·</span>
+            <a href="tel:0799390790" className="transition-colors hover:text-gold">
+              ☎ 0799 390 790
+            </a>
           </p>
         </div>
 
