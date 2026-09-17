@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SERVICES, getService } from '@/lib/services';
-import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from '@/components/JsonLd';
 
 export const dynamicParams = false;
 
@@ -61,6 +61,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
   return (
     <main className="bg-night">
       <ServiceJsonLd service={{ slug: sv.slug, name: sv.name, tagline: sv.tagline }} />
+      <FaqJsonLd faqs={sv.faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Trang chủ', path: '/' },
@@ -209,6 +210,33 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   {step.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ hiển thị thật */}
+      <section className="px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-center text-[11px] font-bold uppercase tracking-[0.25em] text-[#8B5FC7]">
+            <span className="mx-auto inline-flex items-center gap-2">
+              <span className="h-px w-8 bg-gold" /> Hỏi đáp <span className="h-px w-8 bg-gold" />
+            </span>
+          </p>
+          <h2 className="mt-4 text-center font-heading text-3xl font-medium text-ink sm:text-4xl">
+            Câu hỏi <span className="italic text-[#7A4FB3]">thường gặp</span>
+          </h2>
+          <div className="mt-10 space-y-4">
+            {sv.faqs.map((f) => (
+              <details
+                key={f.q}
+                className="group rounded-2xl border border-luxury bg-white p-6 transition-colors open:border-[#8B5FC7]/50"
+              >
+                <summary className="cursor-pointer list-none font-heading text-lg font-medium text-ink transition-colors marker:hidden group-hover:text-[#7A4FB3]">
+                  {f.q}
+                </summary>
+                <p className="mt-3 text-sm font-light leading-relaxed text-[#6E6285]">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

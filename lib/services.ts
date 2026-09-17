@@ -15,6 +15,7 @@ export type Service = {
   tech: string[];
   steps: { name: string; desc: string }[];
   benefits: string[];
+  faqs: { q: string; a: string }[];
   special?: boolean;
 };
 
@@ -64,6 +65,20 @@ export const SERVICES: Service[] = [
       'Không cần nghỉ dưỡng, sinh hoạt bình thường',
       'Phù hợp mọi vùng cơ thể, mọi loại da',
     ],
+    faqs: [
+      {
+        q: 'Triệt lông có đau không?',
+        a: 'Công nghệ SMART OPT IDPL DELUXE tích hợp làm mát bề mặt da liên tục nên cảm giác êm ái, chỉ như hơi ấm nhẹ lướt qua — khác hẳn các phương pháp triệt truyền thống.',
+      },
+      {
+        q: 'Triệt xong lông có mọc lại không?',
+        a: 'Sau liệu trình đầy đủ, lông mọc lại rất chậm, sợi mảnh và nhạt hơn hẳn. Bạn sẽ được hẹn lịch dặm duy trì để giữ kết quả lâu dài.',
+      },
+      {
+        q: 'Da nhạy cảm có triệt được không?',
+        a: 'Được. Trước mỗi ca, chuyên viên thăm khám loại da và tình trạng lông để chọn mức năng lượng phù hợp, kể cả với da nhạy cảm.',
+      },
+    ],
   },
   {
     slug: 'dieu-tri-da-chuyen-sau',
@@ -88,6 +103,20 @@ export const SERVICES: Service[] = [
       'Công nghệ laser & IPL hiện đại',
       'Kết quả rõ rệt, an toàn lâu dài',
       'Theo dõi và điều chỉnh qua từng buổi',
+    ],
+    faqs: [
+      {
+        q: 'Trị nám có hết hẳn không?',
+        a: 'Nám có thể làm mờ rõ rệt với phác đồ đúng nguyên nhân, nhưng cần duy trì chống nắng và chăm sóc để hạn chế tái phát. Bác sĩ sẽ đánh giá tình trạng nám của bạn trước khi tư vấn.',
+      },
+      {
+        q: 'Có nên tự nặn mụn tại nhà không?',
+        a: 'Không nên. Nặn mụn bằng tay hoặc dụng cụ không vô trùng dễ gây viêm nặng, nhiễm trùng và để lại sẹo. Hãy để chuyên viên xử lý bằng dụng cụ vô trùng và quy trình chuẩn.',
+      },
+      {
+        q: 'Điều trị da có cần kiêng nắng không?',
+        a: 'Có. Trong và sau liệu trình, bạn cần chống nắng kỹ và thoa lại kem chống nắng khi ra ngoài để bảo vệ kết quả điều trị.',
+      },
     ],
   },
   {
@@ -117,6 +146,20 @@ export const SERVICES: Service[] = [
       'Kỹ thuật viên được đào tạo bài bản',
       'Hiệu quả nhìn thấy ngay sau buổi đầu tiên',
     ],
+    faqs: [
+      {
+        q: 'Bao lâu nên chăm sóc da chuyên sâu một lần?',
+        a: 'Thông thường 2–4 tuần một lần tùy tình trạng da. Chuyên viên sẽ tư vấn tần suất phù hợp sau buổi soi da đầu tiên.',
+      },
+      {
+        q: 'Da nhạy cảm có chăm sóc được không?',
+        a: 'Được. Hi Medical sử dụng dược mỹ phẩm nguồn gốc rõ ràng và quy trình nhẹ nhàng, an toàn cho cả da nhạy cảm.',
+      },
+      {
+        q: 'Sau facial có trang điểm ngay được không?',
+        a: 'Nên để da “thở” ít nhất vài giờ sau liệu trình, tránh trang điểm ngay để dưỡng chất thẩm thấu tốt nhất.',
+      },
+    ],
   },
   {
     slug: 'tre-hoa-nang-co',
@@ -141,6 +184,20 @@ export const SERVICES: Service[] = [
       'An toàn, ít tác dụng phụ',
       'Phù hợp cho cả nam và nữ',
     ],
+    faqs: [
+      {
+        q: 'Mấy tuổi nên bắt đầu trẻ hoá da?',
+        a: 'Từ khoảng 28–30 tuổi, da bắt đầu mất collagen nhanh hơn. Trẻ hoá chủ động khi da còn đẹp sẽ nhẹ nhàng và hiệu quả bền hơn là đợi đến khi nếp nhăn hằn sâu.',
+      },
+      {
+        q: 'Trẻ hoá không phẫu thuật có đau và cần nghỉ dưỡng không?',
+        a: 'Các công nghệ IPL, laser, Micro needle shoot tác động nhẹ nhàng, không cần nghỉ dưỡng — bạn sinh hoạt bình thường ngay sau buổi làm.',
+      },
+      {
+        q: 'Hiệu quả giữ được bao lâu?',
+        a: 'Tùy cơ địa, tuổi tác và cách chăm sóc tại nhà. Duy trì liệu trình nhắc lại và chống nắng đầy đủ sẽ giữ kết quả lâu dài.',
+      },
+    ],
   },
   {
     slug: 'massage-thu-gian',
@@ -163,6 +220,20 @@ export const SERVICES: Service[] = [
       'Tinh dầu thiên nhiên nguyên chất',
       'Không gian sạch sẽ, yên tĩnh',
       'Liệu trình linh hoạt theo nhu cầu',
+    ],
+    faqs: [
+      {
+        q: 'Massage dưỡng sinh thảo dược là gì?',
+        a: 'Là liệu pháp kết hợp kỹ thuật massage chuyên sâu với tinh dầu, thảo dược thiên nhiên giúp thư giãn cơ bắp, lưu thông khí huyết và phục hồi năng lượng.',
+      },
+      {
+        q: 'Ai nên đi massage dưỡng sinh?',
+        a: 'Dân văn phòng ngồi nhiều, người hay đau mỏi vai gáy, mất ngủ hoặc căng thẳng kéo dài sẽ cảm nhận rõ hiệu quả sau buổi đầu tiên.',
+      },
+      {
+        q: 'Massage có đau không?',
+        a: 'Lực tay được điều chỉnh theo ngưỡng chịu đựng của từng khách — bạn chỉ cần nói với kỹ thuật viên để tăng hoặc giảm lực bất cứ lúc nào.',
+      },
     ],
   },
   {
@@ -187,6 +258,20 @@ export const SERVICES: Service[] = [
       'Linh hoạt theo nhu cầu và thời gian',
       'Tư vấn riêng trước khi chọn combo',
       'Ưu đãi riêng cho khách đặt lịch online',
+    ],
+    faqs: [
+      {
+        q: 'Combo spa gồm những gì?',
+        a: 'Combo kết hợp nhiều liệu trình như chăm sóc da, triệt lông hoặc điều trị mụn trọn gói — chi tiết từng combo được tư vấn riêng theo nhu cầu của bạn.',
+      },
+      {
+        q: 'Mua combo có tiết kiệm hơn làm lẻ không?',
+        a: 'Có. Combo trọn gói luôn có mức ưu đãi tốt hơn so với mua lẻ từng liệu trình, lại không lo phát sinh chi phí.',
+      },
+      {
+        q: 'Có cần đặt lịch trước không?',
+        a: 'Nên đặt trước ít nhất 1 ngày qua website, hotline hoặc Zalo để được sắp xếp khung giờ phù hợp nhất.',
+      },
     ],
     special: true,
   },

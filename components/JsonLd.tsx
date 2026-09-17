@@ -123,8 +123,23 @@ export function ArticleJsonLd({
   );
 }
 
-export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {
+/** FAQPage — chỉ dùng khi trang có khối FAQ hiển thị thật */
+export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   const data = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
+
+export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {  const data = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: items.map((it, i) => ({
