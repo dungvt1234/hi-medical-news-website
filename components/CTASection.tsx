@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Reveal from './Reveal';
 
 /**
  * CTA — background tối
@@ -49,11 +48,11 @@ export default function CTASection() {
             <span className="h-px w-10 bg-gold" />
             Reserve Your Moment
           </p>
-          <Reveal as="h2" className="font-heading text-5xl font-light leading-[1.1] text-ink sm:text-6xl">
+          <h2 className="reveal font-heading text-5xl font-light leading-[1.1] text-ink sm:text-6xl">
             Khoảnh khắc
             <br />
             của bạn để <span className="italic text-rose-deep">hồi phục.</span>
-          </Reveal>
+          </h2>
           <p className="reveal mx-auto mt-6 max-w-md text-base font-light leading-relaxed text-ink-light lg:mx-0">
             Hãy dành một khoảnh khắc cho chính mình. Đặt lịch ngay hôm nay để được tư vấn miễn phí
             và nhận liệu trình phù hợp nhất với làn da của bạn.

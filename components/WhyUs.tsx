@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Reveal from './Reveal';
 
 /**
  * Why Us — 4 statistics / benefits
@@ -46,10 +45,10 @@ export default function WhyUs() {
             Why Hi Medical
             <span className="h-px w-10 bg-gold" />
           </p>
-          <Reveal as="h2" className="font-heading text-4xl font-light text-ink sm:text-5xl">
+          <h2 className="reveal font-heading text-4xl font-light text-ink sm:text-5xl">
             Được tin chọn bởi những người{' '}
             <span className="italic text-rose-deep">tìm kiếm sự tinh tế.</span>
-          </Reveal>
+          </h2>
         </div>
 
         {/* Stats grid — editorial minimal */}

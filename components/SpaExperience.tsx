@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Reveal from './Reveal';
 
 /**
  * Spa Experience — full-width cinematic image với parallax nhẹ
@@ -64,11 +63,11 @@ export default function SpaExperience() {
           The Experience
           <span className="h-px w-10 bg-gold" />
         </p>
-        <Reveal as="h2" className="font-heading text-4xl font-light leading-[1.15] !text-[#F8F4F7] sm:text-6xl">
+        <h2 className="reveal font-heading text-4xl font-light leading-[1.15] !text-[#F8F4F7] sm:text-6xl">
           Một trải nghiệm
           <br />
           <span className="italic text-gold">vượt xa vẻ đẹp.</span>
-        </Reveal>
+        </h2>
         <p className="mx-auto mt-7 max-w-xl text-base font-light leading-relaxed !text-[#D8CCE8]">
           Không gian được thiết kế như một ốc đảo tĩnh lặng — ánh sáng dịu, hương thơm
           nhẹ nhàng và những chạm khắc tinh tế, đưa bạn rời xa ồn ào để trở về với chính mình.
