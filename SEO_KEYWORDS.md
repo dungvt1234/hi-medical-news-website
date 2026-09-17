@@ -1,5 +1,6 @@
 # BẢNG KEYWORD SEO + GEO — Hi Medical (TP.HCM)
 > 13/09/2026 · Nguyên tắc: 1 keyword = 1 URL · Mỗi trang tiền phải có GIÁ + FAQ + ngày cập nhật
+> Địa chỉ chuẩn: 49 Nguyễn Bỉnh Khiêm, P. Vũng Tàu, TP.HCM — local đánh cụm **Vũng Tàu**
 
 ## A. 6 TRANG DỊCH VỤ (có sẵn — tối ưu, không viết mới)
 
@@ -42,7 +43,8 @@
 
 **Đợt 3 — local + niềm tin:**
 9. `spa-vung-tau-uy-tin` (địa chỉ + bản đồ + review Google)
-10. `triệt-lông-nam-giới` (phân khúc khách nam đang tăng)
+10. `triet-long-vung-tau` + `tri-mun-vung-tau` (local pages theo cụm Vũng Tàu)
+11. `triệt-lông-nam-giới` (phân khúc khách nam đang tăng)
 
 ## D. LỊCH TRIỂN KHAI
 - Tuần 1–2: tối ưu 6 trang dịch vụ (giá + FAQ + update 09/2026) — CẦN BẢNG GIÁ THẬT

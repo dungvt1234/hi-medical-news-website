@@ -1,6 +1,12 @@
 # KẾ HOẠCH SEO + GEO — hi-medical-news.vercel.app
 > Lập: 13/09/2026 · Mục tiêu: spa TP.HCM được Google và AI (AI Overviews, ChatGPT, Gemini) tìm thấy + trích dẫn
 
+## 0. NAP CHUẨN (dùng đồng nhất mọi nơi)
+- **Địa chỉ:** 49 Nguyễn Bỉnh Khiêm, Phường Vũng Tàu, TP. Hồ Chí Minh
+- **Hotline/Zalo:** 0799 390 790 · **Giờ:** 09:00–18:00 (T2–CN)
+- **Facebook:** https://www.facebook.com/ChamSocDaVungTau
+- Local SEO đánh cụm **Vũng Tàu** (spa Vũng Tàu, triệt lông Vũng Tàu), không đánh Quận 1 nữa.
+
 ## 1. HIỆN TRẠNG WEB (audit 13/09/2026)
 
 **Tài sản sẵn có:** 21 trang tĩnh (6 dịch vụ, 9 bài viết, feedback, journal), đúng 1 H1/trang,
