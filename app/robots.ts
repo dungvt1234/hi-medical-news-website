@@ -9,9 +9,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
-      // Cho phép bot AI trích dẫn nội dung (GEO)
+      // Bot AI-search (quyết định trích dẫn — khác bot training)
       {
-        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended'],
+        userAgent: ['OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'],
+        allow: '/',
+      },
+      // Bot training (mở theo lựa chọn, không ảnh hưởng search)
+      {
+        userAgent: ['GPTBot', 'ClaudeBot', 'Google-Extended'],
         allow: '/',
       },
     ],

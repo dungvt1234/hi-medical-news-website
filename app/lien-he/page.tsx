@@ -51,7 +51,7 @@ export default function LienHePage() {
             <span className="h-px w-10 bg-rose/60" />
           </p>
           <h1 className="font-heading text-4xl font-light text-ink sm:text-5xl lg:text-6xl">
-            Ghé thăm <span className="italic text-rose-deep">Hi Medical</span>
+            Liên hệ Hi Medical <span className="italic text-rose-deep">tại Vũng Tàu</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-relaxed text-ink-light">
             Đặt lịch trước ít nhất 1 ngày để được phục vụ chu đáo nhất —

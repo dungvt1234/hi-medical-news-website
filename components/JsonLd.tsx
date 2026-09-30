@@ -7,7 +7,6 @@ export const SALON = {
   name: 'Hi Medical Skincare & Beauty',
   telephone: '+84 799 390 790',
   street: '49 Nguyễn Bỉnh Khiêm',
-  locality: 'Phường Vũng Tàu, TP. Hồ Chí Minh',
 };
 
 const AREA_SERVED = { '@type': 'City', name: 'Vũng Tàu' };
@@ -28,7 +27,8 @@ export function SalonJsonLd() {
         address: {
           '@type': 'PostalAddress',
           streetAddress: SALON.street,
-          addressLocality: SALON.locality,
+          addressLocality: 'Vũng Tàu',
+          addressRegion: 'Hồ Chí Minh',
           addressCountry: 'VN',
         },
         areaServed: AREA_SERVED,

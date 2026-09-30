@@ -14,16 +14,6 @@ export const metadata: Metadata = {
   },
   description:
     'Hi Medical Skincare & Beauty — 49 Nguyễn Bỉnh Khiêm, Vũng Tàu. Triệt lông SMART OPT IDPL, trị mụn/nám, trẻ hoá chuẩn y khoa. Đặt lịch: 0799 390 790.',
-  keywords: [
-    'spa cao cấp',
-    'skincare',
-    'Hi Medical',
-    'liệu trình làm đẹp',
-    'lavender glow spa',
-    'triệt lông TP.HCM',
-    'trị nám TP.HCM',
-    'chăm sóc da TP.HCM',
-  ],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -35,7 +25,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Hi Medical Skincare & Beauty' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Triệt lông, Trị nám & Spa tại Vũng Tàu | Hi Medical',
     description:
       'Triệt lông, trị nám, trẻ hoá và chăm sóc da chuẩn y khoa tại Vũng Tàu. Đặt lịch: 0799 390 790.',
