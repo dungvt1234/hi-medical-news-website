@@ -582,6 +582,68 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: 'a14',
+    slug: 'tri-nam-da-nguyen-nhan-phan-loai-phuong-phap',
+    title: 'Trị nám da: nguyên nhân và cách điều trị hiệu quả 2026',
+    excerpt:
+      'Nám da hình thành do nắng, nội tiết và chăm sóc sai cách. Hiểu đúng loại nám của mình là bước đầu tiên để chọn phương pháp điều trị hiệu quả, hạn chế tái phát.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.cream,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '8 phút đọc',
+    content: [
+      {
+        heading: 'Nám da là gì?',
+        paragraphs: [
+          'Nám da là tình trạng tăng sắc tố melanin khiến da xuất hiện các đốm, mảng sậm màu — thường ở hai gò má, trán, mũi và môi trên. Nám không nguy hiểm cho sức khỏe nhưng ảnh hưởng lớn đến thẩm mỹ và sự tự tin, đặc biệt với phụ nữ sau sinh và ngoài 30 tuổi.',
+          'Điểm mấu chốt nhiều người bỏ qua: nám không phải một bệnh duy nhất mà gồm nhiều loại khác nhau, mỗi loại cần cách xử lý khác nhau. Điều trị sai loại nám là lý do phổ biến nhất khiến tiền mất mà nám vẫn còn.',
+        ],
+      },
+      {
+        heading: 'Phân biệt 4 loại nám thường gặp',
+        paragraphs: [
+          'Nám mảng: mảng nâu nhạt lan rộng hai bên má, ranh giới không rõ, thường do nắng và mỹ phẩm — đáp ứng tốt với peel, laser nhẹ và phục hồi.',
+          'Nám chân sâu (nám đốm): đốm tròn sậm màu, chân nám ăn sâu xuống trung bì — cần laser bước sóng phù hợp (như Pico, Nd:YAG) theo liệu trình nhiều buổi, không thể hết trong 1–2 lần.',
+          'Tàn nhang: chấm nhỏ li ti, có yếu tố di truyền, đậm lên khi ra nắng — đáp ứng tốt với laser và chống nắng nghiêm ngặt.',
+          'Đồi mồi: đốm nâu phẳng xuất hiện theo tuổi tác ở mặt và mu bàn tay — xử lý bằng laser hoặc peel tùy mức độ. Nếu không chắc mình thuộc loại nào, soi da thăm khám là cách duy nhất xác định đúng.',
+        ],
+      },
+      {
+        heading: '3 nguyên nhân gây nám hàng đầu',
+        paragraphs: [
+          'Thứ nhất là ánh nắng mặt trời — tia UV kích thích tế bào sắc tố sản sinh melanin ồ ạt. Người che chắn kém, thoa kem chống nắng không đủ lượng hoặc không thoa lại là đối tượng nám ghé thăm sớm nhất.',
+          'Thứ hai là rối loạn nội tiết: mang thai, sau sinh, tiền mãn kinh hoặc dùng thuốc tránh thai kéo dài khiến melanin tăng sinh — đây là lý do nám hay xuất hiện ở phụ nữ sau sinh.',
+          'Thứ ba là chăm sóc sai cách: kem trộn, lột tẩy mạnh, lạm dụng peel tại nhà làm mỏng hàng rào da, da yếu đi và tăng sắc tố để tự bảo vệ — nám vì thế đậm và lan nhanh hơn.',
+        ],
+      },
+      {
+        heading: 'So sánh các phương pháp trị nám hiện nay',
+        paragraphs: [
+          'Kem bôi đặc trị (vitamin C, arbutin, tranexamic acid): phù hợp nám rất nhẹ, cần kiên trì 2–3 tháng, chi phí thấp nhất nhưng hiệu quả chậm và không xử lý được nám chân sâu.',
+          'Peel da sinh học: bong lớp sừng chứa sắc tố, cải thiện bề mặt và độ đều màu sau 4–6 buổi — tốt cho nám mảng nhẹ đến trung bình, cần phục hồi và chống nắng kỹ.',
+          'Laser (Pico, Nd:YAG, IPL): phá vỡ sắc tố melanin thành mảnh nhỏ để cơ thể đào thải — giải pháp chính cho nám chân sâu, tàn nhang, hiệu quả rõ sau liệu trình 5–10 buổi tùy mức độ.',
+          'Mesotherapy và phục hồi: đưa hoạt chất ức chế sắc tố trực tiếp vào da, thường kết hợp với laser để tăng hiệu quả và rút ngắn liệu trình. Chi tiết giá từng phương pháp xem bài “Trị nám bằng laser giá bao nhiêu?” trên website Hi Medical.',
+        ],
+      },
+      {
+        heading: 'Vì sao trị nám xong hay bị lại?',
+        paragraphs: [
+          'Nguyên nhân số một là bỏ chống nắng sau điều trị — melanin quay lại chỉ sau vài tháng ra nắng không bảo vệ. Nguyên nhân thứ hai là chỉ trị ngọn (bắn laser) mà bỏ phục hồi hàng rào da và cân bằng nội tiết.',
+          'Phác đồ bền vững gồm 4 trụ: điều trị đúng loại nám, phục hồi da, chống nắng nghiêm ngặt (thoa lại mỗi 2–3 giờ ngoài trời) và tái khám đúng lịch. Thiếu bất kỳ trụ nào, nám đều có đường quay lại.',
+        ],
+      },
+      {
+        heading: 'Khi nào nên đi khám và điều trị?',
+        paragraphs: [
+          'Hãy đi soi da khi: nám lan rộng nhanh, mảng nám đậm dần dù đã chống nắng, đã thử nhiều sản phẩm không cải thiện, hoặc không phân biệt được mình thuộc loại nám nào. Càng để lâu, chân nám càng sâu và tốn nhiều buổi hơn.',
+          'Tại Hi Medical Vũng Tàu, mỗi ca nám được soi da phân tích trước khi lên phác đồ riêng — mời bạn đọc câu chuyện thật của chị Thu Hà (mờ nám trên 80% sau 3 tháng) và đặt lịch thăm khám miễn phí qua hotline 0799 390 790.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getFeatured(articles: Article[] = ARTICLES): Article {
