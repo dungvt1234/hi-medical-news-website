@@ -590,7 +590,7 @@ export const ARTICLES: Article[] = [
       'Nám da hình thành do nắng, nội tiết và chăm sóc sai cách. Hiểu đúng loại nám của mình là bước đầu tiên để chọn phương pháp điều trị hiệu quả, hạn chế tái phát.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.cream,
+    image: '/images/tri-nam-da-cover.jpg',
     date: '2026-09-17',
     dateLabel: '17/09/2026',
     readTime: '8 phút đọc',
