@@ -3,8 +3,6 @@ import { ARTICLES } from '@/lib/articles';
 import { SERVICES } from '@/lib/services';
 
 const BASE = 'https://himedicalskin.com';
-
-const BASE = 'https://himedicalskin.com';
 // Ngày cập nhật nội dung thực — đổi khi sửa trang tĩnh/dịch vụ
 const SITE_UPDATED = new Date('2026-09-17');
 
