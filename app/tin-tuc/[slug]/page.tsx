@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CalendarDays, Clock, ArrowLeft, ArrowUpRight } from 'lucide-react';
-import { ARTICLES, getArticleBySlug } from '@/lib/articles';
+import { ARTICLES, getArticleBySlug, getTopicLinks } from '@/lib/articles';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 // Pre-render tất cả trang chi tiết bài viết
@@ -134,6 +134,32 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
             </div>
           ))}
         </div>
+
+        {/* Xem thêm trong chủ đề (hub-and-spoke) */}
+        {getTopicLinks(article.slug).length > 0 && (
+          <nav
+            aria-label="Xem thêm trong chủ đề"
+            className="mt-12 rounded-3xl border border-luxury bg-night-2 p-6 sm:p-8"
+          >
+            <p className="flex items-center gap-2 font-heading text-xl font-light text-ink">
+              <span className="h-5 w-1.5 rounded-full bg-gold" />
+              Xem thêm trong chủ đề
+            </p>
+            <ul className="mt-5 space-y-3">
+              {getTopicLinks(article.slug).map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="group flex items-center gap-2 text-sm font-medium text-ink-light transition-colors hover:text-rose-deep"
+                  >
+                    <span aria-hidden className="text-gold transition-transform group-hover:translate-x-1">→</span>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         {/* CTA đặt lịch */}
         <div className="mt-14 rounded-3xl border border-luxury bg-night-2 p-8 text-center sm:p-10">

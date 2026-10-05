@@ -657,3 +657,50 @@ export function getSidebar(articles: Article[] = ARTICLES): Article[] {
 export function getArticleBySlug(slug: string): Article | undefined {
   return ARTICLES.find((a) => a.slug === slug);
 }
+
+// Cụm chủ đề (hub-and-spoke): trụ là trang dịch vụ, nan là bài viết
+const CLUSTERS: { pillar: { label: string; href: string }; slugs: string[] }[] = [
+  {
+    pillar: { label: 'Triệt lông công nghệ cao', href: '/dich-vu/triet-long-cong-nghe-cao' },
+    slugs: [
+      'triet-long-cong-nghe-cao-diot-laser',
+      'bang-gia-triet-long-vinh-vien-2026',
+      'triet-long-bikini-co-dau-khong',
+    ],
+  },
+  {
+    pillar: { label: 'Điều trị da chuyên sâu', href: '/dich-vu/dieu-tri-da-chuyen-sau' },
+    slugs: [
+      'tri-nam-da-nguyen-nhan-phan-loai-phuong-phap',
+      'tri-nam-bang-laser-gia-bao-nhieu',
+      'hanh-trinh-xoa-tan-nam-3-thang',
+      'cham-soc-da-mun-o-tuoi-day-thi',
+      'dieu-tri-tham-quang-duoi-mat',
+    ],
+  },
+  {
+    pillar: { label: 'Trẻ hoá & nâng cơ', href: '/dich-vu/tre-hoa-nang-co' },
+    slugs: ['30-tuoi-chong-lao-hoa-co-muon-khong', 'hifu-gia-bao-nhieu-giu-duoc-bao-lau'],
+  },
+  {
+    pillar: { label: 'Massage & Combo thư giãn', href: '/dich-vu/massage-thu-gian' },
+    slugs: ['spa-ngay-cuoi-tuan-thu-gian', 'uu-dai-thang-8-combo-lam-dep'],
+  },
+  {
+    pillar: { label: 'Hi Medical Skincare & Beauty', href: '/' },
+    slugs: ['cau-chuyen-hi-medical-10-nam', 'hop-tac-quoc-te'],
+  },
+];
+
+/** Link cùng cụm: trụ + tối đa 2 bài cùng cụm (trừ bài đang xem) */
+export function getTopicLinks(slug: string): { label: string; href: string }[] {
+  const cluster = CLUSTERS.find((c) => c.slugs.includes(slug));
+  if (!cluster) return [];
+  const siblings = cluster.slugs
+    .filter((s) => s !== slug)
+    .map((s) => ARTICLES.find((a) => a.slug === s))
+    .filter((a) => a !== undefined)
+    .slice(0, 2)
+    .map((a) => ({ label: a!.title, href: `/tin-tuc/${a!.slug}` }));
+  return [cluster.pillar, ...siblings];
+}
