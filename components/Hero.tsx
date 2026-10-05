@@ -141,7 +141,7 @@ export default function Hero() {
         </div>
 
         {/* ---- Right: arched image ---- */}
-        <div className="order-1 relative mx-auto w-full max-w-xs sm:max-w-md lg:order-2 lg:max-w-none">
+        <div className="order-1 relative mx-auto w-full max-w-[240px] sm:max-w-xs lg:order-2 lg:max-w-sm">
           {/* Glow phía sau ảnh */}
           <div
             aria-hidden
