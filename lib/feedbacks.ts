@@ -25,6 +25,11 @@ export const FEEDBACKS: Feedback[] = [
     content:
       'Liệu trình Moonlight Facial đã thay đổi hoàn toàn làn da của tôi. Không gian tĩnh lặng, chuyên viên tận tâm — mọi thứ đều hoàn hảo đến từng chi tiết. Đây thực sự là nơi để phụ nữ được chăm sóc trọn vẹn.',
     dateLabel: '2026',
+    images: [
+      '/images/gallery/an-nhien-1.jpg',
+      '/images/gallery/an-nhien-2.jpg',
+      '/images/gallery/an-nhien-3.jpg',
+    ],
   },
   {
     id: 'f2',
@@ -35,5 +40,10 @@ export const FEEDBACKS: Feedback[] = [
     content:
       'Tôi bị nám 10 năm, thử đủ loại mà không hết. Tại Hi Medical, từng bước điều trị đều được giải thích rõ ràng, không hề có cảm giác bị bán liệu trình mà là được đồng hành thực sự. Sau 3 tháng, nám mờ trên 80%, giờ tôi chỉ cần kem chống nắng là đủ tự tin.',
     dateLabel: '2026',
+    images: [
+      '/images/gallery/an-nhien-4.jpg',
+      '/images/gallery/an-nhien-5.jpg',
+      '/images/gallery/an-nhien-6.jpg',
+    ],
   },
 ];
