@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, BadgeCheck } from 'lucide-react';
 
 /**
  * Hero — Midnight Luxury Spa
@@ -98,9 +98,9 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-5 pb-16 pt-24 sm:px-8 sm:pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pt-24 lg:pb-20">
         {/* ---- Left: text ---- */}
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          <p className="eyebrow mb-5 flex items-center justify-center gap-3 lg:justify-start !text-white/90">
-            <span className="h-px w-10 bg-gold" />
-            Hi Medical Skincare &amp; Beauty
+          <p className="eyebrow mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-5 py-2 backdrop-blur-sm lg:inline-flex !text-white/90">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            Hi Medical Skincare &amp; Beauty · Vũng Tàu
           </p>
 
           <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -130,7 +130,18 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs tracking-[0.2em] text-white/75 sm:mt-10 lg:justify-start">
+          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium tracking-wide text-white/85 sm:mt-8 lg:justify-start">
+            <li className="inline-flex items-center gap-1.5">
+              <BadgeCheck className="h-4 w-4 text-gold" />
+              Tư vấn &amp; soi da miễn phí
+            </li>
+            <li className="inline-flex items-center gap-1.5">
+              <BadgeCheck className="h-4 w-4 text-gold" />
+              Minh bạch, không vẽ liệu trình
+            </li>
+          </ul>
+
+          <p className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs tracking-[0.2em] text-white/75 sm:mt-6 lg:justify-start">
             <Sparkles className="h-4 w-4 text-gold" />
             <span>📍 49 Nguyễn Bỉnh Khiêm, Vũng Tàu</span>
             <span aria-hidden>·</span>
