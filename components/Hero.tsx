@@ -103,8 +103,8 @@ export default function Hero() {
             Hi Medical Skincare &amp; Beauty · Vũng Tàu
           </p>
 
-          <h1 className="font-heading text-4xl font-light leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Chăm Sóc Da &amp; Triệt Lông
+          <h1 className="font-heading text-[27px] font-light leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-5xl xl:text-[56px]">
+            <span className="whitespace-nowrap">Chăm Sóc Da &amp; Triệt Lông</span>
             <br />
             <span className="italic text-gold">Tại Vũng Tàu</span>
           </h1>
