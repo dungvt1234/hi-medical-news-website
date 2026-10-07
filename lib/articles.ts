@@ -590,7 +590,7 @@ export const ARTICLES: Article[] = [
       'Tìm spa Vũng Tàu uy tín? Xem 5 dấu hiệu nhận biết, trải nghiệm khách thật và cách đặt lịch soi da miễn phí tại Hi Medical.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.salon,
+    image: '/images/spa-uy-tin-cover.jpg',
     date: '2026-09-17',
     dateLabel: '17/09/2026',
     readTime: '5 phút đọc',
