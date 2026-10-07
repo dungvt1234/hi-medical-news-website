@@ -590,7 +590,7 @@ export const ARTICLES: Article[] = [
       'Chọn sai nơi trị nám khiến nám đậm và tốn tiền hơn. 5 tiêu chí chọn spa trị nám tại Vũng Tàu kèm quy trình chuẩn và case thật từ Hi Medical.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.salon,
+    image: '/images/tri-nam-vung-tau-cover.jpg',
     date: '2026-09-17',
     dateLabel: '17/09/2026',
     readTime: '5 phút đọc',
