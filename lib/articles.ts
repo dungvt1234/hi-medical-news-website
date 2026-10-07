@@ -583,6 +583,57 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    id: 'a15',
+    slug: 'tri-nam-o-dau-tot-vung-tau',
+    title: 'Trị nám ở đâu tốt tại Vũng Tàu? 5 tiêu chí chọn đúng nơi',
+    excerpt:
+      'Chọn sai nơi trị nám khiến nám đậm và tốn tiền hơn. 5 tiêu chí chọn spa trị nám tại Vũng Tàu kèm quy trình chuẩn và case thật từ Hi Medical.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.salon,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'Vì sao chọn sai nơi khiến nám nặng hơn?',
+        paragraphs: [
+          'Nám không giống mụn — bôi sai, bắn sai bước sóng hoặc peel quá tay đều có thể khiến sắc tố đậm và lan rộng hơn ban đầu. Nhiều ca đến Hi Medical trong tình trạng nám nặng thêm sau khi điều trị ở nơi không soi da, không phân loại nám mà làm đại trà một công thức cho mọi người.',
+          'Bài học rút ra: với nám, chọn đúng nơi quan trọng hơn chọn công nghệ đắt tiền. Dưới đây là 5 tiêu chí bạn có thể dùng để đánh giá bất kỳ spa nào tại Vũng Tàu trước khi xuống tiền.',
+        ],
+      },
+      {
+        heading: '5 tiêu chí chọn nơi trị nám tại Vũng Tàu',
+        paragraphs: [
+          'Một là soi da và phân loại nám trước khi tư vấn — nơi nào báo liệu trình khi chưa soi da thì nên bỏ qua. Hai là phác đồ riêng từng người, ghi rõ công nghệ, số buổi và chi phí trọn gói ngay từ đầu.',
+          'Ba là công nghệ rõ nguồn gốc: hỏi tên máy, thế hệ laser, đầu tip mới hay tái sử dụng. Bốn là có chính sách bảo hành, dặm lại và tái khám — nám cần theo dõi, nơi làm một lần rồi thôi thì khó bền.',
+          'Năm là review thật có ảnh: tìm feedback của khách Vũng Tàu với tình trạng nám tương tự bạn, ưu tiên nơi dám cho xem case trước–sau và được khách nhắc tên cụ thể.',
+        ],
+      },
+      {
+        heading: 'Quy trình trị nám chuẩn gồm những gì?',
+        paragraphs: [
+          'Quy trình đúng có 4 chặng: thăm khám và soi da để xác định loại nám; điều trị bằng công nghệ phù hợp (laser, peel hoặc meso theo chỉ định); phục hồi hàng rào da sau điều trị; và chống nắng nghiêm ngặt kết hợp tái khám đúng lịch.',
+          'Thiếu bất kỳ chặng nào — đặc biệt là phục hồi và chống nắng — nám đều có đường quay lại trong vài tháng. Hãy hỏi nơi bạn chọn xem quy trình của họ có đủ 4 chặng này không.',
+        ],
+      },
+      {
+        heading: 'Case thật tại Hi Medical Vũng Tàu',
+        paragraphs: [
+          'Chị Thu Hà (38 tuổi) sống chung với nám 10 năm, thử đủ loại kem và thuốc uống không rõ nguồn gốc mà nám ngày càng lan. Tại Hi Medical, chị được soi da xác định nám chân sâu kết hợp nám mảng, lên phác đồ laser bước sóng kép kết hợp phục hồi trong 3 tháng.',
+          'Kết quả: nám mờ trên 80%, da đều màu và sáng hơn hẳn — đo bằng máy phân tích da trước và sau, không chỉ cảm nhận. Đọc toàn bộ hành trình của chị trong bài “Hành trình xóa nám 3 tháng” trên website.',
+        ],
+      },
+      {
+        heading: 'Địa chỉ trị nám tại Vũng Tàu và cách đặt lịch',
+        paragraphs: [
+          'Hi Medical Skincare & Beauty — 49 Nguyễn Bỉnh Khiêm, Phường Vũng Tàu, TP. Hồ Chí Minh. Mở cửa Thứ 2 đến Chủ nhật, 09:00–18:00.',
+          'Đặt lịch soi da và tư vấn miễn phí qua hotline 0799 390 790 hoặc Zalo — nên đặt trước ít nhất 1 ngày để được sắp xếp khung giờ phù hợp nhất.',
+        ],
+      },
+    ],
+  },
+  {
     id: 'a14',
     slug: 'tri-nam-da-nguyen-nhan-phan-loai-phuong-phap',
     title: 'Trị nám da: nguyên nhân và cách điều trị hiệu quả 2026',
@@ -672,6 +723,7 @@ const CLUSTERS: { pillar: { label: string; href: string }; slugs: string[] }[] =
     pillar: { label: 'Điều trị da chuyên sâu', href: '/dich-vu/dieu-tri-da-chuyen-sau' },
     slugs: [
       'tri-nam-da-nguyen-nhan-phan-loai-phuong-phap',
+      'tri-nam-o-dau-tot-vung-tau',
       'tri-nam-bang-laser-gia-bao-nhieu',
       'hanh-trinh-xoa-tan-nam-3-thang',
       'cham-soc-da-mun-o-tuoi-day-thi',
