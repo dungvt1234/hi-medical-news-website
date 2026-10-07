@@ -583,6 +583,57 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    id: 'a16',
+    slug: 'spa-vung-tau-uy-tin-khach-hang-tin-tuong',
+    title: 'Spa Vũng Tàu uy tín được khách hàng tin tưởng nhờ điều gì?',
+    excerpt:
+      'Tìm spa Vũng Tàu uy tín? Xem 5 dấu hiệu nhận biết, trải nghiệm khách thật và cách đặt lịch soi da miễn phí tại Hi Medical.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.salon,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '5 phút đọc',
+    content: [
+      {
+        heading: 'Vì sao khách sợ chọn nhầm spa?',
+        paragraphs: [
+          'Ba nỗi sợ lớn nhất khi chọn spa: giá ảo báo một đằng thu một nẻo, bị vẽ thêm liệu trình không cần thiết, và review seeding không phản ánh thực tế. Chỉ cần dính một trong ba, khách vừa mất tiền vừa mất niềm tin.',
+          'Bởi vậy spa uy tín không phải nơi quảng cáo hay nhất, mà là nơi minh bạch nhất — minh bạch từ giá, quy trình đến kết quả thật của khách đi trước.',
+        ],
+      },
+      {
+        heading: '5 dấu hiệu spa đáng tin tại Vũng Tàu',
+        paragraphs: [
+          'Một là địa chỉ rõ ràng, đến tận nơi xem được — spa trong hẻm sâu, không bảng hiệu, không giờ giấc cố định thì nên cân nhắc. Hai là báo giá trọn gói trước khi làm, hỏi gì trả lời đó, không úp mở.',
+          'Ba là có case khách thật: ảnh trước–sau, câu chuyện có tên tuổi cụ thể chứ không phải ảnh stock và lời khen chung chung. Bốn là review trên Google từ tài khoản thật, có ảnh, trải đều theo thời gian.',
+          'Năm là buổi tư vấn đầu tiên: nơi uy tín thăm khám, soi da rồi mới tư vấn — nơi ép mua gói ngay buổi đầu thì nên đứng dậy ra về.',
+        ],
+      },
+      {
+        heading: 'Khách nói gì về Hi Medical?',
+        paragraphs: [
+          'Chị Minh Anh, khách thân thiết: liệu trình Moonlight Facial thay đổi hoàn toàn làn da của chị, không gian tĩnh lặng và chuyên viên tận tâm đến từng chi tiết.',
+          'Chị Thu Hà (38 tuổi) sống chung với nám 10 năm, sau 3 tháng điều trị nám mờ trên 80% — kết quả đo bằng máy phân tích da. Xem đầy đủ hình ảnh feedback của khách tại trang Đánh giá của Hi Medical.',
+        ],
+      },
+      {
+        heading: 'Trải nghiệm thử thế nào?',
+        paragraphs: [
+          'Cách kiểm chứng tốt nhất là một buổi trải nghiệm nhỏ: soi da, tư vấn miễn phí, xem không gian và cách làm việc rồi hãy quyết định liệu trình dài.',
+          'Hi Medical áp dụng đúng nguyên tắc này — mọi liệu trình đều bắt đầu bằng thăm khám, không ép mua gói, giá báo trước khi làm.',
+        ],
+      },
+      {
+        heading: 'Địa chỉ và cách đặt lịch',
+        paragraphs: [
+          'Hi Medical Skincare & Beauty — 49 Nguyễn Bỉnh Khiêm, Phường Vũng Tàu, TP. Hồ Chí Minh. Mở cửa Thứ 2 đến Chủ nhật, 09:00–18:00.',
+          'Đặt lịch soi da miễn phí qua hotline 0799 390 790 hoặc Zalo — nên đặt trước ít nhất 1 ngày để được sắp xếp khung giờ phù hợp.',
+        ],
+      },
+    ],
+  },
+  {
     id: 'a15',
     slug: 'tri-nam-o-dau-tot-vung-tau',
     title: 'Trị nám ở đâu tốt tại Vũng Tàu? 5 tiêu chí chọn đúng nơi',
@@ -740,7 +791,7 @@ const CLUSTERS: { pillar: { label: string; href: string }; slugs: string[] }[] =
   },
   {
     pillar: { label: 'Hi Medical Skincare & Beauty', href: '/' },
-    slugs: ['cau-chuyen-hi-medical-10-nam', 'hop-tac-quoc-te'],
+    slugs: ['cau-chuyen-hi-medical-10-nam', 'hop-tac-quoc-te', 'spa-vung-tau-uy-tin-khach-hang-tin-tuong'],
   },
 ];
 
