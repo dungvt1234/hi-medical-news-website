@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/journal`, lastModified: SITE_UPDATED },
     { url: `${BASE}/feedback`, lastModified: SITE_UPDATED },
     { url: `${BASE}/lien-he`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/gioi-thieu`, lastModified: SITE_UPDATED },
     ...SERVICES.map((s) => ({
       url: `${BASE}/dich-vu/${s.slug}`,
       lastModified: SITE_UPDATED,

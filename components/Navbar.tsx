@@ -15,7 +15,7 @@ import { useFlip } from './FlipProvider';
 const NAV_LINKS = [
   { href: '/#home', label: 'Trang chủ' },
   { href: '/#treatments', label: 'Dịch vụ' },
-  { href: '/#about', label: 'Giới thiệu' },
+  { href: '/gioi-thieu', label: 'Giới thiệu' },
   { href: '/#experience', label: 'Trải nghiệm' },
   { href: '/journal', label: 'Bài viết' },
   { href: '/feedback', label: 'Đánh giá' },
