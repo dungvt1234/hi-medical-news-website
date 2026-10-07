@@ -403,7 +403,7 @@ export const ARTICLES: Article[] = [
       'Sau một tuần làm việc căng thẳng, cơ thể cần được phục hồi. Gợi ý liệu trình chăm sóc toàn diện giúp chị em nạp lại năng lượng cho tuần mới.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.spa,
+    image: '/images/spa-cuoi-tuan-cover.jpg',
     date: '2026-07-25',
     dateLabel: '25/07/2026',
     readTime: '4 phút đọc',
