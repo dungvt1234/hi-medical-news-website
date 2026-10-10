@@ -746,6 +746,50 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: 'a17',
+    slug: 'vi-sao-nen-dat-lich-cham-soc-sac-dep-truoc',
+    title: 'Vì sao nên đặt lịch chăm sóc sắc đẹp trước?',
+    excerpt:
+      'Đặt lịch trước giúp bạn chủ động khung giờ, được tư vấn kỹ và có liệu trình hợp lý — thay vì chờ đợi hay làm vội khi spa kín lịch.',
+    category: 'Bí quyết làm đẹp',
+    categoryKey: 'tips',
+    image: IMG.flower,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '4 phút đọc',
+    content: [
+      {
+        heading: 'Chủ động thời gian giữa lịch trình bận rộn',
+        paragraphs: [
+          'Với người bận rộn, khoảng thời gian dành cho bản thân thường ít ỏi và dễ bị công việc lấn mất. Đặt lịch trước giúp bạn giữ chắc khung giờ đó trong ngày, thay vì hy vọng còn chỗ trống vào phút cuối.',
+          'Một cuộc hẹn đã đặt cũng là một lời hứa với chính mình — bạn sẽ thực sự nghỉ ngơi thay vì lướt qua ý định chăm sóc bản thân rồi quên mất.',
+        ],
+      },
+      {
+        heading: 'Vì sao nên đặt lịch chăm sóc sắc đẹp trước?',
+        paragraphs: [
+          'Đặt lịch trước giúp khách hàng chủ động hơn khi sắp xếp công việc và thời gian cá nhân. Một số lợi ích có thể kể đến: tiết kiệm thời gian nhờ chọn khung giờ phù hợp với lịch trình; được tư vấn trước về nhu cầu chăm sóc và dịch vụ mong muốn; sắp xếp liệu trình hợp lý với thời gian có sẵn; và trải nghiệm thuận tiện hơn, hạn chế chờ đợi khi cơ sở đã kín lịch.',
+          'Nếu bạn có lịch trình bận rộn hoặc chỉ có một khoảng thời gian ngắn để chăm sóc bản thân, hãy trao đổi trước với Hi Medical để được tư vấn về thời lượng dịch vụ và cách sắp xếp lịch hẹn phù hợp.',
+        ],
+      },
+      {
+        heading: 'Hi Medical – Địa chỉ chăm sóc sắc đẹp tại Vũng Tàu',
+        paragraphs: [
+          'Nếu bạn đang tìm kiếm địa chỉ chăm sóc da tại Vũng Tàu, Hi Medical – Skincare & Beauty là nơi bạn có thể liên hệ để tìm hiểu các dịch vụ chăm sóc sắc đẹp theo nhu cầu cá nhân.',
+          'Với định hướng chú trọng trải nghiệm khách hàng, Hi Medical hướng đến việc giúp mỗi khách hàng lựa chọn phương pháp chăm sóc phù hợp, chủ động về thời gian và có thêm cơ hội dành sự quan tâm cho bản thân giữa lịch trình bận rộn.',
+          'Trước khi lựa chọn dịch vụ, khách hàng nên trao đổi về tình trạng da, mục tiêu chăm sóc, thời lượng thực hiện và hướng dẫn chăm sóc sau liệu trình nếu có.',
+        ],
+      },
+      {
+        heading: 'Đặt lịch chăm sóc sắc đẹp tại Hi Medical',
+        paragraphs: [
+          'Đừng để lịch trình bận rộn khiến bạn quên dành thời gian cho chính mình. Hãy chủ động sắp xếp một khoảng thời gian phù hợp để chăm sóc làn da, thư giãn và tận hưởng trải nghiệm làm đẹp theo nhu cầu cá nhân.',
+          'Hi Medical – Skincare & Beauty: địa chỉ 49 Nguyễn Bỉnh Khiêm, Vũng Tàu — hotline 0799 390 790. Liên hệ trực tiếp để được tư vấn dịch vụ và thời gian phù hợp. Một giờ, một điểm đến, một khoảng thời gian dành riêng cho bạn.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getFeatured(articles: Article[] = ARTICLES): Article {
@@ -787,7 +831,7 @@ const CLUSTERS: { pillar: { label: string; href: string }; slugs: string[] }[] =
   },
   {
     pillar: { label: 'Massage & Combo thư giãn', href: '/dich-vu/massage-thu-gian' },
-    slugs: ['spa-ngay-cuoi-tuan-thu-gian', 'uu-dai-thang-8-combo-lam-dep'],
+    slugs: ['spa-ngay-cuoi-tuan-thu-gian', 'uu-dai-thang-8-combo-lam-dep', 'vi-sao-nen-dat-lich-cham-soc-sac-dep-truoc'],
   },
   {
     pillar: { label: 'Hi Medical Skincare & Beauty', href: '/' },
