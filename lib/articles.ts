@@ -754,7 +754,7 @@ export const ARTICLES: Article[] = [
       'Nhân ngày Phụ nữ Việt Nam 20/10, Hi Medical mang đến ưu đãi chăm sóc da chuyên sâu và trẻ hóa da dành cho phái đẹp tại Vũng Tàu.',
     category: 'Chương trình khuyến mãi',
     categoryKey: 'promo',
-    image: IMG.cream,
+    image: '/images/uu-dai-20-10-cover.jpg',
     date: '2026-09-17',
     dateLabel: '17/09/2026',
     readTime: '3 phút đọc',
