@@ -747,6 +747,41 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    id: 'a18',
+    slug: 'uu-dai-20-10-yeu-thuong-nang',
+    title: 'Ưu đãi 20/10 – Yêu thương nàng, chăm sóc nét đẹp riêng',
+    excerpt:
+      'Nhân ngày Phụ nữ Việt Nam 20/10, Hi Medical mang đến ưu đãi chăm sóc da chuyên sâu và trẻ hóa da dành cho phái đẹp tại Vũng Tàu.',
+    category: 'Chương trình khuyến mãi',
+    categoryKey: 'promo',
+    image: IMG.cream,
+    date: '2026-09-17',
+    dateLabel: '17/09/2026',
+    readTime: '3 phút đọc',
+    content: [
+      {
+        paragraphs: [
+          'Ngày Phụ nữ Việt Nam 20/10 là dịp đặc biệt để dành những điều ngọt ngào cho những người phụ nữ mình yêu thương. Nhưng nàng ơi, đừng quên rằng chính bản thân mình cũng xứng đáng được quan tâm, chăm sóc và nâng niu mỗi ngày!',
+          'Nhân dịp 20/10, Hi Medical – Skincare & Beauty mang đến những chương trình ưu đãi dành cho phái đẹp, giúp nàng có thêm cơ hội trải nghiệm các dịch vụ chăm sóc da chuyên sâu và trẻ hóa da.',
+        ],
+      },
+      {
+        heading: 'Ưu đãi làm đẹp 20/10 tại Hi Medical có gì?',
+        paragraphs: [
+          'Các gói chăm sóc da chuyên sâu, phù hợp với nhu cầu của từng khách hàng. Trải nghiệm dịch vụ trẻ hóa da, hướng đến làn da tươi tắn và rạng rỡ hơn. Tư vấn lựa chọn liệu trình dựa trên tình trạng da và mục tiêu chăm sóc cá nhân.',
+          'Một món quà ý nghĩa không nhất thiết phải thật đắt đỏ. Đôi khi, đó là khoảng thời gian nàng dành cho chính mình, là sự tự tin khi soi gương và là cảm giác được chăm sóc một cách chỉn chu.',
+        ],
+      },
+      {
+        heading: 'Đón ưu đãi đặc biệt dịp 20/10 tại Hi Medical!',
+        paragraphs: [
+          'Nhắn tin ngay để được tư vấn chương trình ưu đãi, lựa chọn liệu trình phù hợp và đặt lịch trải nghiệm.',
+          'Hi Medical – Skincare & Beauty: 49 Nguyễn Bỉnh Khiêm, Vũng Tàu — hotline 0799 390 790. 20/10 này, hãy để Hi Medical đồng hành cùng nàng trên hành trình chăm sóc và yêu thương bản thân!',
+        ],
+      },
+    ],
+  },
+  {
     id: 'a17',
     slug: 'vi-sao-nen-dat-lich-cham-soc-sac-dep-truoc',
     title: 'Vì sao nên đặt lịch chăm sóc sắc đẹp trước?',
@@ -831,7 +866,7 @@ const CLUSTERS: { pillar: { label: string; href: string }; slugs: string[] }[] =
   },
   {
     pillar: { label: 'Massage & Combo thư giãn', href: '/dich-vu/massage-thu-gian' },
-    slugs: ['spa-ngay-cuoi-tuan-thu-gian', 'uu-dai-thang-8-combo-lam-dep', 'vi-sao-nen-dat-lich-cham-soc-sac-dep-truoc'],
+    slugs: ['spa-ngay-cuoi-tuan-thu-gian', 'uu-dai-thang-8-combo-lam-dep', 'vi-sao-nen-dat-lich-cham-soc-sac-dep-truoc', 'uu-dai-20-10-yeu-thuong-nang'],
   },
   {
     pillar: { label: 'Hi Medical Skincare & Beauty', href: '/' },
