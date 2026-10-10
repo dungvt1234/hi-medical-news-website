@@ -754,7 +754,7 @@ export const ARTICLES: Article[] = [
       'Đặt lịch trước giúp bạn chủ động khung giờ, được tư vấn kỹ và có liệu trình hợp lý — thay vì chờ đợi hay làm vội khi spa kín lịch.',
     category: 'Bí quyết làm đẹp',
     categoryKey: 'tips',
-    image: IMG.flower,
+    image: '/images/dat-lich-truoc-cover.jpg',
     date: '2026-09-17',
     dateLabel: '17/09/2026',
     readTime: '4 phút đọc',
